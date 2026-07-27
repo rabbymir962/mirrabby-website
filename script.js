@@ -1,41 +1,119 @@
-// ===========================
-// MIR RABBY OFFICIAL
-// Premium Website v2.0
-// ===========================
+// =========================
+// MIR RABBY OFFICIAL v4.0
+// Premium JavaScript
+// =========================
 
-// Smooth fade animation on scroll
-const sections = document.querySelectorAll("section");
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault();
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, {
-  threshold: 0.15
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
+        });
+
+    });
 });
 
-sections.forEach((section) => {
-  section.style.opacity = "0";
-  section.style.transform = "translateY(50px)";
-  section.style.transition = "all 0.8s ease";
-  observer.observe(section);
+// Header Shadow
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>50){
+
+header.style.boxShadow="0 10px 30px rgba(0,0,0,.4)";
+
+}else{
+
+header.style.boxShadow="none";
+
+}
+
 });
 
-// Scroll To Top Button
-const topButton = document.createElement("button");
-topButton.innerHTML = "↑";
-topButton.id = "topBtn";
-document.body.appendChild(topButton);
+// Fade Animation
 
-topButton.style.cssText = `
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+sections.forEach(section=>{
+
+section.style.opacity="0";
+
+section.style.transform="translateY(60px)";
+section.style.transition="1s";
+
+observer.observe(section);
+
+});
+
+// Back To Top Button
+
+const topBtn=document.createElement("button");
+
+topBtn.innerHTML="↑";
+
+document.body.appendChild(topBtn);
+
+topBtn.style.cssText=`
+
 position:fixed;
-bottom:25px;
-right:25px;
-width:50px;
-height:50px;
+right:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#00e676;
+font-size:22px;
+cursor:pointer;
+display:none;
+z-index:9999;
+
+`;
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};height:50px;
 border:none;
 border-radius:50%;
 background:#00ff99;
