@@ -224,3 +224,64 @@ opacity:1;
 transform:translateY(0);
 
 }
+.stats{
+
+margin-top:70px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:20px;
+
+padding:30px;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#10B981;
+
+box-shadow:0 20px 40px rgba(16,185,129,.25);
+
+}
+
+.card h3{
+
+font-size:18px;
+
+margin-bottom:18px;
+
+color:#dcdcdc;
+
+}
+
+.card span{
+
+font-size:42px;
+
+font-family:'Poppins',sans-serif;
+
+font-weight:800;
+
+color:#10B981;
+
+}
