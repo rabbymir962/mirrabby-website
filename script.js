@@ -1,12 +1,13 @@
 /* ===================================================
-   CHAPTER 11
-   PREMIUM JAVASCRIPT FEATURES
+   MIR RABBY OFFICIAL WEBSITE v5.0
+   PREMIUM JAVASCRIPT
+   FINAL FIXED VERSION
 =================================================== */
 
 
-/* ===============================
+/* ===================================================
    PAGE LOADER
-================================ */
+=================================================== */
 
 window.addEventListener("load",()=>{
 
@@ -16,7 +17,7 @@ window.addEventListener("load",()=>{
 
         setTimeout(()=>{
 
-            loader.style.opacity="0";
+            loader.classList.add("hide");
 
             setTimeout(()=>{
 
@@ -33,9 +34,10 @@ window.addEventListener("load",()=>{
 
 
 
-/* ===============================
+/* ===================================================
    SCROLL PROGRESS BAR
-================================ */
+=================================================== */
+
 
 window.addEventListener("scroll",()=>{
 
@@ -47,17 +49,17 @@ window.addEventListener("scroll",()=>{
     if(progressBar){
 
 
-        let scrollTop =
-        document.documentElement.scrollTop;
+        const scrollTop =
+        window.scrollY;
 
 
-        let height =
+        const documentHeight =
         document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+        window.innerHeight;
 
 
-        let progress =
-        (scrollTop / height) * 100;
+        const progress =
+        (scrollTop / documentHeight) * 100;
 
 
         progressBar.style.width =
@@ -71,9 +73,10 @@ window.addEventListener("scroll",()=>{
 
 
 
-/* ===============================
+/* ===================================================
    MOBILE MENU
-================================ */
+=================================================== */
+
 
 const menuToggle =
 document.querySelector(".menu-toggle");
@@ -83,26 +86,111 @@ const nav =
 document.querySelector("nav");
 
 
-
-if(menuToggle){
-
-
-menuToggle.addEventListener("click",()=>{
+if(menuToggle && nav){
 
 
-    nav.classList.toggle("active");
+    menuToggle.addEventListener("click",()=>{
 
 
-});
+        nav.classList.toggle("active");
+
+
+        menuToggle.classList.toggle("open");
+
+
+    });
 
 
 }
 
 
 
-/* ===============================
+/* Close Mobile Menu */
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+
+    link.addEventListener("click",()=>{
+
+
+        if(nav){
+
+            nav.classList.remove("active");
+
+        }
+
+
+    });
+
+
+});
+
+
+
+/* Click Outside Close Menu */
+
+
+document.addEventListener("click",(e)=>{
+
+
+    if(
+
+        nav &&
+        menuToggle &&
+        !nav.contains(e.target) &&
+        !menuToggle.contains(e.target)
+
+    ){
+
+        nav.classList.remove("active");
+
+    }
+
+
+});
+
+
+
+/* ===================================================
+   HEADER SCROLL EFFECT
+=================================================== */
+
+
+const header =
+document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+
+    if(header){
+
+
+        if(window.scrollY > 50){
+
+            header.classList.add("scrolled");
+
+
+        }else{
+
+
+            header.classList.remove("scrolled");
+
+
+        }
+
+
+    }
+
+
+});
+
+
+
+/* ===================================================
    AUTO YEAR
-================================ */
+=================================================== */
+
 
 const year =
 document.getElementById("year");
@@ -110,91 +198,122 @@ document.getElementById("year");
 
 if(year){
 
-    year.innerHTML =
+    year.textContent =
     new Date().getFullYear();
 
 }
 
 
 
-/* ===============================
+/* ===================================================
    ACTIVE NAV LINK
-================================ */
+=================================================== */
 
 
-const navLinks =
+const sections =
+document.querySelectorAll("section[id]");
+
+
+const navItems =
 document.querySelectorAll("nav ul li a");
 
 
-navLinks.forEach(link=>{
+
+window.addEventListener("scroll",()=>{
 
 
-    link.addEventListener("click",()=>{
+    let current="";
 
 
-        nav.classList.remove("active");
+    sections.forEach(section=>{
+
+
+        const sectionTop =
+        section.offsetTop - 150;
+
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+            section.getAttribute("id");
+
+        }
+
+
+    });
+
+
+
+    navItems.forEach(link=>{
+
+
+        link.classList.remove("active");
+
+
+        if(link.getAttribute("href") === "#"+current){
+
+
+            link.classList.add("active");
+
+
+        }
 
 
     });
 
 
 });
+
+
+
 /* ===================================================
-   CHAPTER 12
-   ADVANCED WEBSITE EFFECTS
+   SCROLL REVEAL ANIMATION
 =================================================== */
 
 
-/* ===============================
-   NAVBAR SCROLL EFFECT
-================================ */
-
-window.addEventListener("scroll",()=>{
-
-    const header =
-    document.querySelector("header");
-
-
-    if(window.scrollY > 50){
-
-        header.classList.add("scrolled");
-
-    }else{
-
-        header.classList.remove("scrolled");
-
-    }
-
-});
-
-
-
-/* ===============================
-   SCROLL REVEAL ANIMATION
-================================ */
-
 const revealElements =
-document.querySelectorAll(
-".service-card, .portfolio-card, .info-box, .contact-card"
-);
+document.querySelectorAll(`
+
+.section-title,
+
+.mission-card,
+
+.org-card,
+
+.rights-card,
+
+.activity-card,
+
+.news-card,
+
+.gallery-item,
+
+.video-card,
+
+.info-item,
+
+.contact-item
+
+`);
 
 
 
-const revealOnScroll = ()=>{
+function revealOnScroll(){
 
 
     revealElements.forEach(element=>{
 
 
-        const position =
+        const top =
         element.getBoundingClientRect().top;
 
 
-        const screenHeight =
+        const windowHeight =
         window.innerHeight;
 
 
-        if(position < screenHeight - 100){
+
+        if(top < windowHeight - 80){
 
 
             element.classList.add("slide-up");
@@ -206,7 +325,7 @@ const revealOnScroll = ()=>{
     });
 
 
-};
+}
 
 
 
@@ -216,106 +335,190 @@ revealOnScroll
 );
 
 
-
 revealOnScroll();
 
 
 
-/* ===============================
+/* ===================================================
    TYPING EFFECT
-================================ */
+=================================================== */
+
 
 const typingText =
 document.querySelector(".typing");
 
 
+
 if(typingText){
 
 
-let text =
-typingText.innerHTML;
+    const text =
+    typingText.textContent;
 
 
-typingText.innerHTML="";
+    typingText.textContent="";
 
 
-let index=0;
+    let index=0;
 
 
 
-function typing(){
+    function typeEffect(){
 
 
-    if(index < text.length){
+        if(index < text.length){
 
 
-        typingText.innerHTML +=
-        text.charAt(index);
+            typingText.textContent +=
+            text.charAt(index);
 
 
-        index++;
+            index++;
 
-        setTimeout(
-        typing,
-        100
-        );
+
+            setTimeout(
+                typeEffect,
+                100
+            );
+
+
+        }
 
 
     }
 
 
-}
-
-
-typing();
+    typeEffect();
 
 
 }
 
 
 
-/* ===============================
+/* ===================================================
    BACK TO TOP BUTTON
-================================ */
-
-const topButton =
-document.getElementById("backTop");
+=================================================== */
 
 
-
-if(topButton){
-
-
-window.addEventListener("scroll",()=>{
+const backToTop =
+document.getElementById("backToTop");
 
 
-    if(window.scrollY > 400){
+
+if(backToTop){
 
 
-        topButton.classList.add("show");
+    window.addEventListener("scroll",()=>{
 
 
-    }else{
+        if(window.scrollY > 400){
 
 
-        topButton.classList.remove("show");
+            backToTop.style.display="flex";
 
 
-    }
+        }else{
+
+
+            backToTop.style.display="none";
+
+
+        }
+
+
+    });
+
+
+
+    backToTop.addEventListener("click",()=>{
+
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+
+    });
+
+
+}
+
+
+
+/* ===================================================
+   IMAGE LAZY LOADING SUPPORT
+=================================================== */
+
+
+const images =
+document.querySelectorAll("img");
+
+
+
+images.forEach(img=>{
+
+
+    img.setAttribute(
+        "loading",
+        "lazy"
+    );
 
 
 });
 
 
 
-topButton.addEventListener("click",()=>{
+/* ===================================================
+   CONTACT FORM DEMO
+=================================================== */
 
 
-    window.scrollTo({
+const contactForm =
+document.querySelector(".contact-form form");
 
-        top:0,
 
-        behavior:"smooth"
+
+if(contactForm){
+
+
+    contactForm.addEventListener("submit",(e)=>{
+
+
+        e.preventDefault();
+
+
+        alert(
+        "আপনার বার্তা সফলভাবে গ্রহণ করা হয়েছে। ধন্যবাদ।"
+        );
+
+
+        contactForm.reset();
+
+
+    });
+
+
+}
+
+
+
+/* ===================================================
+   PREVENT BROKEN LINKS
+=================================================== */
+
+
+document.querySelectorAll('a[href="#"]').forEach(link=>{
+
+
+    link.addEventListener("click",(e)=>{
+
+
+        e.preventDefault();
+
 
     });
 
@@ -323,4 +526,21 @@ topButton.addEventListener("click",()=>{
 });
 
 
-}
+
+/* ===================================================
+   CONSOLE BRAND
+=================================================== */
+
+
+console.log(
+`
+=================================
+
+ MIR RABBY OFFICIAL WEBSITE
+ Premium Version v5.0
+
+ Website Loaded Successfully
+
+=================================
+`
+);
