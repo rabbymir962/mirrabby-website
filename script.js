@@ -1,295 +1,326 @@
-// =========================
-// MIR RABBY OFFICIAL v4.0
-// Premium JavaScript
-// =========================
+/* ===================================================
+   CHAPTER 11
+   PREMIUM JAVASCRIPT FEATURES
+=================================================== */
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e){
-        e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior:"smooth"
-        });
+/* ===============================
+   PAGE LOADER
+================================ */
 
-    });
-});
-
-// Header Shadow
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>50){
-
-header.style.boxShadow="0 10px 30px rgba(0,0,0,.4)";
-
-}else{
-
-header.style.boxShadow="none";
-
-}
-
-});
-
-// Fade Animation
-
-const sections=document.querySelectorAll("section");
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-}
-
-});
-
-});
-
-sections.forEach(section=>{
-
-section.style.opacity="0";
-
-section.style.transform="translateY(60px)";
-section.style.transition="1s";
-
-observer.observe(section);
-
-});
-
-// Back To Top Button
-
-const topBtn=document.createElement("button");
-
-topBtn.innerHTML="↑";
-
-document.body.appendChild(topBtn);
-
-topBtn.style.cssText=`
-
-position:fixed;
-right:20px;
-bottom:20px;
-width:55px;
-height:55px;
-border:none;
-border-radius:50%;
-background:#00e676;
-font-size:22px;
-cursor:pointer;
-display:none;
-z-index:9999;
-
-`;
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>300){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
-});
-
-topBtn.onclick=()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-};height:50px;
-border:none;
-border-radius:50%;
-background:#00ff99;
-color:#000;
-font-size:24px;
-cursor:pointer;
-display:none;
-box-shadow:0 5px 20px rgba(0,255,153,.4);
-z-index:999;
-`;
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    topButton.style.display = "block";
-  } else {
-    topButton.style.display = "none";
-  }
-});
-
-topButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-// Navbar shadow
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.style.boxShadow = "0 10px 30px rgba(0,0,0,.4)";
-  } else {
-    header.style.boxShadow = "none";
-  }
-});
-
-// Welcome Message
-console.log("Welcome to MIR RABBY OFFICIAL Premium Website");/* ==========================================
-   MIR RABBY Official Website
-   script.js
-========================================== */
-
-// Scroll To Top Button
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        topBtn.style.display = "flex";
-    } else {
-        topBtn.style.display = "none";
-    }
-});
-
-topBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
-// Sticky Navbar
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = "rgba(8,17,31,.95)";
-        navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,.30)";
-    } else {
-        navbar.style.background = "rgba(0,0,0,.35)";
-        navbar.style.boxShadow = "none";
-    }
-});
-
-// Mobile Menu
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
-
-menuBtn.addEventListener("click", () => {
-
-    if (menu.style.display === "flex") {
-
-        menu.style.display = "none";
-
-    } else {
-
-        menu.style.display = "flex";
-        menu.style.flexDirection = "column";
-        menu.style.position = "absolute";
-        menu.style.top = "80px";
-        menu.style.right = "20px";
-        menu.style.background = "#08111f";
-        menu.style.padding = "20px";
-        menu.style.borderRadius = "12px";
-        menu.style.width = "220px";
-        menu.style.textAlign = "center";
-        menu.style.gap = "20px";
-        menu.style.boxShadow = "0 10px 30px rgba(0,0,0,.4)";
-
-    }
-
-});
-
-// Active Menu
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".menu a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-
-        if (window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-// Fade Animation
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-document.querySelectorAll("section").forEach(section=>{
-
-    observer.observe(section);
-
-});
-
-// Loading Animation
 window.addEventListener("load",()=>{
 
-    document.body.style.opacity="1";
+    const loader = document.getElementById("loader");
+
+    if(loader){
+
+        setTimeout(()=>{
+
+            loader.style.opacity="0";
+
+            setTimeout(()=>{
+
+                loader.style.display="none";
+
+            },500);
+
+
+        },800);
+
+    }
 
 });
 
-// Current Year
-const year = new Date().getFullYear();
 
-const copyright =
-document.querySelector(".copyright");
 
-if(copyright){
+/* ===============================
+   SCROLL PROGRESS BAR
+================================ */
 
-copyright.innerHTML =
-"© " + year + " MIR RABBY. All Rights Reserved.";
+window.addEventListener("scroll",()=>{
+
+
+    const progressBar =
+    document.getElementById("progress-bar");
+
+
+    if(progressBar){
+
+
+        let scrollTop =
+        document.documentElement.scrollTop;
+
+
+        let height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+
+        let progress =
+        (scrollTop / height) * 100;
+
+
+        progressBar.style.width =
+        progress + "%";
+
+
+    }
+
+
+});
+
+
+
+/* ===============================
+   MOBILE MENU
+================================ */
+
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+
+const nav =
+document.querySelector("nav");
+
+
+
+if(menuToggle){
+
+
+menuToggle.addEventListener("click",()=>{
+
+
+    nav.classList.toggle("active");
+
+
+});
+
+
+}
+
+
+
+/* ===============================
+   AUTO YEAR
+================================ */
+
+const year =
+document.getElementById("year");
+
+
+if(year){
+
+    year.innerHTML =
+    new Date().getFullYear();
+
+}
+
+
+
+/* ===============================
+   ACTIVE NAV LINK
+================================ */
+
+
+const navLinks =
+document.querySelectorAll("nav ul li a");
+
+
+navLinks.forEach(link=>{
+
+
+    link.addEventListener("click",()=>{
+
+
+        nav.classList.remove("active");
+
+
+    });
+
+
+});
+/* ===================================================
+   CHAPTER 12
+   ADVANCED WEBSITE EFFECTS
+=================================================== */
+
+
+/* ===============================
+   NAVBAR SCROLL EFFECT
+================================ */
+
+window.addEventListener("scroll",()=>{
+
+    const header =
+    document.querySelector("header");
+
+
+    if(window.scrollY > 50){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+/* ===============================
+   SCROLL REVEAL ANIMATION
+================================ */
+
+const revealElements =
+document.querySelectorAll(
+".service-card, .portfolio-card, .info-box, .contact-card"
+);
+
+
+
+const revealOnScroll = ()=>{
+
+
+    revealElements.forEach(element=>{
+
+
+        const position =
+        element.getBoundingClientRect().top;
+
+
+        const screenHeight =
+        window.innerHeight;
+
+
+        if(position < screenHeight - 100){
+
+
+            element.classList.add("slide-up");
+
+
+        }
+
+
+    });
+
+
+};
+
+
+
+window.addEventListener(
+"scroll",
+revealOnScroll
+);
+
+
+
+revealOnScroll();
+
+
+
+/* ===============================
+   TYPING EFFECT
+================================ */
+
+const typingText =
+document.querySelector(".typing");
+
+
+if(typingText){
+
+
+let text =
+typingText.innerHTML;
+
+
+typingText.innerHTML="";
+
+
+let index=0;
+
+
+
+function typing(){
+
+
+    if(index < text.length){
+
+
+        typingText.innerHTML +=
+        text.charAt(index);
+
+
+        index++;
+
+        setTimeout(
+        typing,
+        100
+        );
+
+
+    }
+
+
+}
+
+
+typing();
+
+
+}
+
+
+
+/* ===============================
+   BACK TO TOP BUTTON
+================================ */
+
+const topButton =
+document.getElementById("backTop");
+
+
+
+if(topButton){
+
+
+window.addEventListener("scroll",()=>{
+
+
+    if(window.scrollY > 400){
+
+
+        topButton.classList.add("show");
+
+
+    }else{
+
+
+        topButton.classList.remove("show");
+
+
+    }
+
+
+});
+
+
+
+topButton.addEventListener("click",()=>{
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+});
+
 
 }
