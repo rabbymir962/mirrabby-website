@@ -285,3 +285,25 @@ font-weight:800;
 color:#10B981;
 
 }
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 22px;
+    margin-bottom:25px;
+    border-radius:50px;
+    background:rgba(16,185,129,.15);
+    border:1px solid rgba(16,185,129,.35);
+    color:#10B981;
+    font-weight:600;
+    backdrop-filter:blur(12px);
+}
+
+.hero-line{
+    width:120px;
+    height:5px;
+    background:#10B981;
+    margin:25px auto;
+    border-radius:50px;
+    box-shadow:0 0 20px rgba(16,185,129,.6);
+}
