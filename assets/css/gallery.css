@@ -1,1 +1,253 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Gallery Section
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery{
+
+    padding:100px 0;
+
+    background:var(--white-color);
+
+}
+
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+/* =========================================
+   GALLERY ITEM
+========================================= */
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition-normal);
+
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.gallery-item img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.5s ease;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(11,93,59,.72);
+
+    opacity:0;
+
+    transition:var(--transition-normal);
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.gallery-icon{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.2);
+
+    color:var(--white-color);
+
+    font-size:1.6rem;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.gallery-overlay h3{
+
+    color:var(--white-color);
+
+    margin-bottom:8px;
+
+    text-align:center;
+
+}
+
+.gallery-overlay p{
+
+    color:rgba(255,255,255,.9);
+
+    text-align:center;
+
+}
+
+
+/* =========================================
+   VIDEO BADGE
+========================================= */
+
+.video-badge{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    background:var(--secondary-color);
+
+    color:var(--white-color);
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================
+   VIEW ALL BUTTON
+========================================= */
+
+.gallery-action{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width:992px){
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .gallery{
+
+        padding:80px 0;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-item img{
+
+        height:240px;
+
+    }
+
+}
