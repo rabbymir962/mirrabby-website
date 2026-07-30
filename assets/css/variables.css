@@ -1,1 +1,117 @@
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
 
+CSS Variables
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+:root {
+
+    /* =========================================
+       BRAND COLORS
+    ========================================= */
+
+    --primary-color: #0B5D3B;
+    --primary-dark: #08472D;
+    --primary-light: #128C5A;
+
+    --secondary-color: #D90000;
+    --secondary-dark: #A80000;
+    --secondary-light: #FF4D4D;
+
+    --accent-color: #FFD700;
+
+    /* =========================================
+       BASIC COLORS
+    ========================================= */
+
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+
+    --body-bg: #F8FAFC;
+
+    --text-color: #1E293B;
+    --text-light: #64748B;
+
+    --border-color: #E2E8F0;
+
+    /* =========================================
+       GLASSMORPHISM
+    ========================================= */
+
+    --glass-background: rgba(255,255,255,.18);
+
+    --glass-border: rgba(255,255,255,.30);
+
+    --glass-shadow:
+        0 8px 32px rgba(0,0,0,.08);
+
+    /* =========================================
+       SHADOWS
+    ========================================= */
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.08);
+
+    --shadow-md:
+        0 8px 20px rgba(0,0,0,.10);
+
+    --shadow-lg:
+        0 15px 35px rgba(0,0,0,.15);
+
+    /* =========================================
+       BORDER RADIUS
+    ========================================= */
+
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 25px;
+    --radius-xl: 40px;
+    --radius-round: 999px;
+
+    /* =========================================
+       TRANSITIONS
+    ========================================= */
+
+    --transition-fast: .2s ease;
+
+    --transition-normal: .3s ease;
+
+    --transition-slow: .5s ease;
+
+    /* =========================================
+       SPACING
+    ========================================= */
+
+    --space-xs: .5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+
+    /* =========================================
+       CONTAINER
+    ========================================= */
+
+    --container-width: 1200px;
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    --header-height: 80px;
+
+    /* =========================================
+       Z-INDEX
+    ========================================= */
+
+    --z-loader: 99999;
+    --z-popup: 9999;
+    --z-header: 999;
+    --z-menu: 990;
+    --z-dropdown: 980;
+
+}
