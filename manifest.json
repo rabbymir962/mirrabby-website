@@ -1,0 +1,96 @@
+{
+    "name": "MIR RABBY OFFICIAL",
+    "short_name": "MIR RABBY",
+    "description": "Official Website of MIR RABBY. Human Rights, Social Service, Public Affairs, News, Publications and Community Activities.",
+
+    "start_url": "/index.html",
+
+    "scope": "/",
+
+    "display": "standalone",
+
+    "orientation": "portrait-primary",
+
+    "theme_color": "#0B5D3B",
+
+    "background_color": "#ffffff",
+
+    "lang": "en-BD",
+
+    "categories": [
+        "social",
+        "news",
+        "education",
+        "community"
+    ],
+
+    "icons": [
+
+        {
+            "src": "assets/images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+
+        {
+            "src": "assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+
+    ],
+
+    "screenshots": [
+
+        {
+            "src": "assets/images/banner.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg"
+        }
+
+    ],
+
+    "shortcuts": [
+
+        {
+            "name": "About MIR RABBY",
+            "short_name": "About",
+            "url": "/pages/about.html",
+            "icons": [
+                {
+                    "src": "assets/images/favicon.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+
+        {
+            "name": "Latest News",
+            "short_name": "News",
+            "url": "/pages/news.html",
+            "icons": [
+                {
+                    "src": "assets/images/favicon.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+
+        {
+            "name": "Contact",
+            "short_name": "Contact",
+            "url": "/pages/contact.html",
+            "icons": [
+                {
+                    "src": "assets/images/favicon.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+
+    ],
+
+    "prefer_related_applications": false
+}
