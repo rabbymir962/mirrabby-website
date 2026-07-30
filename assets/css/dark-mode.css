@@ -1,1 +1,277 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Dark Mode Theme
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+
+/* =========================================
+   DARK MODE VARIABLES
+========================================= */
+
+body.dark-mode{
+
+    --body-bg:#0F172A;
+
+    --white-color:#1E293B;
+
+    --text-color:#F8FAFC;
+
+    --text-light:#CBD5E1;
+
+    --border-color:#334155;
+
+    --glass-background:rgba(30,41,59,.70);
+
+    --glass-border:rgba(255,255,255,.08);
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body.dark-mode{
+
+    background:var(--body-bg);
+
+    color:var(--text-color);
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.dark-mode .header{
+
+    background:rgba(15,23,42,.90);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+body.dark-mode .nav-menu a{
+
+    color:var(--text-color);
+
+}
+
+body.dark-mode .logo-text{
+
+    color:var(--white-color);
+
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+body.dark-mode section{
+
+    background:transparent;
+
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+body.dark-mode .glass-card,
+
+body.dark-mode .right-card,
+
+body.dark-mode .news-card,
+
+body.dark-mode .gallery-item,
+
+body.dark-mode .publication-card,
+
+body.dark-mode .event-card,
+
+body.dark-mode .contact-card,
+
+body.dark-mode .contact-form,
+
+body.dark-mode .emergency-card{
+
+    background:var(--glass-background);
+
+    border:1px solid var(--glass-border);
+
+    color:var(--text-color);
+
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6{
+
+    color:var(--text-color);
+
+}
+
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+body.dark-mode p{
+
+    color:var(--text-light);
+
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+body.dark-mode input,
+
+body.dark-mode textarea,
+
+body.dark-mode select{
+
+    background:#162338;
+
+    color:#ffffff;
+
+    border:1px solid #334155;
+
+}
+
+body.dark-mode input::placeholder,
+
+body.dark-mode textarea::placeholder{
+
+    color:#94A3B8;
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+body.dark-mode .btn-primary{
+
+    background:var(--primary-color);
+
+    color:#ffffff;
+
+}
+
+body.dark-mode .btn-outline{
+
+    color:#ffffff;
+
+    border-color:var(--primary-color);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+body.dark-mode .footer{
+
+    background:#020617;
+
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+body.dark-mode a{
+
+    color:inherit;
+
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+body.dark-mode::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+body.dark-mode::-webkit-scrollbar-track{
+
+    background:#0F172A;
+
+}
+
+body.dark-mode::-webkit-scrollbar-thumb{
+
+    background:#0B5D3B;
+
+    border-radius:20px;
+
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover{
+
+    background:#128C5A;
+
+}
+
+
+/* =========================================
+   SMOOTH TRANSITION
+========================================= */
+
+body,
+
+.header,
+
+section,
+
+.card,
+
+button,
+
+input,
+
+textarea,
+
+a{
+
+    transition:
+
+    background .35s ease,
+
+    color .35s ease,
+
+    border-color .35s ease;
+
+}
