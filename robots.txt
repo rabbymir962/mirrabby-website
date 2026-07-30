@@ -1,0 +1,36 @@
+# =====================================================
+# MIR RABBY OFFICIAL
+# Version 2026 Edition
+# Human Rights • Social Service • Public Affairs
+# =====================================================
+
+User-agent: *
+
+# Allow all public pages
+Allow: /
+
+# Disallow sensitive and future development folders
+Disallow: /docs/
+Disallow: /data/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /backups/
+Disallow: /uploads/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+
+# Prevent indexing of internal/system files
+Disallow: /LICENSE
+Disallow: /README.md
+Disallow: /package.json
+
+# Crawl delay (may be ignored by some search engines)
+Crawl-delay: 5
+
+# Sitemap location
+Sitemap: https://mirrabby-website.pages.dev/sitemap.xml
+
+# Preferred host
+Host: https://mirrabby-website.pages.dev/
