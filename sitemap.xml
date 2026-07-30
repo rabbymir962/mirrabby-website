@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Human Rights • Social Service • Public Affairs
+
+XML Sitemap
+=====================================================
+-->
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    <!-- Home Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/
+        </loc>
+
+        <lastmod>
+            2026-07-30
+        </lastmod>
+
+        <changefreq>
+            weekly
+        </changefreq>
+
+        <priority>
+            1.0
+        </priority>
+
+    </url>
+
+
+
+    <!-- About Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/about.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.9
+        </priority>
+
+    </url>
+
+
+
+    <!-- Human Rights Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/human-rights.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.9
+        </priority>
+
+    </url>
+
+
+
+    <!-- News Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/news.html
+        </loc>
+
+        <changefreq>
+            weekly
+        </changefreq>
+
+        <priority>
+            0.9
+        </priority>
+
+    </url>
+
+
+
+    <!-- Gallery Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/gallery.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.8
+        </priority>
+
+    </url>
+
+
+
+    <!-- Publications Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/publications.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.8
+        </priority>
+
+    </url>
+
+
+
+    <!-- Events Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/events.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.8
+        </priority>
+
+    </url>
+
+
+
+    <!-- Emergency Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/emergency.html
+        </loc>
+
+        <changefreq>
+            yearly
+        </changefreq>
+
+        <priority>
+            0.7
+        </priority>
+
+    </url>
+
+
+
+    <!-- Contact Page -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/contact.html
+        </loc>
+
+        <changefreq>
+            monthly
+        </changefreq>
+
+        <priority>
+            0.8
+        </priority>
+
+    </url>
+
+
+
+    <!-- Privacy Policy -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/privacy-policy.html
+        </loc>
+
+        <changefreq>
+            yearly
+        </changefreq>
+
+        <priority>
+            0.5
+        </priority>
+
+    </url>
+
+
+
+    <!-- Terms -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/terms.html
+        </loc>
+
+        <changefreq>
+            yearly
+        </changefreq>
+
+        <priority>
+            0.5
+        </priority>
+
+    </url>
+
+
+
+    <!-- Disclaimer -->
+
+    <url>
+
+        <loc>
+            https://mirrabby-website.pages.dev/pages/disclaimer.html
+        </loc>
+
+        <changefreq>
+            yearly
+        </changefreq>
+
+        <priority>
+            0.5
+        </priority>
+
+    </url>
+
+
+</urlset>
