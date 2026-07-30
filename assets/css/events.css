@@ -1,1 +1,276 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Events Section
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+
+/* =========================================
+   EVENTS SECTION
+========================================= */
+
+.events{
+
+    padding:100px 0;
+
+    background:var(--white-color);
+
+}
+
+
+/* =========================================
+   EVENTS GRID
+========================================= */
+
+.events-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+/* =========================================
+   EVENT CARD
+========================================= */
+
+.event-card{
+
+    position:relative;
+
+    background:var(--white-color);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition-normal);
+
+}
+
+.event-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* =========================================
+   EVENT IMAGE
+========================================= */
+
+.event-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.event-image img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.5s ease;
+
+}
+
+.event-card:hover .event-image img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =========================================
+   DATE BADGE
+========================================= */
+
+.event-date{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    background:var(--primary-color);
+
+    color:var(--white-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.event-date span{
+
+    font-size:1.5rem;
+
+    line-height:1;
+
+}
+
+.event-date small{
+
+    font-size:.8rem;
+
+}
+
+
+/* =========================================
+   EVENT CONTENT
+========================================= */
+
+.event-content{
+
+    padding:25px;
+
+}
+
+.event-content h3{
+
+    margin-bottom:15px;
+
+    transition:var(--transition-normal);
+
+}
+
+.event-card:hover h3{
+
+    color:var(--primary-color);
+
+}
+
+.event-content p{
+
+    margin-bottom:20px;
+
+}
+
+
+/* =========================================
+   EVENT INFO
+========================================= */
+
+.event-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+}
+
+.event-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+
+/* =========================================
+   READ MORE BUTTON
+========================================= */
+
+.event-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--primary-color);
+
+    font-weight:600;
+
+    transition:var(--transition-normal);
+
+}
+
+.event-btn:hover{
+
+    gap:14px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width:992px){
+
+    .events-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .events{
+
+        padding:80px 0;
+
+    }
+
+    .events-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .event-image img{
+
+        height:220px;
+
+    }
+
+}
