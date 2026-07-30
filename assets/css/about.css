@@ -1,1 +1,275 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+About Section
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about{
+
+    padding:100px 0;
+
+    background:var(--white-color);
+
+}
+
+
+/* =========================================
+   ABOUT CONTAINER
+========================================= */
+
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+/* =========================================
+   ABOUT IMAGE
+========================================= */
+
+.about-image{
+
+    position:relative;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* =========================================
+   EXPERIENCE CARD
+========================================= */
+
+.experience-card{
+
+    position:absolute;
+
+    bottom:25px;
+
+    right:-20px;
+
+    padding:20px;
+
+    min-width:180px;
+
+    text-align:center;
+
+    background:var(--glass-background);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.experience-card h3{
+
+    color:var(--primary-color);
+
+    font-size:2rem;
+
+    margin-bottom:5px;
+
+}
+
+.experience-card span{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about-content h2{
+
+    margin-bottom:20px;
+
+}
+
+.about-content p{
+
+    margin-bottom:20px;
+
+}
+
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.about-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin:35px 0;
+
+}
+
+.about-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px;
+
+    background:var(--glass-background);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition-normal);
+
+}
+
+.about-feature:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.about-feature i{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    color:var(--white-color);
+
+    font-style:normal;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================
+   ABOUT BUTTON
+========================================= */
+
+.about-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width:992px){
+
+    .about-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-content{
+
+        text-align:center;
+
+    }
+
+    .about-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-buttons{
+
+        justify-content:center;
+
+    }
+
+    .experience-card{
+
+        right:15px;
+
+    }
+
+}
+
+
+@media (max-width:576px){
+
+    .about{
+
+        padding:70px 0;
+
+    }
+
+    .experience-card{
+
+        position:static;
+
+        margin-top:20px;
+
+    }
+
+}
