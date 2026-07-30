@@ -1,1 +1,250 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Typography System
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    font-family:"Inter","Hind Siliguri",sans-serif;
+
+    font-size:16px;
+
+    font-weight:400;
+
+    line-height:1.7;
+
+    color:var(--text-color);
+
+    background:var(--body-bg);
+
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:"Inter","Hind Siliguri",sans-serif;
+
+    font-weight:700;
+
+    color:var(--text-color);
+
+    line-height:1.25;
+
+    margin-bottom:1rem;
+
+}
+
+h1{
+
+    font-size:3rem;
+
+}
+
+h2{
+
+    font-size:2.4rem;
+
+}
+
+h3{
+
+    font-size:2rem;
+
+}
+
+h4{
+
+    font-size:1.6rem;
+
+}
+
+h5{
+
+    font-size:1.3rem;
+
+}
+
+h6{
+
+    font-size:1.1rem;
+
+}
+
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+p{
+
+    color:var(--text-light);
+
+    margin-bottom:1rem;
+
+}
+
+
+/* =========================================
+   SMALL TEXT
+========================================= */
+
+small{
+
+    font-size:.875rem;
+
+}
+
+
+/* =========================================
+   STRONG
+========================================= */
+
+strong{
+
+    font-weight:700;
+
+}
+
+
+/* =========================================
+   BLOCKQUOTE
+========================================= */
+
+blockquote{
+
+    padding:1.5rem;
+
+    border-left:5px solid var(--primary-color);
+
+    background:rgba(11,93,59,.06);
+
+    border-radius:var(--radius-md);
+
+    font-style:italic;
+
+    margin:2rem 0;
+
+}
+
+
+/* =========================================
+   CODE
+========================================= */
+
+code{
+
+    font-family:monospace;
+
+    padding:.2rem .4rem;
+
+    border-radius:6px;
+
+    background:#eef2f7;
+
+}
+
+
+/* =========================================
+   TEXT UTILITIES
+========================================= */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.text-primary{
+
+    color:var(--primary-color);
+
+}
+
+.text-secondary{
+
+    color:var(--secondary-color);
+
+}
+
+.text-light{
+
+    color:var(--text-light);
+
+}
+
+.text-white{
+
+    color:var(--white-color);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width:768px){
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.9rem;
+
+    }
+
+    h3{
+
+        font-size:1.6rem;
+
+    }
+
+    h4{
+
+        font-size:1.35rem;
+
+    }
+
+}
