@@ -1,1 +1,333 @@
 
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Premium Navigation Bar
+Human Rights • Social Service • Public Affairs
+=====================================================
+*/
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:var(--header-height);
+
+    display:flex;
+
+    align-items:center;
+
+    z-index:var(--z-header);
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.25);
+
+    transition:var(--transition-normal);
+
+}
+
+
+/* =========================================
+   HEADER ON SCROLL
+========================================= */
+
+.header.scrolled{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logo img{
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:cover;
+
+}
+
+.logo-text{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:var(--primary-color);
+
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.nav-menu li{
+
+    list-style:none;
+
+}
+
+.nav-menu a{
+
+    color:var(--text-color);
+
+    font-weight:600;
+
+    position:relative;
+
+    transition:var(--transition-normal);
+
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary-color);
+
+    transition:var(--transition-normal);
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+.nav-menu a:hover,
+
+.nav-menu a.active{
+
+    color:var(--primary-color);
+
+}
+
+
+/* =========================================
+   RIGHT AREA
+========================================= */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+/* =========================================
+   DARK MODE BUTTON
+========================================= */
+
+.theme-toggle{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--glass-background);
+
+    border:1px solid var(--glass-border);
+
+    cursor:pointer;
+
+    transition:var(--transition-normal);
+
+}
+
+.theme-toggle:hover{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle{
+
+    display:none;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary-color);
+
+    color:var(--white-color);
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+@media (max-width:992px){
+
+    .menu-toggle{
+
+        display:flex;
+
+    }
+
+    .nav-menu{
+
+        position:fixed;
+
+        top:var(--header-height);
+
+        right:-100%;
+
+        width:280px;
+
+        height:calc(100vh - var(--header-height));
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        gap:25px;
+
+        padding:40px 25px;
+
+        background:rgba(255,255,255,.96);
+
+        backdrop-filter:blur(20px);
+
+        transition:.35s ease;
+
+        box-shadow:var(--shadow-lg);
+
+    }
+
+    .nav-menu.active{
+
+        right:0;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width:576px){
+
+    .logo-text{
+
+        font-size:1rem;
+
+    }
+
+    .logo img{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+}
