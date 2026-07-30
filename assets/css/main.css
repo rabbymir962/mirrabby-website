@@ -1,0 +1,311 @@
+/*
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Main CSS Controller
+
+Human Rights • Social Service • Public Affairs
+
+=====================================================
+*/
+
+
+/* =========================================
+   CSS MODULE IMPORTS
+========================================= */
+
+
+/* Core */
+
+@import url("./reset.css");
+
+@import url("./variables.css");
+
+@import url("./typography.css");
+
+
+
+/* Layout Components */
+
+@import url("./navbar.css");
+
+@import url("./hero.css");
+
+@import url("./about.css");
+
+
+
+/* Website Sections */
+
+@import url("./human-rights.css");
+
+@import url("./news.css");
+
+@import url("./gallery.css");
+
+@import url("./publications.css");
+
+@import url("./events.css");
+
+@import url("./emergency.css");
+
+@import url("./contact.css");
+
+@import url("./footer.css");
+
+
+
+/* Effects */
+
+@import url("./animation.css");
+
+
+
+/* Responsive */
+
+@import url("./responsive.css");
+
+
+
+/* Theme */
+
+@import url("./dark-mode.css");
+
+
+
+/* =========================================
+   GLOBAL WEBSITE SETTINGS
+========================================= */
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+
+}
+
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin-inline: auto;
+
+    padding-inline: 20px;
+
+}
+
+
+
+/* =========================================
+   SECTION COMMON STYLE
+========================================= */
+
+
+section {
+
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-title p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+}
+
+
+
+/* =========================================
+   BUTTON SYSTEM
+========================================= */
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 28px;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+}
+
+
+
+.btn-primary {
+
+    background: var(--primary-color);
+
+    color: var(--white-color);
+
+}
+
+
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+
+.btn-outline {
+
+    border: 2px solid var(--primary-color);
+
+    color: var(--primary-color);
+
+}
+
+
+
+.btn-outline:hover {
+
+    background: var(--primary-color);
+
+    color: var(--white-color);
+
+}
+
+
+
+/* =========================================
+   GLASSMORPHISM SYSTEM
+========================================= */
+
+
+.glass-card {
+
+    background: var(--glass-background);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: 25px;
+
+}
+
+
+
+/* =========================================
+   IMAGE DEFAULT
+========================================= */
+
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+
+/* =========================================
+   LINK DEFAULT
+========================================= */
+
+
+a {
+
+    text-decoration: none;
+
+    transition: .3s ease;
+
+}
+
+
+
+/* =========================================
+   HIDDEN CLASS
+========================================= */
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+
+:focus-visible {
+
+    outline: 3px solid var(--primary-color);
+
+    outline-offset: 3px;
+
+}
