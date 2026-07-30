@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+=====================================================
+MIR RABBY OFFICIAL
+Version 2026 Edition
+
+Microsoft Browser Configuration File
+
+Human Rights • Social Service • Public Affairs
+=====================================================
+-->
+
+<browserconfig>
+
+    <msapplication>
+
+
+        <!-- Tile Color -->
+
+        <tile>
+
+            <TileColor>
+                #0B5D3B
+            </TileColor>
+
+
+            <!-- Square Logo -->
+
+            <Square70x70Logo
+                src="assets/images/favicon.png" />
+
+
+            <Square150x150Logo
+                src="assets/images/favicon.png" />
+
+
+            <Square310x310Logo
+                src="assets/images/logo.png" />
+
+
+            <Wide310x150Logo
+                src="assets/images/banner.jpg" />
+
+
+        </tile>
+
+
+
+        <!-- Application Information -->
+
+        <notification>
+
+            <polling-uri
+                src="https://mirrabby-website.pages.dev/" />
+
+        </notification>
+
+
+    </msapplication>
+
+
+</browserconfig>
