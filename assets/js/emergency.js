@@ -145,3 +145,105 @@ function isMobileDevice() {
     );
 
 }
+/* =========================================
+   SHARE EMERGENCY NUMBER
+========================================= */
+
+function initializeEmergencyShare() {
+
+    const buttons = document.querySelectorAll("[data-share]");
+
+    if (!buttons.length) return;
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", async function () {
+
+            const number = this.dataset.share;
+
+            if (!number) return;
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share({
+
+                        title: "Bangladesh Emergency Service",
+
+                        text: `Emergency Number: ${number}`,
+
+                        url: `tel:${number}`
+
+                    });
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+                }
+
+            }
+
+            else {
+
+                showEmergencyMessage(
+
+                    "এই ব্রাউজারে Share সমর্থিত নয়।"
+
+                );
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* =========================================
+   FAVORITE SERVICES
+========================================= */
+
+function initializeEmergencyFavorites() {
+
+    const buttons = document.querySelectorAll(
+
+        "[data-favorite]"
+
+    );
+
+    if (!buttons.length) return;
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const service =
+
+                this.dataset.favorite;
+
+            if (!service) return;
+
+            localStorage.setItem(
+
+                "favoriteEmergency",
+
+                service
+
+            );
+
+            showEmergencyMessage(
+
+                "Favorite সংরক্ষণ হয়েছে।"
+
+            );
+
+        });
+
+    });
+
+}
