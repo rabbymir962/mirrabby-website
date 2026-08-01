@@ -396,3 +396,25 @@ Human Rights • Social Service • Public Affairs
     transform:translateY(0);
 
 }
+/* =========================================
+   PAGE TRANSITION
+========================================= */
+
+.page-loaded{
+
+    opacity:1;
+
+}
+
+body{
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+}
+
+
+/* =========================================
+   END OF ANIMATION
+========================================= */
