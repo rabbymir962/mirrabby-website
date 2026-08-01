@@ -99,7 +99,7 @@ function initializeActiveSections() {
 
     const sections = document.querySelectorAll("section[id]");
 
-    const links = document.querySelectorAll(".nav-menu a");
+    const links = document.querySelectorAll(".navbar a");
 
     if (!sections.length || !links.length) return;
 
