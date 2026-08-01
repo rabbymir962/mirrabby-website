@@ -248,3 +248,156 @@ code{
     }
 
 }
+/* =========================================
+   LINKS
+========================================= */
+
+a{
+
+    color:var(--primary-color);
+
+    text-decoration:none;
+
+    transition:all .3s ease;
+
+}
+
+a:hover{
+
+    color:var(--secondary-color);
+
+}
+
+a:focus-visible{
+
+    outline:2px solid var(--primary-color);
+
+    outline-offset:3px;
+
+}
+
+
+/* =========================================
+   LISTS
+========================================= */
+
+ul,
+ol{
+
+    margin:0 0 1rem 1.5rem;
+
+    padding:0;
+
+}
+
+li{
+
+    margin-bottom:.5rem;
+
+    color:var(--text-color);
+
+}
+
+
+/* =========================================
+   HR
+========================================= */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:var(--border-color);
+
+    margin:2rem 0;
+
+}
+
+
+/* =========================================
+   MARK
+========================================= */
+
+mark{
+
+    background:#fff3b0;
+
+    color:#000;
+
+    padding:.1rem .3rem;
+
+    border-radius:4px;
+
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection{
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+}
+
+::-moz-selection{
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+}
+
+
+/* =========================================
+   IMAGES
+========================================= */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+
+/* =========================================
+   ABBR
+========================================= */
+
+abbr{
+
+    cursor:help;
+
+    text-decoration:dotted underline;
+
+}
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+kbd{
+
+    padding:.2rem .45rem;
+
+    border-radius:5px;
+
+    background:#222;
+
+    color:#fff;
+
+    font-size:.85rem;
+
+    font-family:monospace;
+
+}
