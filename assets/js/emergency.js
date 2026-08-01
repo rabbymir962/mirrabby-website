@@ -247,3 +247,71 @@ function initializeEmergencyFavorites() {
     });
 
 }
+/* =========================================
+   RESTORE FAVORITE
+========================================= */
+
+function restoreFavoriteService() {
+
+    const favorite = localStorage.getItem(
+
+        "favoriteEmergency"
+
+    );
+
+    if (!favorite) return;
+
+    const button = document.querySelector(
+
+        `[data-favorite="${favorite}"]`
+
+    );
+
+    if (button) {
+
+        button.classList.add("active");
+
+    }
+
+}
+
+
+/* =========================================
+   CLEAR FAVORITE
+========================================= */
+
+function clearFavoriteService() {
+
+    localStorage.removeItem(
+
+        "favoriteEmergency"
+
+    );
+
+}
+
+
+/* =========================================
+   DESTROY EMERGENCY
+========================================= */
+
+function destroyEmergency() {
+
+    const message = document.querySelector(
+
+        ".emergency-message"
+
+    );
+
+    if (message) {
+
+        message.remove();
+
+    }
+
+}
+
+
+/* =========================================
+   END OF EMERGENCY
+========================================= */
