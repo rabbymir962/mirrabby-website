@@ -155,3 +155,96 @@ function showMessage(text, type) {
     }, 4000);
 
 }
+/* =========================================
+   REAL TIME VALIDATION
+========================================= */
+
+function initializeRealtimeValidation() {
+
+    const form = document.querySelector(".contact-form");
+
+    if (!form) return;
+
+    const fields = form.querySelectorAll("input, textarea");
+
+    fields.forEach(field => {
+
+        field.addEventListener("input", () => {
+
+            field.classList.remove("error");
+
+        });
+
+    });
+
+}
+
+
+/* =========================================
+   LOADING BUTTON
+========================================= */
+
+function setSubmitLoading(isLoading) {
+
+    const button = document.querySelector(
+        ".contact-form button[type='submit']"
+    );
+
+    if (!button) return;
+
+    if (isLoading) {
+
+        button.disabled = true;
+
+        button.dataset.original = button.textContent;
+
+        button.textContent = "Sending...";
+
+    } else {
+
+        button.disabled = false;
+
+        button.textContent =
+            button.dataset.original || "Submit";
+
+    }
+
+}
+
+
+/* =========================================
+   CHARACTER COUNTER
+========================================= */
+
+function initializeCharacterCounter() {
+
+    const textarea = document.querySelector(
+        ".contact-form textarea[name='message']"
+    );
+
+    if (!textarea) return;
+
+    const counter = document.createElement("small");
+
+    counter.className = "message-counter";
+
+    textarea.insertAdjacentElement(
+        "afterend",
+        counter
+    );
+
+    const updateCounter = () => {
+
+        counter.textContent =
+            `${textarea.value.length} Characters`;
+
+    };
+
+    updateCounter();
+
+    textarea.addEventListener(
+        "input",
+        updateCounter
+    );
+
+}
