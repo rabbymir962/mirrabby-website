@@ -401,3 +401,174 @@ kbd{
     font-family:monospace;
 
 }
+/* =========================================
+   FORM TYPOGRAPHY
+========================================= */
+
+label{
+
+    display:inline-block;
+
+    margin-bottom:.5rem;
+
+    font-weight:600;
+
+    color:var(--text-color);
+
+}
+
+input,
+textarea,
+select{
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    font-weight:400;
+
+    line-height:1.5;
+
+    color:var(--text-color);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:var(--text-light);
+
+    opacity:.8;
+
+}
+
+
+/* =========================================
+   BUTTON TYPOGRAPHY
+========================================= */
+
+button{
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    line-height:1.2;
+
+}
+
+
+/* =========================================
+   TABLE TYPOGRAPHY
+========================================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    font-weight:700;
+
+    text-align:left;
+
+    color:var(--text-color);
+
+}
+
+td{
+
+    color:var(--text-light);
+
+}
+
+th,
+td{
+
+    padding:.85rem;
+
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+caption{
+
+    margin-bottom:1rem;
+
+    font-weight:600;
+
+    color:var(--text-light);
+
+}
+
+
+/* =========================================
+   FIGURE
+========================================= */
+
+figure{
+
+    margin:0;
+
+}
+
+figcaption{
+
+    margin-top:.75rem;
+
+    font-size:.9rem;
+
+    color:var(--text-light);
+
+    text-align:center;
+
+}
+
+
+/* =========================================
+   ADDRESS
+========================================= */
+
+address{
+
+    font-style:normal;
+
+    line-height:1.8;
+
+    color:var(--text-light);
+
+}
+
+
+/* =========================================
+   PRINT
+========================================= */
+
+@media print{
+
+    body{
+
+        color:#000;
+
+        background:#fff;
+
+    }
+
+    a{
+
+        color:#000;
+
+        text-decoration:underline;
+
+    }
+
+}
