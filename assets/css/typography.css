@@ -572,3 +572,131 @@ address{
     }
 
 }
+/* =========================================
+   TYPOGRAPHY HELPERS
+========================================= */
+
+.text-uppercase{
+
+    text-transform:uppercase;
+
+}
+
+.text-lowercase{
+
+    text-transform:lowercase;
+
+}
+
+.text-capitalize{
+
+    text-transform:capitalize;
+
+}
+
+.fw-light{
+
+    font-weight:300;
+
+}
+
+.fw-normal{
+
+    font-weight:400;
+
+}
+
+.fw-medium{
+
+    font-weight:500;
+
+}
+
+.fw-semibold{
+
+    font-weight:600;
+
+}
+
+.fw-bold{
+
+    font-weight:700;
+
+}
+
+.fs-small{
+
+    font-size:.875rem;
+
+}
+
+.fs-normal{
+
+    font-size:1rem;
+
+}
+
+.fs-large{
+
+    font-size:1.125rem;
+
+}
+
+.lh-1{
+
+    line-height:1;
+
+}
+
+.lh-normal{
+
+    line-height:1.5;
+
+}
+
+.lh-relaxed{
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================
+   TEXT TRUNCATE
+========================================= */
+
+.text-truncate{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible{
+
+    outline:2px solid var(--primary-color);
+
+    outline-offset:3px;
+
+}
+
+html{
+
+    -webkit-text-size-adjust:100%;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+
+/* =========================================
+   END OF TYPOGRAPHY
+========================================= */
