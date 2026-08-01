@@ -248,3 +248,106 @@ function initializeCharacterCounter() {
     );
 
 }
+/* =========================================
+   SPAM PROTECTION
+========================================= */
+
+function canSubmitForm() {
+
+    const lastSubmit = sessionStorage.getItem(
+        "contact-last-submit"
+    );
+
+    const now = Date.now();
+
+    if (
+        lastSubmit &&
+        now - Number(lastSubmit) < 10000
+    ) {
+
+        showMessage(
+            "অনুগ্রহ করে কয়েক সেকেন্ড অপেক্ষা করুন।",
+            "error"
+        );
+
+        return false;
+
+    }
+
+    sessionStorage.setItem(
+        "contact-last-submit",
+        now
+    );
+
+    return true;
+
+}
+
+
+/* =========================================
+   AUTO FOCUS
+========================================= */
+
+function initializeAutoFocus() {
+
+    const field = document.querySelector(
+        ".contact-form input[name='name']"
+    );
+
+    if (!field) return;
+
+    field.focus();
+
+}
+
+
+/* =========================================
+   RESET MESSAGE
+========================================= */
+
+function clearFormMessage() {
+
+    const message = document.querySelector(
+        ".form-message"
+    );
+
+    if (message) {
+
+        message.remove();
+
+    }
+
+}
+
+
+/* =========================================
+   FUTURE API READY
+========================================= */
+
+async function sendContactData(data) {
+
+    /*
+    Future API Example
+
+    await fetch("/api/contact",{
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify(data)
+
+    });
+
+    */
+
+    return Promise.resolve(true);
+
+}
+
+
+/* =========================================
+   END OF CONTACT
+========================================= */
