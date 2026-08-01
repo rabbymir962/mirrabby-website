@@ -82,3 +82,12 @@ function initializeTyping() {
     }
 
 }
+/* =========================================
+   START
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializeTyping();
+
+});
