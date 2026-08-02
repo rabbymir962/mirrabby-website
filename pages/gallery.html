@@ -1,19 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>গ্যালারি | MIR RABBY</title>
+    
+    <!-- CSS Links -->
     <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="container header-container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/40?text=MR'">
+                <img src="../assets/images/logo.png" alt="Logo" onerror="this.src='../assets/images/logo.png'">
                 <span class="logo-text">MIR RABBY</span>
             </a>
             <nav class="nav-menu" id="navMenu">
@@ -23,17 +27,26 @@
                     <li><a href="human-rights.html">মানবাধিকার</a></li>
                     <li><a href="news.html">সংবাদ</a></li>
                     <li><a href="gallery.html" class="active">গ্যালারি</a></li>
+                    <li><a href="publications.html">প্রকাশনা</a></li>
+                    <li><a href="events.html">ইভেন্ট</a></li>
                     <li><a href="emergency.html">জরুরি সেবা</a></li>
                     <li><a href="contact.html">যোগাযোগ</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section" style="padding: 50px 0;">
         <div class="container text-center">
             <h1 class="hero-title">ছবি ও ভিডিও গ্যালারি</h1>
@@ -41,31 +54,59 @@
         </div>
     </section>
 
+    <!-- Gallery Grid Section -->
     <section style="padding: 60px 0;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
+                <!-- Gallery Image 1 -->
                 <div class="glass-card" style="padding: 15px; text-align: center;">
-                    <img src="../assets/images/gallery-1.jpg" alt="Event" style="width: 100%; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/350x250?text=Human+Rights+Event'">
+                    <img src="../assets/images/gallery/01.jpg" alt="মানবাধিকার সচেতনতা সভা" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
                     <h4>মানবাধিকার সচেতনতা সভা</h4>
                 </div>
+
+                <!-- Gallery Image 2 -->
                 <div class="glass-card" style="padding: 15px; text-align: center;">
-                    <img src="../assets/images/gallery-2.jpg" alt="Event" style="width: 100%; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/350x250?text=Community+Program'">
+                    <img src="../assets/images/gallery/02.jpg" alt="সামাজিক কার্যক্রম" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
                     <h4>সামাজিক কার্যক্রম</h4>
                 </div>
+
+                <!-- Gallery Image 3 -->
                 <div class="glass-card" style="padding: 15px; text-align: center;">
-                    <img src="../assets/images/gallery-3.jpg" alt="Event" style="width: 100%; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='https://via.placeholder.com/350x250?text=Legal+Help+Desk'">
-                    <h4>আইনি সহায়তা ডেস্ক</h4>
+                    <img src="../assets/images/gallery/03.jpg" alt="আইনি সহায়তা ডেস্ক" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
+                    <h4>আইনি সহায়তা ডেস্ক</h4>
                 </div>
+
+                <!-- Gallery Image 4 -->
+                <div class="glass-card" style="padding: 15px; text-align: center;">
+                    <img src="../assets/images/gallery/04.jpg" alt="সাংগঠনিক সেমিনার" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
+                    <h4>সাংগঠনিক সেমিনার</h4>
+                </div>
+
+                <!-- Gallery Image 5 -->
+                <div class="glass-card" style="padding: 15px; text-align: center;">
+                    <img src="../assets/images/gallery/05.jpg" alt="জনসেবামূলক উদ্যোগ" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
+                    <h4>জনসেবামূলক উদ্যোগ</h4>
+                </div>
+
+                <!-- Gallery Image 6 -->
+                <div class="glass-card" style="padding: 15px; text-align: center;">
+                    <img src="../assets/images/gallery/06.jpg" alt="সম্মাননা ও স্বীকৃতি" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px;" onerror="this.src='../assets/images/profile.jpg'">
+                    <h4>সম্মাননা ও স্বীকৃতি</h4>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-bottom">
             <p>&copy; 2026 MIR RABBY. All Rights Reserved | mirrabbyhumanrights.com</p>
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/navbar.js"></script>
 </body>
