@@ -1,1 +1,259 @@
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কাশিনাথপুর পুলিশ ফাঁড়ি | MIR RABBY</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .fari-banner {
+            background: linear-gradient(135deg, rgba(11, 93, 59, 0.15), rgba(0, 0, 0, 0.3));
+            padding: 35px 20px;
+            border-radius: var(--radius-md, 12px);
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fari-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .contact-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .contact-box {
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--radius-sm, 8px);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-box i {
+            font-size: 2.2rem;
+            color: var(--primary-color, #0B5D3B);
+            margin-bottom: 12px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .service-list li i {
+            color: var(--primary-color, #0B5D3B);
+        }
+
+        .fari-img-container {
+            width: 100%;
+            height: 260px;
+            border-radius: var(--radius-sm, 8px);
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+        }
+
+        .fari-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: var(--radius-sm, 8px);
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Logo" onerror="this.src='../assets/images/logo.png'">
+                <span class="logo-text">MIR RABBY</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html">হোম</a></li>
+                    <li><a href="about.html">আমার সম্পর্কে</a></li>
+                    <li><a href="human-rights.html">মানবাধিকার</a></li>
+                    <li><a href="human-rights-seihr.html">মানবাধিকার (SEIHR)</a></li>
+                    <li><a href="human-rights-hrrs.html">মানবাধিকার (HRRS)</a></li>
+                    <li><a href="video.html">ভিডিও</a></li>
+                    <li><a href="santhia-upzela.html">সাঁথিয়া উপজেলা</a></li>
+                    <li><a href="kashinathpur-police-fari.html" class="active">কাশিনাথপুর পুলিশ ফাঁড়ি</a></li>
+                    <li><a href="news.html">সংবাদ</a></li>
+                    <li><a href="mr-gallery.html">MR-গ্যালারি</a></li>
+                    <li><a href="gallery.html">গ্যালারি</a></li>
+                    <li><a href="publications.html">প্রকাশনা</a></li>
+                    <li><a href="events.html">ইভেন্ট</a></li>
+                    <li><a href="emergency.html">জরুরি সেবা</a></li>
+                    <li><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding: 40px 0 20px 0;">
+        <div class="container">
+            <div class="glass-card fari-banner">
+                <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--primary-color, #0B5D3B); margin-bottom: 12px;"></i>
+                <h1 class="hero-title">কাশিনাথপুর পুলিশ ফাঁড়ি</h1>
+                <p class="hero-intro">সাঁথিয়া, পাবনা | আইন-শৃঙ্খলা রক্ষা, জননিরাপত্তা ও আইনি সেবা কেন্দ্র</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section style="padding: 20px 0 60px 0;">
+        <div class="container">
+            
+            <!-- Details & Image Grid -->
+            <div class="fari-grid">
+                
+                <!-- Info Section -->
+                <div class="glass-card" style="padding: 25px;">
+                    <h3><i class="fa-solid fa-circle-info"></i> পরিচিতি ও উদ্দেশ্য</h3>
+                    <hr style="margin: 12px 0; border: 0; border-top: 1px solid rgba(0,0,0,0.1);">
+                    <p style="line-height: 1.8;">
+                        পাবনা জেলার সাঁথিয়া উপজেলার অতি গুরুত্বপূর্ণ সংযোগস্থল কাশিনাথপুর মোড় ও তার আশপাশের এলাকার নিরাপত্তা নিশ্চিতকরণে কাশিনাথপুর পুলিশ ফাঁড়ি অত্যন্ত গুরুত্বপূর্ণ ভূমিকা পালন করে।
+                    </p>
+                    <p style="line-height: 1.8; margin-top: 10px;">
+                        স্থানীয় নাগরিকদের নিরাপত্তা প্রদান, যেকোনো অপ্রীতিকর ঘটনা প্রতিরোধ এবং মানবাধিকার সুরক্ষায় স্থানীয় সামাজিক সংগঠন ও মানবাধিকার কর্মীদের সাথে সমন্বয় রেখে ফাঁড়ির পুলিশ সদস্যরা দায়িত্ব পালন করছেন।
+                    </p>
+                </div>
+
+                <!-- Photo Section -->
+                <div class="glass-card" style="padding: 20px;">
+                    <div class="fari-img-container">
+                        <img src="../assets/images/gallery/02.jpg" alt="কাশিনাথপুর পুলিশ ফাঁড়ি" onerror="this.src='../assets/images/profile.jpg'">
+                    </div>
+                    <h4 style="text-align: center; margin-top: 5px;">কাশিনাথপুর ফাঁড়ির এলাকা পর্যবেক্ষণ ও মতবিনিময়</h4>
+                </div>
+
+            </div>
+
+            <!-- Emergency Contact Numbers Grid -->
+            <h3 style="text-align: center; margin-bottom: 20px; margin-top: 10px;"><i class="fa-solid fa-phone-volume"></i> জরুরি যোগাযোগ নম্বরসমূহ</h3>
+            <div class="contact-card-grid">
+                
+                <div class="glass-card contact-box">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h4>ইনচার্জ (IC)</h4>
+                    <p style="margin-top: 8px; font-weight: bold; font-size: 1.1rem;">০১৩২০-১২৩৪৫৬</p>
+                    <small>কাশিনাথপুর পুলিশ ফাঁড়ি</small>
+                </div>
+
+                <div class="glass-card contact-box">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h4>সাঁথিয়া থানা (Duty Officer)</h4>
+                    <p style="margin-top: 8px; font-weight: bold; font-size: 1.1rem;">০১৩২০-১২৬৭৮৯</p>
+                    <small>সাঁথিয়া, পাবনা</small>
+                </div>
+
+                <div class="glass-card contact-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <h4>জাতীয় জরুরি সেবা</h4>
+                    <p style="margin-top: 8px; font-weight: bold; font-size: 1.4rem; color: #d9534f;">৯৯৯ (999)</p>
+                    <small>টোল ফ্রি (২৪ ঘণ্টা সেবা)</small>
+                </div>
+
+            </div>
+
+            <!-- Services Section & Google Map Grid -->
+            <div class="fari-grid" style="margin-top: 30px;">
+                
+                <!-- Services -->
+                <div class="glass-card" style="padding: 25px;">
+                    <h3><i class="fa-solid fa-hand-holding-hand"></i> প্রধান সেবাসমূহ</h3>
+                    <hr style="margin: 12px 0; border: 0; border-top: 1px solid rgba(0,0,0,0.1);">
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> ২৪ ঘণ্টা টহল ও এলাকাভিত্তিক নিরাপত্তা নিশ্চিতকরণ।</li>
+                        <li><i class="fa-solid fa-circle-check"></i> যেকোনো জরুরি পরিস্থিতিতে দ্রুত ঘটনাস্থলে উপস্থিত হওয়া।</li>
+                        <li><i class="fa-solid fa-circle-check"></i> সাধারণ ডায়েরি (GD) গ্রহণ ও প্রয়োজনীয় আইনি প্রক্রিয়া পরিচালনা।</li>
+                        <li><i class="fa-solid fa-circle-check"></i> মানবাধিকার সংরক্ষণ এবং সাধারণ জনগণের হয়রানি রোধ।</li>
+                    </ul>
+                </div>
+
+                <!-- Google Map Location -->
+                <div class="glass-card" style="padding: 25px;">
+                    <h3><i class="fa-solid fa-location-dot"></i> অবস্থান (Location)</h3>
+                    <hr style="margin: 12px 0; border: 0; border-top: 1px solid rgba(0,0,0,0.1);">
+                    <p><i class="fa-solid fa-map-pin"></i> কাশিনাথপুর মোড়, সাঁথিয়া, পাবনা।</p>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14589.658763567156!2d89.6231!3d23.9984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe832104578b87%3A0x6bfa5806637e75ba!2sKashinathpur!5e0!3m2!1sbn!2sbd!4v1700000000000" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 MIR RABBY. All Rights Reserved | mirrabbyhumanrights.com</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
