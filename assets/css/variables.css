@@ -1,107 +1,48 @@
 /*
 =====================================================
-MIR RABBY OFFICIAL
-Version 2026 Edition
-
-CSS Variables
-Human Rights • Social Service • Public Affairs
+MIR RABBY HUMAN RIGHTS - GLOBAL VARIABLES
+Domain: mirrabbyhumanrights.com
 =====================================================
 */
 
 :root {
-
-    /* =========================================
-       BRAND COLORS
-    ========================================= */
-
-    --primary-color: #0B5D3B;
+    /* Brand Primary Colors */
+    --primary-color: #0B5D3B;       /* Deep Human Rights Green */
     --primary-dark: #08472D;
-    --primary-light: #128C5A;
-
-    --secondary-color: #D90000;
-    --secondary-dark: #A80000;
-    --secondary-light: #FF4D4D;
-
-    --accent-color: #FFD700;
-
-    /* =========================================
-       BASIC COLORS & BACKGROUNDS
-    ========================================= */
-
-    --white-color: #FFFFFF;
-    --black-color: #000000;
-
+    --primary-light: #E8F5E9;
+    --secondary-color: #1E293B;     /* Charcoal Slate */
+    --accent-color: #D97706;        /* Golden Amber */
+    
+    /* Light Mode Neutral Colors */
     --body-bg: #F8FAFC;
     --card-bg: #FFFFFF;
-    --card-bg-alt: #F1F5F9;
-
-    --text-color: #1E293B;
-    --text-light: #64748B;
-    --text-white: #FFFFFF;
-
+    --text-color: #0F172A;
+    --text-muted: #64748B;
+    --white-color: #FFFFFF;
     --border-color: #E2E8F0;
-    --border-hover: #CBD5E1;
 
-    /* =========================================
-       GLASSMORPHISM
-    ========================================= */
-
-    --glass-background: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(255, 255, 255, 0.40);
-    --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+    /* Glassmorphism System */
+    --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-blur: blur(12px);
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
-    /* =========================================
-       SHADOWS
-    ========================================= */
-
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
-    --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 15px 35px rgba(15, 23, 42, 0.12);
-
-    /* =========================================
-       BORDER RADIUS
-    ========================================= */
-
+    /* Spacing & Radius */
+    --container-max-width: 1200px;
     --radius-sm: 8px;
-    --radius-md: 15px;
-    --radius-lg: 25px;
-    --radius-xl: 40px;
-    --radius-round: 999px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    /* =========================================
-       TRANSITIONS
-    ========================================= */
-
-    --transition-fast: .2s ease;
-    --transition-normal: .3s ease;
-    --transition-slow: .5s ease;
-
-    /* =========================================
-       SPACING
-    ========================================= */
-
-    --space-xs: .5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 3rem;
-    --space-xl: 5rem;
-
-    /* =========================================
-       CONTAINER & HEADER
-    ========================================= */
-
-    --container-width: 1200px;
-    --header-height: 80px;
-
-    /* =========================================
-       Z-INDEX
-    ========================================= */
-
-    --z-loader: 99999;
-    --z-popup: 9999;
-    --z-header: 999;
-    --z-menu: 990;
-    --z-dropdown: 980;
-
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+    --body-bg: #0F172A;
+    --card-bg: #1E293B;
+    --text-color: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border-color: #334155;
+    --glass-bg: rgba(30, 41, 59, 0.85);
+    --glass-border: rgba(51, 65, 85, 0.8);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
