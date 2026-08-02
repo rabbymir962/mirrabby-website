@@ -1,10 +1,9 @@
-
 /*
 =====================================================
 MIR RABBY OFFICIAL
 Version 2026 Edition
 
-Dark Mode Theme
+Dark Mode Theme (Pure Dark - Fixed Blue Tint)
 Human Rights • Social Service • Public Affairs
 =====================================================
 */
@@ -14,22 +13,14 @@ Human Rights • Social Service • Public Affairs
    DARK MODE VARIABLES
 ========================================= */
 
-body.dark-mode{
-
-    --body-bg:#0F172A;
-
-    --white-color:#1E293B;
-
-    --text-color:#F8FAFC;
-
-    --text-light:#CBD5E1;
-
-    --border-color:#334155;
-
-    --glass-background:rgba(30,41,59,.70);
-
-    --glass-border:rgba(255,255,255,.08);
-
+body.dark-mode {
+    --body-bg: #121212;
+    --white-color: #1E1E1E;
+    --text-color: #F8FAFC;
+    --text-light: #CBD5E1;
+    --border-color: #2D2D2D;
+    --glass-background: rgba(30, 30, 30, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 
@@ -37,12 +28,9 @@ body.dark-mode{
    BODY
 ========================================= */
 
-body.dark-mode{
-
-    background:var(--body-bg);
-
-    color:var(--text-color);
-
+body.dark-mode {
+    background: var(--body-bg);
+    color: var(--text-color);
 }
 
 
@@ -50,12 +38,9 @@ body.dark-mode{
    HEADER
 ========================================= */
 
-body.dark-mode .header{
-
-    background:rgba(15,23,42,.90);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
+body.dark-mode .header {
+    background: rgba(18, 18, 18, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
@@ -63,16 +48,12 @@ body.dark-mode .header{
    NAVIGATION
 ========================================= */
 
-body.dark-mode .nav-menu a{
-
-    color:var(--text-color);
-
+body.dark-mode .nav-menu a {
+    color: var(--text-color);
 }
 
-body.dark-mode .logo-text{
-
-    color:var(--white-color);
-
+body.dark-mode .logo-text {
+    color: var(--text-color);
 }
 
 
@@ -80,10 +61,8 @@ body.dark-mode .logo-text{
    SECTIONS
 ========================================= */
 
-body.dark-mode section{
-
-    background:transparent;
-
+body.dark-mode section {
+    background: transparent;
 }
 
 
@@ -92,29 +71,17 @@ body.dark-mode section{
 ========================================= */
 
 body.dark-mode .glass-card,
-
 body.dark-mode .right-card,
-
 body.dark-mode .news-card,
-
 body.dark-mode .gallery-item,
-
 body.dark-mode .publication-card,
-
 body.dark-mode .event-card,
-
 body.dark-mode .contact-card,
-
 body.dark-mode .contact-form,
-
-body.dark-mode .emergency-card{
-
-    background:var(--glass-background);
-
-    border:1px solid var(--glass-border);
-
-    color:var(--text-color);
-
+body.dark-mode .emergency-card {
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
 }
 
 
@@ -127,10 +94,8 @@ body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
-body.dark-mode h6{
-
-    color:var(--text-color);
-
+body.dark-mode h6 {
+    color: var(--text-color);
 }
 
 
@@ -138,10 +103,8 @@ body.dark-mode h6{
    PARAGRAPH
 ========================================= */
 
-body.dark-mode p{
-
-    color:var(--text-light);
-
+body.dark-mode p {
+    color: var(--text-light);
 }
 
 
@@ -150,25 +113,16 @@ body.dark-mode p{
 ========================================= */
 
 body.dark-mode input,
-
 body.dark-mode textarea,
-
-body.dark-mode select{
-
-    background:#162338;
-
-    color:#ffffff;
-
-    border:1px solid #334155;
-
+body.dark-mode select {
+    background: #1A1A1A;
+    color: #ffffff;
+    border: 1px solid #333333;
 }
 
 body.dark-mode input::placeholder,
-
-body.dark-mode textarea::placeholder{
-
-    color:#94A3B8;
-
+body.dark-mode textarea::placeholder {
+    color: #94A3B8;
 }
 
 
@@ -176,20 +130,14 @@ body.dark-mode textarea::placeholder{
    BUTTON
 ========================================= */
 
-body.dark-mode .btn-primary{
-
-    background:var(--primary-color);
-
-    color:#ffffff;
-
+body.dark-mode .btn-primary {
+    background: var(--primary-color);
+    color: #ffffff;
 }
 
-body.dark-mode .btn-outline{
-
-    color:#ffffff;
-
-    border-color:var(--primary-color);
-
+body.dark-mode .btn-outline {
+    color: #ffffff;
+    border-color: var(--primary-color);
 }
 
 
@@ -197,10 +145,8 @@ body.dark-mode .btn-outline{
    FOOTER
 ========================================= */
 
-body.dark-mode .footer{
-
-    background:#020617;
-
+body.dark-mode .footer {
+    background: #0A0A0A;
 }
 
 
@@ -208,10 +154,8 @@ body.dark-mode .footer{
    LINKS
 ========================================= */
 
-body.dark-mode a{
-
-    color:inherit;
-
+body.dark-mode a {
+    color: inherit;
 }
 
 
@@ -219,30 +163,21 @@ body.dark-mode a{
    SCROLLBAR
 ========================================= */
 
-body.dark-mode::-webkit-scrollbar{
-
-    width:10px;
-
+body.dark-mode::-webkit-scrollbar {
+    width: 10px;
 }
 
-body.dark-mode::-webkit-scrollbar-track{
-
-    background:#0F172A;
-
+body.dark-mode::-webkit-scrollbar-track {
+    background: #121212;
 }
 
-body.dark-mode::-webkit-scrollbar-thumb{
-
-    background:#0B5D3B;
-
-    border-radius:20px;
-
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #0B5D3B;
+    border-radius: 20px;
 }
 
-body.dark-mode::-webkit-scrollbar-thumb:hover{
-
-    background:#128C5A;
-
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #128C5A;
 }
 
 
@@ -251,27 +186,15 @@ body.dark-mode::-webkit-scrollbar-thumb:hover{
 ========================================= */
 
 body,
-
 .header,
-
 section,
-
 .card,
-
 button,
-
 input,
-
 textarea,
-
-a{
-
+a {
     transition:
-
-    background .35s ease,
-
-    color .35s ease,
-
-    border-color .35s ease;
-
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease;
 }
