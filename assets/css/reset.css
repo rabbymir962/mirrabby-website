@@ -177,3 +177,20 @@ iframe {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark, #08472D);
 }
+
+
+/* =========================================
+   TEXT VISIBILITY FIX (FORCE DARK TEXT)
+========================================= */
+
+body, p, span, h1, h2, h3, h4, h5, h6, li, a, label, div {
+    color: #1E293B !important;
+}
+
+a {
+    color: #0B5D3B !important;
+}
+
+a:hover {
+    color: #08472D !important;
+}
