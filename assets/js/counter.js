@@ -1,85 +1,43 @@
 /*
 =====================================================
-MIR RABBY OFFICIAL
-Version 2026 Edition
-
-Animated Counter
+MIR RABBY HUMAN RIGHTS - STATS COUNTER SCRIPT
 =====================================================
 */
 
-"use strict";
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
 
-/* =========================================
-   INITIALIZE COUNTER
-========================================= */
+    const startCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
 
-function initializeCounter() {
-
-    const counters = document.querySelectorAll(".counter");
-
-    if (!counters.length) return;
-
-    const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) return;
-
-            animateCounter(entry.target);
-
-            observer.unobserve(entry.target);
-
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
         });
+    };
 
-    }, {
+    // Scroll trigger for stats section
+    let animated = false;
+    window.addEventListener('scroll', () => {
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
 
-        threshold: 0.5
-
-    });
-
-    counters.forEach(counter => {
-
-        observer.observe(counter);
-
-    });
-
-}
-
-
-/* =========================================
-   ANIMATE COUNTER
-========================================= */
-
-function animateCounter(counter) {
-
-    const target = Number(counter.dataset.target);
-
-    const duration = Number(counter.dataset.duration) || 2000;
-
-    let start = 0;
-
-    const startTime = performance.now();
-
-    function update(currentTime) {
-
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-
-        start = Math.floor(progress * target);
-
-        counter.textContent = start.toLocaleString();
-
-        if (progress < 1) {
-
-            requestAnimationFrame(update);
-
-        } else {
-
-            counter.textContent = target.toLocaleString();
-
+            if (sectionPos < screenPos && !animated) {
+                animated = true;
+                startCounters();
+            }
         }
-
-    }
-
-    requestAnimationFrame(update);
-
-}
+    });
+});
