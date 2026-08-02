@@ -1,180 +1,80 @@
 /*
 =====================================================
-MIR RABBY OFFICIAL
-Version 2026 Edition
-
-Main CSS Controller
-Human Rights • Social Service • Public Affairs
+MIR RABBY HUMAN RIGHTS - MAIN CSS CONTROLLER
 =====================================================
 */
 
-
-/* =========================================
-   CSS MODULE IMPORTS (CORRECT ORDER)
-========================================= */
-
-/* Core - Always Load Variables & Reset First */
+/* Core Imports */
 @import url("./variables.css");
 @import url("./reset.css");
 @import url("./typography.css");
-
-/* Layout Components */
 @import url("./navbar.css");
 @import url("./hero.css");
-@import url("./about.css");
-
-/* Website Sections */
-@import url("./human-rights.css");
-@import url("./news.css");
-@import url("./gallery.css");
-@import url("./publications.css");
-@import url("./events.css");
 @import url("./emergency.css");
-@import url("./contact.css");
 @import url("./footer.css");
-
-/* Effects & Utility */
-@import url("./animation.css");
-
-/* Responsive */
 @import url("./responsive.css");
 
-
-/* =========================================
-   GLOBAL WEBSITE SETTINGS
-========================================= */
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    overflow-x: hidden;
-    min-height: 100vh;
-    background-color: var(--body-bg, #F8FAFC);
-    color: var(--text-color, #1E293B);
-}
-
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
+/* Container System */
 .container {
     width: 100%;
-    max-width: var(--container-width, 1200px);
-    margin-inline: auto;
-    padding-inline: 20px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-
-/* =========================================
-   SECTION COMMON STYLE
-========================================= */
-
-section {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+/* Common Layout Components */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
     font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--text-color, #1E293B);
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .section-title p {
-    max-width: 600px;
-    margin: auto;
-    color: var(--text-light, #64748B);
+    color: var(--text-muted);
 }
 
-
-/* =========================================
-   BUTTON SYSTEM
-========================================= */
-
+/* Button UI Elements */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     padding: 12px 28px;
     border-radius: 50px;
     font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all .3s ease;
+    transition: var(--transition);
 }
 
 .btn-primary {
-    background: var(--primary-color, #0B5D3B);
-    color: var(--white-color, #FFFFFF) !important;
+    background: var(--primary-color);
+    color: var(--white-color) !important;
 }
 
 .btn-primary:hover {
-    background: var(--primary-dark, #08472D);
-    transform: translateY(-3px);
+    background: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
-    border: 2px solid var(--primary-color, #0B5D3B);
-    color: var(--primary-color, #0B5D3B);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn-outline:hover {
-    background: var(--primary-color, #0B5D3B);
-    color: var(--white-color, #FFFFFF) !important;
-}
-
-
-/* =========================================
-   GLASSMORPHISM SYSTEM
-========================================= */
-
-.glass-card {
-    background: var(--glass-background, rgba(255, 255, 255, 0.85));
-    backdrop-filter: var(--glass-blur, blur(12px));
-    -webkit-backdrop-filter: var(--glass-blur, blur(12px));
-    border: 1px solid var(--glass-border, rgba(226, 232, 240, 0.8));
-    border-radius: var(--radius-lg, 25px);
-    box-shadow: var(--glass-shadow);
-}
-
-
-/* =========================================
-   IMAGE & LINK DEFAULT
-========================================= */
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: .3s ease;
-}
-
-
-/* =========================================
-   HIDDEN & ACCESSIBILITY
-========================================= */
-
-.hidden {
-    display: none !important;
-}
-
-:focus-visible {
-    outline: 3px solid var(--primary-color, #0B5D3B);
-    outline-offset: 3px;
+    background: var(--primary-color);
+    color: var(--white-color) !important;
 }
