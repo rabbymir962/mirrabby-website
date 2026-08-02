@@ -1,72 +1,34 @@
 /*
 =====================================================
-MIR RABBY OFFICIAL
-Version 2026 Edition
-
-Theme Manager
-Light Theme Priority • Safe Theme Handler
+MIR RABBY HUMAN RIGHTS - THEME SWITCHER
 =====================================================
 */
 
-"use strict";
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme');
 
-document.addEventListener("DOMContentLoaded", () => {
-    initializeTheme();
-});
-
-/* =========================================
-   INITIALIZE THEME
-========================================= */
-function initializeTheme() {
-    // Force clean light mode on initial load to prevent blue background issues
-    disableDarkMode();
-    
-    // Set up toggle buttons if present in UI
-    setupThemeToggle();
-}
-
-/* =========================================
-   THEME TOGGLE BUTTON
-========================================= */
-function setupThemeToggle() {
-    const toggleButtons = document.querySelectorAll(".theme-toggle, #theme-toggle");
-
-    if (!toggleButtons.length) return;
-
-    toggleButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            toggleTheme();
-        });
-    });
-}
-
-/* =========================================
-   TOGGLE THEME
-========================================= */
-function toggleTheme() {
-    if (document.body.classList.contains("dark-mode")) {
-        disableDarkMode();
-        localStorage.setItem("theme", "light");
-    } else {
-        enableDarkMode();
-        localStorage.setItem("theme", "dark");
+    // Load saved theme
+    if (currentTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        if (themeToggle) {
+            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
     }
-}
 
-/* =========================================
-   ENABLE DARK MODE
-========================================= */
-function enableDarkMode() {
-    document.body.classList.add("dark-mode");
-    document.body.setAttribute("data-theme", "dark");
-}
-
-/* =========================================
-   DISABLE DARK MODE
-========================================= */
-function disableDarkMode() {
-    document.body.classList.remove("dark-mode");
-    document.body.setAttribute("data-theme", "light");
-}
-
+    // Toggle theme on button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            let theme = document.body.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+        });
+    }
+});
