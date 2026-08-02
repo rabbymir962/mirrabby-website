@@ -1,1 +1,79 @@
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ | MIR RABBY</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/40?text=MR'">
+                <span class="logo-text">MIR RABBY</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html">হোম</a></li>
+                    <li><a href="about.html">আমার সম্পর্কে</a></li>
+                    <li><a href="human-rights.html">মানবাধিকার</a></li>
+                    <li><a href="news.html">সংবাদ</a></li>
+                    <li><a href="gallery.html">গ্যালারি</a></li>
+                    <li><a href="emergency.html">জরুরি সেবা</a></li>
+                    <li><a href="contact.html" class="active">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section" style="padding: 50px 0;">
+        <div class="container text-center">
+            <h1 class="hero-title">যোগাযোগ করুন</h1>
+            <p class="hero-intro">আপনার যেকোনো মতামত, পরামর্শ বা সহায়তার জন্য আমাদের লিখুন</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="glass-card" style="padding: 30px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">যোগাযোগের তথ্য</h3>
+                <p><i class="fa-solid fa-globe" style="color: var(--primary-color);"></i> <strong>ওয়েবসাইট:</strong> www.mirrabbyhumanrights.com</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary-color);"></i> <strong>ইমেইল:</strong> contact@mirrabbyhumanrights.com</p>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--primary-color);"></i> <strong>ঠিকানা:</strong> কাশিনাথপুর,সাঁথিয়া,পাবনা, বাংলাদেশ</p>
+            </div>
+
+            <div class="glass-card" style="padding: 30px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">মেসেজ পাঠান</h3>
+                <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে।');">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" placeholder="আপনার নাম" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--card-bg); color: var(--text-color);">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" placeholder="আপনার ইমেইল" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--card-bg); color: var(--text-color);">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <textarea rows="4" placeholder="আপনার বার্তা লিখুন..." required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--card-bg); color: var(--text-color);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">পাঠিয়ে দিন</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 MIR RABBY. All Rights Reserved | mirrabbyhumanrights.com</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
