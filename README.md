@@ -1,27 +1,12 @@
-# MIR RABBY OFFICIAL
-# Version 2026 Edition
+# MIR RABBY HUMAN RIGHTS OFFICIAL WEBSITE (2026 EDITION)
 
-## Human Rights • Social Service • Public Affairs
+Official Portal for **Mir Rabby** focusing on Human Rights, Social Service, and Public Affairs.
+Domain: `mirrabbyhumanrights.com`
 
-## Project Overview
-
-MIR RABBY OFFICIAL is a professional personal website
-designed for Human Rights, Social Service and Public Affairs.
-
-## Features
-
-- Premium Responsive Design
-- Mobile First Design
-- SEO Optimized
-- Cloudflare Pages Ready
-- GitHub Ready
-
-## Technology Stack
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
-## Deployment
-
-Cloudflare Pages + GitHub
+## Folder Structure Overview
+- `/` : Root meta and configuration files
+- `assets/css/` : Styling modules
+- `assets/js/` : Functional scripts
+- `assets/images/` : Image resources & icons
+- `pages/` : Inner website pages
+- `data/` : Dynamic JSON data stores
