@@ -245,3 +245,86 @@ padding:20px;
     color:var(--text-muted);
     line-height:1.7;
 }
+
+/* =====================================================
+   QUICK STATISTICS
+===================================================== */
+
+.gov-stats-section{
+    padding:70px 20px;
+}
+
+.gov-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:40px;
+}
+
+.gov-stat-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:22px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+.gov-stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.gov-stat-card i{
+    font-size:34px;
+    color:var(--primary-color);
+
+    margin-bottom:15px;
+}
+
+.gov-stat-card h3{
+    font-size:2rem;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.gov-stat-card p{
+    opacity:.85;
+    font-size:.95rem;
+}
+
+/* Tablet */
+
+@media(min-width:768px){
+
+    .gov-stats-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}
+
+/* Desktop */
+
+@media(min-width:1200px){
+
+    .gov-stat-card{
+
+        padding:35px;
+
+    }
+
+    .gov-stat-card h3{
+
+        font-size:2.3rem;
+
+    }
+
+}
