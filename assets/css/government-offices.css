@@ -2,346 +2,229 @@
    1. GLOBAL & RESET STYLES
 --------------------------------------------------- */
 :root {
-    --primary-color: #006a4e; /* বাংলাদেশ সরকারি সবুজ */
-    --primary-hover: #004d38;
-    --accent-red: #f42a41;    /* লাল একসেন্ট */
-    --bg-light: #f8fafc;
+    --primary-green: #004d38;
+    --text-dark: #0f172a;
+    --bg-light: #f4f8f5;
     --card-bg: #ffffff;
-    --text-main: #1a202c;
-    --text-muted: #4a5568;
-    --border-color: #e2e8f0;
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'SolaimanLipi', 'Siyam Rupali', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'SolaimanLipi', 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: var(--bg-light);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
+    color: var(--text-dark);
 }
 
 /* ---------------------------------------------------
-   2. TOP NAVBAR
+   2. HEADER & HAMBURGER ICON
 --------------------------------------------------- */
-.main-navbar {
-    background: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.main-header {
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
-.nav-container {
-    max-width: 1200px;
+.header-container {
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
-.nav-brand {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 0;
+.brand-logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    color: var(--primary-green);
+    font-size: 22px;
+    font-weight: 800;
 }
 
-.nav-menu {
+.menu-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* ---------------------------------------------------
+   3. SIDE DRAWER MENU (৩ লাইনে ক্লিক করলে বের হবে)
+--------------------------------------------------- */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    overflow-y: auto;
+}
+
+.side-drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-header {
     display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.drawer-menu-list {
     list-style: none;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-link {
-    color: #ffffff;
-    padding: 10px 16px;
-    display: block;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover, 
-.nav-item.active > .nav-link {
-    background-color: var(--accent-red);
-    color: #ffffff;
-    font-weight: bold;
-}
-
-/* ---------------------------------------------------
-   3. HERO HEADER BANNER
---------------------------------------------------- */
-.hero-banner {
-    padding: 35px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #006a4e 0%, #004d38 100%);
-    color: #ffffff;
-    border-bottom: 4px solid var(--accent-red);
-}
-
-.hero-banner h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
-
-.hero-banner p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* ---------------------------------------------------
-   4. TWO COLUMN PAGE LAYOUT
---------------------------------------------------- */
-.main-body-section {
-    padding: 40px 0;
-}
-
-.page-layout {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* LEFT SIDE: UNO DETAILS CARD */
-.uno-content-area {
-    flex: 2;
+.drawer-menu-list li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 17px;
+    font-weight: 600;
+    display: block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.drawer-menu-list li a.active-home {
+    background-color: #e2f1e8;
+    color: var(--primary-green);
+    width: fit-content;
+    padding: 4px 14px;
+}
+
+.drawer-menu-list li a:hover {
+    color: var(--primary-green);
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* ---------------------------------------------------
+   4. PAGE CONTENT (UNO CARD)
+--------------------------------------------------- */
+.page-content {
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .uno-card {
-    background: var(--card-bg);
+    background: #ffffff;
     border-radius: 16px;
     padding: 30px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     display: flex;
     gap: 25px;
-    align-items: flex-start;
-}
-
-.uno-image-box {
-    flex-shrink: 0;
 }
 
 .uno-image-box img {
-    width: 180px;
-    height: 220px;
+    width: 170px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-.uno-details {
-    flex: 1;
+    border-radius: 10px;
+    border: 2px solid var(--primary-green);
 }
 
 .uno-badge {
-    display: inline-block;
-    padding: 4px 14px;
-    background: var(--accent-red);
-    color: #ffffff;
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 3px 12px;
     border-radius: 20px;
+    font-size: 13px;
     font-weight: 700;
-    font-size: 0.85rem;
-    margin-bottom: 12px;
 }
 
 .uno-details h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 5px;
+    color: var(--primary-green);
+    margin-top: 8px;
+    font-size: 24px;
 }
 
 .uno-title {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    font-weight: 600;
+    color: #64748b;
+    font-size: 14px;
     margin-bottom: 15px;
 }
 
 .uno-quote {
-    color: #2d3748;
-    line-height: 1.8;
-    background: #f1f8e9;
-    padding: 20px;
-    border-left: 4px solid var(--primary-color);
+    background: #f8fafc;
+    border-left: 4px solid var(--primary-green);
+    padding: 15px;
     border-radius: 0 8px 8px 0;
-    margin-bottom: 25px;
-    font-size: 0.95rem;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 .uno-contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
+    gap: 10px;
 }
 
 .uno-contact-item {
+    font-size: 14px;
+    color: #334155;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    background: var(--bg-light);
-    border: 1px solid #edf2f7;
-    font-size: 0.9rem;
-    color: #2d3748;
-}
-
-.uno-contact-item i {
-    color: var(--primary-color);
-}
-
-/* RIGHT SIDE: SIDEBAR MENU BAR */
-.sidebar-menu {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-color);
-    position: sticky;
-    top: 85px;
-}
-
-.sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 12px;
-    margin-bottom: 15px;
-    border-bottom: 3px solid var(--accent-red);
-    color: var(--primary-color);
-}
-
-.sidebar-header h3 {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700;
-}
-
-.sidebar-links-list {
-    display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
-.sidebar-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg-light);
-    color: #2d3748;
-    padding: 12px 15px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    font-weight: 600;
-    font-size: 0.92rem;
-    transition: all 0.3s ease;
+.uno-contact-item i {
+    color: var(--primary-green);
 }
 
-.sidebar-btn.home-btn {
-    background: #e2e8f0;
-    color: #1a202c;
-}
-
-.sidebar-btn span {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.sidebar-btn i {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-.sidebar-btn .external-icon {
-    font-size: 0.8rem;
-    color: #a0aec0;
-    transition: color 0.3s ease;
-}
-
-.sidebar-btn:hover {
-    background: var(--primary-color);
-    color: #ffffff;
-    border-color: var(--primary-color);
-    transform: translateX(4px);
-}
-
-.sidebar-btn:hover i,
-.sidebar-btn:hover .external-icon {
-    color: #ffffff;
-}
-
-/* ---------------------------------------------------
-   5. RESPONSIVE MEDIA QUERIES
---------------------------------------------------- */
-@media (max-width: 992px) {
-    .page-layout {
-        flex-direction: column;
-    }
-
-    .uno-content-area, 
-    .sidebar-menu {
-        width: 100%;
-    }
-
-    .sidebar-menu {
-        position: static;
-    }
-
+@media (max-width: 768px) {
     .uno-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .uno-quote {
         text-align: left;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        padding: 12px;
-        gap: 10px;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-banner h1 {
-        font-size: 1.6rem;
-    }
-
-    .uno-card {
-        padding: 20px;
-    }
-
-    .uno-contact-grid {
-        grid-template-columns: 1fr;
     }
 }
