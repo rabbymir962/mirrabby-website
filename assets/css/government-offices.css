@@ -1,7 +1,7 @@
 /*
 =====================================================
 SATHIA GOVERNMENT OFFICES
-MIR RABBY OFFICIAL WEBSITE
+OFFICIAL STYLESHEET
 =====================================================
 */
 
@@ -9,8 +9,9 @@ MIR RABBY OFFICIAL WEBSITE
    0. GLOBAL RESET & DESIGN VARIABLES
 --------------------------------------------------- */
 :root {
-    --primary-color: #1b5e20;
-    --primary-hover: #2e7d32;
+    --primary-color: #006a4e; /* Bangladesh Official Green */
+    --primary-hover: #004d38;
+    --accent-red: #f42a41;    /* Bangladesh Official Red */
     --bg-light: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #1a202c;
@@ -24,13 +25,17 @@ MIR RABBY OFFICIAL WEBSITE
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'SolaimanLipi', 'Siyam Rupali', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
     background-color: var(--bg-light);
     color: var(--text-main);
     line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* ---------------------------------------------------
@@ -57,7 +62,6 @@ body {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: none;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -68,6 +72,7 @@ body {
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 10px;
 }
 
 .nav-item {
@@ -76,39 +81,41 @@ body {
 
 .nav-link {
     color: #ffffff;
-    text-decoration: none;
-    padding: 18px 15px;
+    padding: 12px 16px;
     display: block;
     font-size: 15px;
     font-weight: 500;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .nav-link:hover, 
 .nav-item.active > .nav-link {
-    background-color: var(--primary-hover);
+    background-color: var(--accent-red);
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* ---------------------------------------------------
    2. HERO SECTION
 --------------------------------------------------- */
 .uno-profile-hero {
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
-    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(135deg, #006a4e 0%, #004d38 100%);
+    color: #ffffff;
+    border-bottom: 4px solid var(--accent-red);
 }
 
 .uno-profile-hero h1 {
     font-size: 2.2rem;
-    color: var(--primary-color);
     margin-bottom: 8px;
     font-weight: 700;
 }
 
 .uno-profile-hero p {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    opacity: 0.9;
 }
 
 /* ---------------------------------------------------
@@ -138,23 +145,33 @@ body {
     padding: 30px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-color);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.uno-image-box {
+    flex-shrink: 0;
 }
 
 .uno-image-box img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
     border-radius: 12px;
-    display: block;
-    margin: 0 auto 25px auto;
+    border: 3px solid var(--primary-color);
     box-shadow: var(--shadow-medium);
+}
+
+.uno-details {
+    flex: 1;
 }
 
 .uno-badge {
     display: inline-block;
-    padding: 6px 14px;
-    background: rgba(27, 94, 32, 0.1);
-    color: var(--primary-color);
+    padding: 4px 14px;
+    background: var(--accent-red);
+    color: #ffffff;
     border-radius: 20px;
     font-weight: 700;
     font-size: 0.85rem;
@@ -163,41 +180,40 @@ body {
 
 .uno-details h2 {
     font-size: 1.8rem;
-    color: var(--text-main);
+    color: var(--primary-color);
     margin-bottom: 5px;
 }
 
 .uno-title {
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .uno-quote {
-    font-style: italic;
     color: #2d3748;
     line-height: 1.8;
     background: #f1f8e9;
     padding: 20px;
-    border-left: 4px solid var(--primary-hover);
-    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
     margin-bottom: 25px;
     font-size: 0.95rem;
 }
 
 .uno-contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 12px;
 }
 
 .uno-contact-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 15px;
-    border-radius: 10px;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
     background: var(--bg-light);
     border: 1px solid #edf2f7;
     font-size: 0.9rem;
@@ -210,16 +226,20 @@ body {
 }
 
 /* ---------------------------------------------------
-   4. RIGHT SIDEBAR (GOVERNMENT LINKS)
+   4. RIGHT SIDEBAR (STICKY GOVERNMENT LINKS)
 --------------------------------------------------- */
 .sidebar-menu {
     flex: 1;
     background: var(--card-bg);
-    padding: 24px;
+    padding: 20px;
     border-radius: 16px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-color);
-    height: fit-content;
+    
+    /* Sticky Properties */
+    position: sticky;
+    top: 85px;
+    z-index: 10;
 }
 
 .sidebar-header {
@@ -227,14 +247,15 @@ body {
     align-items: center;
     gap: 10px;
     padding-bottom: 12px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--accent-red);
     color: var(--primary-color);
 }
 
 .sidebar-header h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin: 0;
+    font-weight: 700;
 }
 
 .govt-links {
@@ -249,13 +270,18 @@ body {
     justify-content: space-between;
     background: var(--bg-light);
     color: #2d3748;
-    padding: 12px 16px;
-    border-radius: 10px;
-    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
     font-weight: 600;
     font-size: 0.92rem;
     transition: all 0.3s ease;
+}
+
+.govt-btn span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .govt-btn i {
@@ -266,49 +292,70 @@ body {
 .govt-btn .icon-right {
     font-size: 0.8rem;
     color: #a0aec0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .govt-btn:hover {
     background: var(--primary-color);
     color: #ffffff;
     border-color: var(--primary-color);
+    transform: translateX(4px);
 }
 
-.govt-btn:hover i {
-    color: #ffffff;
-}
-
+.govt-btn:hover i,
 .govt-btn:hover .icon-right {
     color: #ffffff;
-    transform: translateX(4px);
 }
 
 /* ---------------------------------------------------
    5. RESPONSIVE MEDIA QUERIES
 --------------------------------------------------- */
-@media(max-width: 992px) {
+@media (max-width: 992px) {
     .page-layout {
         flex-direction: column;
     }
+
     .uno-card-section, 
     .sidebar-menu {
         width: 100%;
     }
+
+    .sidebar-menu {
+        position: static;
+    }
+
+    .uno-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .uno-quote {
+        text-align: left;
+    }
 }
 
-@media(max-width: 768px) {
-    .nav-menu {
+@media (max-width: 768px) {
+    .nav-container {
         flex-direction: column;
-        width: 100%;
+        padding: 15px;
+        gap: 10px;
     }
-    .nav-link {
-        padding: 12px;
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
     .uno-profile-hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
+
     .uno-card {
         padding: 20px;
+    }
+
+    .uno-contact-grid {
+        grid-template-columns: 1fr;
     }
 }
