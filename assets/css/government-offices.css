@@ -1,31 +1,23 @@
-/*
-=====================================================
-SATHIA GOVERNMENT OFFICES
-OFFICIAL STYLESHEET
-=====================================================
-*/
-
 /* ---------------------------------------------------
-   0. GLOBAL RESET & DESIGN VARIABLES
+   1. GLOBAL & RESET STYLES
 --------------------------------------------------- */
 :root {
-    --primary-color: #006a4e; /* Bangladesh Official Green */
+    --primary-color: #006a4e; /* বাংলাদেশ সরকারি সবুজ */
     --primary-hover: #004d38;
-    --accent-red: #f42a41;    /* Bangladesh Official Red */
+    --accent-red: #f42a41;    /* লাল একসেন্ট */
     --bg-light: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #1a202c;
     --text-muted: #4a5568;
     --border-color: #e2e8f0;
     --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
-    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'SolaimanLipi', 'Siyam Rupali', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'SolaimanLipi', 'Siyam Rupali', 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
@@ -39,7 +31,7 @@ a {
 }
 
 /* ---------------------------------------------------
-   1. NAVIGATION BAR
+   2. TOP NAVBAR
 --------------------------------------------------- */
 .main-navbar {
     background: var(--primary-color);
@@ -75,13 +67,9 @@ a {
     gap: 10px;
 }
 
-.nav-item {
-    position: relative;
-}
-
 .nav-link {
     color: #ffffff;
-    padding: 12px 16px;
+    padding: 10px 16px;
     display: block;
     font-size: 15px;
     font-weight: 500;
@@ -97,29 +85,28 @@ a {
 }
 
 /* ---------------------------------------------------
-   2. HERO SECTION
+   3. HERO HEADER BANNER
 --------------------------------------------------- */
-.uno-profile-hero {
-    padding: 40px 20px;
+.hero-banner {
+    padding: 35px 20px;
     text-align: center;
     background: linear-gradient(135deg, #006a4e 0%, #004d38 100%);
     color: #ffffff;
     border-bottom: 4px solid var(--accent-red);
 }
 
-.uno-profile-hero h1 {
+.hero-banner h1 {
     font-size: 2.2rem;
-    margin-bottom: 8px;
-    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-.uno-profile-hero p {
+.hero-banner p {
     font-size: 1.1rem;
     opacity: 0.9;
 }
 
 /* ---------------------------------------------------
-   3. MAIN BODY & TWO COLUMN LAYOUT
+   4. TWO COLUMN PAGE LAYOUT
 --------------------------------------------------- */
 .main-body-section {
     padding: 40px 0;
@@ -134,8 +121,8 @@ a {
     align-items: flex-start;
 }
 
-/* Left Content: UNO Section */
-.uno-card-section {
+/* LEFT SIDE: UNO DETAILS CARD */
+.uno-content-area {
     flex: 2;
 }
 
@@ -160,7 +147,7 @@ a {
     object-fit: cover;
     border-radius: 12px;
     border: 3px solid var(--primary-color);
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .uno-details {
@@ -222,12 +209,9 @@ a {
 
 .uno-contact-item i {
     color: var(--primary-color);
-    font-size: 1.1rem;
 }
 
-/* ---------------------------------------------------
-   4. RIGHT SIDEBAR (STICKY GOVERNMENT LINKS)
---------------------------------------------------- */
+/* RIGHT SIDE: SIDEBAR MENU BAR */
 .sidebar-menu {
     flex: 1;
     background: var(--card-bg);
@@ -235,11 +219,8 @@ a {
     border-radius: 16px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-color);
-    
-    /* Sticky Properties */
     position: sticky;
     top: 85px;
-    z-index: 10;
 }
 
 .sidebar-header {
@@ -258,13 +239,13 @@ a {
     font-weight: 700;
 }
 
-.govt-links {
+.sidebar-links-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-.govt-btn {
+.sidebar-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,32 +259,37 @@ a {
     transition: all 0.3s ease;
 }
 
-.govt-btn span {
+.sidebar-btn.home-btn {
+    background: #e2e8f0;
+    color: #1a202c;
+}
+
+.sidebar-btn span {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.govt-btn i {
+.sidebar-btn i {
     color: var(--primary-color);
     font-size: 1.1rem;
 }
 
-.govt-btn .icon-right {
+.sidebar-btn .external-icon {
     font-size: 0.8rem;
     color: #a0aec0;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.govt-btn:hover {
+.sidebar-btn:hover {
     background: var(--primary-color);
     color: #ffffff;
     border-color: var(--primary-color);
     transform: translateX(4px);
 }
 
-.govt-btn:hover i,
-.govt-btn:hover .icon-right {
+.sidebar-btn:hover i,
+.sidebar-btn:hover .external-icon {
     color: #ffffff;
 }
 
@@ -315,7 +301,7 @@ a {
         flex-direction: column;
     }
 
-    .uno-card-section, 
+    .uno-content-area, 
     .sidebar-menu {
         width: 100%;
     }
@@ -338,7 +324,7 @@ a {
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
-        padding: 15px;
+        padding: 12px;
         gap: 10px;
     }
 
@@ -347,7 +333,7 @@ a {
         justify-content: center;
     }
 
-    .uno-profile-hero h1 {
+    .hero-banner h1 {
         font-size: 1.6rem;
     }
 
