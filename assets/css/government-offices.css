@@ -5,7 +5,9 @@ MIR RABBY OFFICIAL WEBSITE
 =====================================================
 */
 
-/* Navigation Dropdown Menu Structure */
+/* ---------------------------------------------------
+   1. NAVIGATION BAR
+--------------------------------------------------- */
 .main-navbar {
     background: #1b5e20;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -59,417 +61,224 @@ MIR RABBY OFFICIAL WEBSITE
     background-color: #2e7d32;
 }
 
-.dropdown-toggle::after {
-    content: ' \f107';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    margin-left: 5px;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 320px;
-    background: #ffffff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    border-radius: 0 0 8px 8px;
-    border-top: 3px solid #2e7d32;
-    padding: 15px 0;
-    max-height: 80vh;
-    overflow-y: auto;
-    z-index: 1001;
-}
-
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-category {
-    padding: 8px 20px;
-}
-
-.category-title {
-    font-weight: 700;
-    color: #1b5e20;
-    font-size: 15px;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 4px;
-    margin-bottom: 6px;
-    display: block;
-}
-
-.sub-list {
-    list-style: none;
-    padding-left: 10px;
-}
-
-.sub-list li {
-    margin: 4px 0;
-}
-
-.sub-list a {
-    color: #4a5568;
-    text-decoration: none;
-    font-size: 13.5px;
-    display: block;
-    padding: 3px 5px;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.sub-list a::before {
-    content: "├─ ";
-    color: #94a3b8;
-}
-
-.sub-list a:hover {
-    background-color: #f1f5f9;
-    color: #2e7d32;
-    font-weight: 600;
-}
-
-
-/* Hero Section */
-
-.government-hero {
-    padding: 80px 0;
+/* ---------------------------------------------------
+   2. HERO SECTION
+--------------------------------------------------- */
+.uno-profile-hero {
+    padding: 60px 0;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--body-bg) 100%);
+    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.government-tag {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 30px;
-    background: rgba(11, 93, 59, .10);
-    color: var(--primary-color);
-    font-size: .9rem;
-    font-weight: 700;
-    margin-bottom: 18px;
+.uno-profile-hero h1 {
+    font-size: 2.5rem;
+    color: #1b5e20;
+    margin-bottom: 10px;
 }
 
-.government-hero h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 18px;
+.uno-profile-hero p {
+    font-size: 1.1rem;
+    color: #4a5568;
 }
 
-.government-hero p {
-    max-width: 800px;
-    margin: auto;
-    color: var(--text-muted);
-    line-height: 1.9;
+/* ---------------------------------------------------
+   3. MAIN BODY & TWO COLUMN LAYOUT
+--------------------------------------------------- */
+.main-body-section {
+    padding: 40px 0;
+    background-color: #f8fafc;
 }
 
+.page-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
 
-/* UNO Section */
-
-.uno-section {
-    padding: 80px 0;
+/* Left Content: UNO Section */
+.uno-card-section {
+    flex: 2;
 }
 
 .uno-card {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 40px;
-    padding: 35px;
-    border-radius: var(--radius-lg);
-}
-
-.uno-image {
-    text-align: center;
-}
-
-.uno-image img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 20px;
-    display: block;
-    margin: auto;
-    box-shadow: 0 20px 50px rgba(0,0,0,.15);
-}
-
-.official-badge {
-    display: inline-block;
-    padding: 8px 18px;
-    background: rgba(11, 93, 59, .10);
-    color: var(--primary-color);
-    border-radius: 30px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.uno-content h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.uno-content p {
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-/* UNO Quote Section */
-.uno-quote {
-    font-style: italic;
-    color: var(--text-muted, #4a5568);
-    line-height: 1.7;
-    background: rgba(11, 93, 59, .05);
-    padding: 15px 20px;
-    border-left: 4px solid var(--primary-color, #2e7d32);
-    border-radius: 6px;
-    margin-bottom: 22px;
-}
-
-.official-info {
-    display: grid;
-    gap: 16px;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 15px 18px;
-    border-radius: 14px;
-    background: rgba(11, 93, 59, .05);
-}
-
-.info-item i {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-top: 3px;
-}
-
-.info-item strong {
-    margin-right: 6px;
-}
-
-.info-item a {
-    color: var(--primary-color);
-    word-break: break-word;
-}
-
-
-/* Government Office Grid */
-
-.government-offices {
-    padding: 80px 0;
-}
-
-.office-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.office-card {
+    background: #ffffff;
+    border-radius: 16px;
     padding: 30px;
-    text-align: center;
-    transition: var(--transition);
-    text-decoration: none;
-    color: inherit;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
 }
 
-.office-card:hover {
-    transform: translateY(-8px);
+.uno-image-box img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 25px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-.office-card i {
-    font-size: 2.8rem;
-    color: var(--primary-color);
+.uno-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(27, 94, 32, 0.1);
+    color: #1b5e20;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.uno-details h2 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 5px;
+}
+
+.uno-title {
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-.office-card h3 {
-    margin-bottom: 12px;
-    color: var(--primary-color);
+.uno-quote {
+    font-style: italic;
+    color: #2d3748;
+    line-height: 1.8;
+    background: #f1f8e9;
+    padding: 20px;
+    border-left: 4px solid #2e7d32;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
 }
 
-.office-card p {
-    color: var(--text-muted);
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   QUICK STATISTICS
-===================================================== */
-
-.gov-stats-section {
-    padding: 70px 20px;
-}
-
-.gov-stats-grid {
+.uno-contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
 }
 
-.gov-stat-card {
-    background: rgba(255, 255, 255, .08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, .15);
-    border-radius: 22px;
-    padding: 28px 20px;
-    text-align: center;
-    transition: .35s ease;
-}
-
-.gov-stat-card:hover {
-    transform: translateY(-8px);
-}
-
-.gov-stat-card i {
-    font-size: 34px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.gov-stat-card h3 {
-    font-size: 2rem;
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.gov-stat-card p {
-    opacity: .85;
-    font-size: .95rem;
-}
-
-
-/* =====================================================
-   ALL GOVERNMENT OFFICES
-===================================================== */
-
-.government-offices-section {
-    padding: 80px 20px;
-}
-
-.government-offices-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 45px;
-}
-
-.office-card {
-    background: rgba(255, 255, 255, .08);
-    border: 1px solid rgba(255, 255, 255, .15);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-radius: 24px;
-    padding: 30px 24px;
-    transition: .35s ease;
-}
-
-.office-card:hover {
-    transform: translateY(-8px);
-}
-
-.office-card.featured {
-    border: 1px solid rgba(0, 200, 120, .35);
-}
-
-.office-icon {
-    width: 72px;
-    height: 72px;
+.uno-contact-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, .08);
-    margin-bottom: 22px;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    font-size: 0.9rem;
+    color: #2d3748;
 }
 
-.office-icon i {
-    font-size: 32px;
-    color: var(--primary-color);
+.uno-contact-item i {
+    color: #1b5e20;
+    font-size: 1.1rem;
 }
 
-.office-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.3rem;
+/* ---------------------------------------------------
+   4. RIGHT SIDEBAR (GOVERNMENT LINKS)
+--------------------------------------------------- */
+.sidebar-menu {
+    flex: 1;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    height: fit-content;
 }
 
-.office-card p {
-    opacity: .85;
-    line-height: 1.7;
-    margin-bottom: 22px;
-}
-
-.office-btn {
-    display: inline-flex;
+.sidebar-header {
+    display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: 12px;
-    background: var(--primary-color);
-    color: #fff;
-    font-weight: 600;
-    transition: .3s;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1b5e20;
+    color: #1b5e20;
 }
 
-.office-btn:hover {
+.sidebar-header h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.govt-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.govt-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    color: #2d3748;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.3s ease;
+}
+
+.govt-btn i {
+    color: #1b5e20;
+    font-size: 1.1rem;
+}
+
+.govt-btn .icon-right {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    transition: transform 0.3s ease;
+}
+
+.govt-btn:hover {
+    background: #1b5e20;
+    color: #ffffff;
+    border-color: #1b5e20;
+}
+
+.govt-btn:hover i {
+    color: #ffffff;
+}
+
+.govt-btn:hover .icon-right {
+    color: #ffffff;
     transform: translateX(4px);
 }
 
+/* ---------------------------------------------------
+   5. RESPONSIVE MEDIA QUERIES
+--------------------------------------------------- */
+@media(max-width: 992px) {
+    .page-layout {
+        flex-direction: column;
+    }
+    .uno-card-section, 
+    .sidebar-menu {
+        width: 100%;
+    }
+}
 
-/* Responsive Media Queries */
-
-@media(max-width:992px) {
+@media(max-width: 768px) {
     .nav-menu {
         flex-direction: column;
         width: 100%;
     }
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
+    .nav-link {
+        padding: 12px;
     }
-    .uno-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .info-item {
-        text-align: left;
-    }
-}
-
-@media(max-width:768px) {
-    .government-hero {
-        padding: 60px 0;
-    }
-    .government-hero h1 {
-        font-size: 2.2rem;
+    .uno-profile-hero h1 {
+        font-size: 1.8rem;
     }
     .uno-card {
         padding: 20px;
-    }
-}
-
-@media(min-width:768px) {
-    .gov-stats-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .government-offices-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(min-width:1200px) {
-    .gov-stat-card {
-        padding: 35px;
-    }
-    .gov-stat-card h3 {
-        font-size: 2.3rem;
-    }
-    .government-offices-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
