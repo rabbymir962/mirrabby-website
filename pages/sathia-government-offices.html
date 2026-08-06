@@ -11,7 +11,7 @@
 <body>
 
   <!-- ======================================
-       ১. নেভিগেশন বার ও সাব-মেনু (DROPDOWN)
+        ১. নেভিগেশন বার (ড্রপডাউন ছাড়া সরাসরি লিংক)
   ======================================= -->
   <nav class="main-navbar">
     <div class="nav-container">
@@ -24,58 +24,9 @@
           <a href="../index.html" class="nav-link">হোম</a>
         </li>
 
-        <!-- সাঁথিয়া সরকারি দপ্তর সাব-মেনু -->
-        <li class="nav-item dropdown active">
-          <a href="#" class="nav-link dropdown-toggle">সাঁথিয়া সরকারি দপ্তর</a>
-          
-          <div class="dropdown-menu">
-            
-            <div class="dropdown-category">
-              <span class="category-title">📍 উপজেলা প্রশাসন</span>
-              <ul class="sub-list">
-                <li><a href="#uno-profile">উপজেলা নির্বাহী অফিস (UNO)</a></li>
-                <li><a href="#ac-land">সহকারী কমিশনার (ভূমি)</a></li>
-                <li><a href="#upazila-parishad">উপজেলা পরিষদ</a></li>
-              </ul>
-            </div>
-
-            <div class="dropdown-category">
-              <span class="category-title">🏛 আইন ও শৃঙ্খলা</span>
-              <ul class="sub-list">
-                <li><a href="#thana">সাঁথিয়া থানা</a></li>
-                <li><a href="#fire-service">ফায়ার সার্ভিস</a></li>
-                <li><a href="#ansar">আনসার ও ভিডিপি</a></li>
-              </ul>
-            </div>
-
-            <div class="dropdown-category">
-              <span class="category-title">🌾 কৃষি ও প্রাণিসম্পদ</span>
-              <ul class="sub-list">
-                <li><a href="#krishi">কৃষি অফিস</a></li>
-                <li><a href="#livestock">প্রাণিসম্পদ অফিস</a></li>
-                <li><a href="#fisheries">মৎস্য অফিস</a></li>
-              </ul>
-            </div>
-
-            <div class="dropdown-category">
-              <span class="category-title">🏥 স্বাস্থ্য ও শিক্ষা</span>
-              <ul class="sub-list">
-                <li><a href="#health">উপজেলা স্বাস্থ্য কমপ্লেক্স</a></li>
-                <li><a href="#primary-edu">প্রাথমিক শিক্ষা অফিস</a></li>
-                <li><a href="#secondary-edu">মাধ্যমিক শিক্ষা অফিস</a></li>
-              </ul>
-            </div>
-
-            <div class="dropdown-category">
-              <span class="category-title">👥 সমাজকল্যাণ ও অন্যান্য</span>
-              <ul class="sub-list">
-                <li><a href="#social-welfare">সমাজসেবা অফিস</a></li>
-                <li><a href="#election">নির্বাচন অফিস</a></li>
-                <li><a href="#rural-dev">পল্লী বিদ্যুৎ ও উন্নয়ন</a></li>
-              </ul>
-            </div>
-
-          </div>
+        <!-- সরাসরি পেজ ওপেন হওয়ার জন্য সিম্পল লিংক -->
+        <li class="nav-item active">
+          <a href="santhia-govt-offices.html" class="nav-link">সাঁথিয়া সরকারি দপ্তর</a>
         </li>
 
         <li class="nav-item"><a href="#" class="nav-link">আমার সম্পর্কে</a></li>
@@ -87,7 +38,7 @@
   </nav>
 
   <!-- ======================================
-       ২. হেডার ব্যানার
+        ২. হেডার ব্যানার
   ======================================= -->
   <section class="uno-profile-hero">
     <div class="container">
@@ -97,53 +48,122 @@
   </section>
 
   <!-- ======================================
-       ৩. উপজেলা নির্বাহী কর্মকর্তার প্রোফাইল কার্ড
+        ৩. মূল কন্টেন্ট ও ডানপাশের সাইডবার লেআউট
   ======================================= -->
-  <section class="uno-card-section" id="uno-profile">
-    <div class="container">
-      <div class="uno-card">
+  <section class="main-body-section">
+    <div class="container page-layout">
+      
+      <!-- বাম অংশ: ইউএনও সাহেবের প্রোফাইল কার্ড -->
+      <main class="uno-card-section" id="uno-profile">
+        <div class="uno-card">
+          
+          <!-- কর্মকর্তার ছবি -->
+          <div class="uno-image-box">
+            <img src="../assets/images/government/uno-santhia.jpg" alt="উপজেলা নির্বাহী কর্মকর্তা - রিজু তামান্না">
+          </div>
+
+          <!-- কর্মকর্তার বিস্তারিত ও বার্তা -->
+          <div class="uno-details">
+            <span class="uno-badge">প্রশাসনিক প্রধান</span>
+            <h2>রিজু তামান্না</h2>
+            <p class="uno-title">উপজেলা নির্বাহী কর্মকর্তা (UNO), সাঁথিয়া, পাবনা</p>
+
+            <div class="uno-quote">
+              <strong>বার্তা:</strong> সম্মানিত সাঁথিয়াবাসী, আসসালামু আলাইকুম/আদাব/নমস্কার। সাঁথিয়ার উন্নয়নে দারিদ্র্য নিরসন, জননিরাপত্তা নিশ্চিতকরণ, টেকসই উন্নয়ন, মানসম্মত শিক্ষা, সুষ্ঠু ভূমি ব্যবস্থাপনাসহ অন্যান্য সরকারি সেবা জনগণের দোরগোড়ায় পৌঁছে দিতে সর্বদা সচেষ্ট থাকব। মাদক, বাল্যবিবাহসহ অন্যান্য সামাজিক সমস্যা প্রতিরোধে আপনাদের যেকোনো ভালো পরামর্শ সাদরে কৃতজ্ঞতা ও আন্তরিকতার সাথে গ্রহণ করে তা বাস্তবায়ন করার উদ্যোগ ও ঐকান্তিক প্রচেষ্টা নেব। সবাই মিলে উন্নত, সুন্দর ও পরিচ্ছন্ন সাঁথিয়া গড়ব—এই দৃঢ় প্রত্যয় ব্যক্ত করছি। আমার উপর অর্পিত দায়িত্ব পালনে সকলের আন্তরিক সহযোগিতা কামনা করছি। সাঁথিয়া উপজেলার পোর্টাল (www.santhia.pabna.gov.bd) ভিজিট করে সুচিন্তিত মতামত এবং পরামর্শ প্রদানের জন্য সকল স্তরের জনগণকে অনুরোধ জানানো হলো।
+              <br><br>
+              <strong>(রিজু তামান্না)</strong><br>
+              উপজেলা নির্বাহী অফিসার<br>
+              সাঁথিয়া, পাবনা
+            </div>
+
+            <!-- যোগাযোগের মাধ্যম -->
+            <div class="uno-contact-grid">
+              <div class="uno-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>উপজেলা পরিষদ ভবন, সাঁথিয়া</span>
+              </div>
+              <div class="uno-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>ফোন: ০২৫৮৮৮৪৮৯০১</span>
+              </div>
+              <div class="uno-contact-item">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>মোবাইল: ০১৭৬২৬২১০১৮</span>
+              </div>
+              <div class="uno-contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>unosanthia@mopa.gov.bd</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- ডান অংশ: সরকারি ওয়েবসাইটের ডিরেক্ট লিংক সাইডবার -->
+      <aside class="sidebar-menu">
+        <div class="sidebar-header">
+          <i class="fa-solid fa-building-flag"></i>
+          <h3>সরকারি দপ্তরসমূহ</h3>
+        </div>
         
-        <!-- কর্মকর্তার ছবি -->
-        <div class="uno-image-box">
-          <img src="../assets/images/government/uno-santhia.jpg" alt="উপজেলা নির্বাহী কর্মকর্তা - রিজু তামান্না">
+        <div class="govt-links">
+          <a href="https://santhia.pabna.gov.bd/pages/#" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>উপজেলা প্রশাসন (ইউএনও)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://acl.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-landmark"></i>
+            <span>উপজেলা ভূমি অফিস</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://sr.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-file-contract"></i>
+            <span>উপজেলা সাব-রেজিস্ট্রার অফিস</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://police.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>সাঁথিয়া থানা</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://health.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-hospital"></i>
+            <span>উপজেলা স্বাস্থ্য কমপ্লেক্স</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://dae.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-wheat-awn"></i>
+            <span>উপজেলা কৃষি অফিস</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://dss.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span>উপজেলা সমাজসেবা কার্যালয়</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://seo.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>উপজেলা মাধ্যমিক শিক্ষা অফিস</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
+
+          <a href="https://ec.santhia.pabna.gov.bd/" target="_blank" rel="noopener noreferrer" class="govt-btn">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <span>উপজেলা নির্বাচন অফিস</span>
+            <i class="fa-solid fa-arrow-up-right-from-square icon-right"></i>
+          </a>
         </div>
+      </aside>
 
-        <!-- কর্মকর্তার বিস্তারিত ও বার্তা -->
-        <div class="uno-details">
-          <span class="uno-badge">প্রশাসনিক প্রধান</span>
-          <h2>রিজু তামান্না</h2>
-          <p class="uno-title">উপজেলা নির্বাহী কর্মকর্তা (UNO), সাঁথিয়া, পাবনা</p>
-
-          <div class="uno-quote">
-            বার্তা :  সম্মানিত সাঁথিয়াবাসী, আসসালামু আলাইকুম/আদাব/ নমস্কার। সাঁথিয়ার উন্নয়নে দারিদ্র্য নিরোসন, জননিরাপত্তা নিশ্চিতকরণ,টেকসই উন্নয়ন, মান সম্মত শিক্ষা, সুষ্ঠ ভূমি ব্যবস্থাপনাসহ ও অন্যান্য সরকারী সেবা জনগণের দোর-গোড়ায় পৌছে দিতে সর্বদা সচেষ্ট থাকব। মাদক, বাল্যবিবাহসহ অন্যান্য সামাজিক সমস্যা প্রতিরোধে আপনাদের যে কোন ভালো পরামর্শ সাদরে কৃতজ্ঞতা ও আন্তরিকতার সাথে গ্রহন করে তা বাস্তবায়ন করার উদ্যোগ ও ঐকান্তিক প্রচেষ্টা নিব। সবাই মিলে উন্নত, সুন্দর ও পরিচ্ছন্ন সাঁথিয়া গড়বো এই দৃঢ় প্রত্যয় ব্যক্ত করছি। আমার উপর অর্পিত দায়িত্ব পালনে সকলের আন্তরিক সহযোগিতা কামনা করছি। সাঁথিয়া উপেজেলার পোর্টাল (www.santhia.pabna.gov.bd) ভিজিট করে সুচিন্তিত মতামত এবং পরামর্শ প্রদানের জন্য সকল স্তরের জনগনকে অনুরোধ জানানো হলো।
-                                                                                                                                                                                                                                 
-( রিজু তামান্না )
-উপজেলা নির্বাহী অফিসার
-সাঁথিয়া, পাবনা 
-          </div>
-
-          <!-- যোগাযোগের মাধ্যম -->
-          <div class="uno-contact-grid">
-            <div class="uno-contact-item">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>উপজেলা পরিষদ ভবন, সাঁথিয়া</span>
-            </div>
-            <div class="uno-contact-item">
-              <i class="fa-solid fa-phone"></i>
-              <span>ফোন: ০২৫৮৮৮৪৮৯০১</span>
-            </div>
-            <div class="uno-contact-item">
-              <i class="fa-solid fa-mobile-screen"></i>
-              <span>মোবাইল: ০১৭৬২৬২১০১৮</span>
-            </div>
-            <div class="uno-contact-item">
-              <i class="fa-solid fa-envelope"></i>
-              <span>unosanthia@mopa.gov.bd</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
