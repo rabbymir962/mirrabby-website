@@ -1,5 +1,5 @@
 /* ---------------------------------------------------
-   1. GLOBAL & RESET STYLES
+   1. RESET & RESPONSIVE GLOBAL STYLES
 --------------------------------------------------- */
 :root {
     --primary-green: #004d38;
@@ -12,21 +12,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'SolaimanLipi', 'Segoe UI', sans-serif;
+    font-family: 'SolaimanLipi', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* যেকোনো ইমেজ যেন স্ক্রিনের বাইরে চলে না যায় */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
+    overflow-x: hidden;
 }
 
 /* ---------------------------------------------------
-   2. HEADER & HAMBURGER ICON
+   2. HEADER & LOGO (ALL DEVICES)
 --------------------------------------------------- */
 .main-header {
     background: #ffffff;
-    padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,8 +54,16 @@ body {
     gap: 10px;
     text-decoration: none;
     color: var(--primary-green);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
+}
+
+/* লোগোর সাইজ ফিক্সড রাখা হয়েছে যেন কখনো ভেঙে বড় না হয় */
+.logo-img {
+    height: 38px;
+    width: auto;
+    max-width: 45px;
+    object-fit: contain;
 }
 
 .menu-toggle-btn {
@@ -57,34 +73,40 @@ body {
     color: var(--text-dark);
     cursor: pointer;
     padding: 5px;
+    transition: color 0.2s;
+}
+
+.menu-toggle-btn:hover {
+    color: var(--primary-green);
 }
 
 /* ---------------------------------------------------
-   3. SIDE DRAWER MENU (৩ লাইনে ক্লিক করলে বের হবে)
+   3. RIGHT SIDE DRAWER MENU (ডান দিক থেকে বের হবে)
 --------------------------------------------------- */
 .side-drawer {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
+    left: auto;
     width: 280px;
     height: 100%;
     background-color: #ffffff;
     z-index: 1000;
-    transform: translateX(-100%);
+    transform: translateX(100%); /* ডান দিকে লুকিয়ে থাকবে */
     transition: transform 0.3s ease-in-out;
     padding: 20px;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     overflow-y: auto;
 }
 
 .side-drawer.open {
-    transform: translateX(0);
+    transform: translateX(0); /* ক্লিক করলে ডান দিক থেকে বের হবে */
 }
 
 .drawer-header {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .close-btn {
@@ -93,24 +115,25 @@ body {
     font-size: 30px;
     color: #64748b;
     cursor: pointer;
+    padding: 0 5px;
 }
 
 .drawer-menu-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
 }
 
 .drawer-menu-list li a {
     text-decoration: none;
     color: var(--text-dark);
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     display: block;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
+    transition: all 0.2s;
 }
 
 .drawer-menu-list li a.active-home {
@@ -121,10 +144,11 @@ body {
 }
 
 .drawer-menu-list li a:hover {
+    background-color: #f1f5f9;
     color: var(--primary-green);
 }
 
-/* Overlay */
+/* Overlay Background */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -141,10 +165,10 @@ body {
 }
 
 /* ---------------------------------------------------
-   4. PAGE CONTENT (UNO CARD)
+   4. PAGE CONTENT & UNO CARD
 --------------------------------------------------- */
 .page-content {
-    padding: 40px 20px;
+    padding: 30px 15px;
 }
 
 .container {
@@ -154,16 +178,16 @@ body {
 
 .uno-card {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 14px;
+    padding: 25px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     display: flex;
     gap: 25px;
 }
 
 .uno-image-box img {
-    width: 170px;
-    height: 210px;
+    width: 160px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid var(--primary-green);
@@ -173,41 +197,42 @@ body {
     background: #fee2e2;
     color: #dc2626;
     padding: 3px 12px;
-    border-radius: 20px;
-    font-size: 13px;
+    border-radius: 15px;
+    font-size: 12px;
     font-weight: 700;
+    display: inline-block;
 }
 
 .uno-details h2 {
     color: var(--primary-green);
     margin-top: 8px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .uno-title {
     color: #64748b;
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 15px;
 }
 
 .uno-quote {
     background: #f8fafc;
     border-left: 4px solid var(--primary-green);
-    padding: 15px;
+    padding: 12px 15px;
     border-radius: 0 8px 8px 0;
-    font-size: 15px;
-    margin-bottom: 20px;
-    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.6;
 }
 
 .uno-contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
 
 .uno-contact-item {
-    font-size: 14px;
+    font-size: 13px;
     color: #334155;
     display: flex;
     align-items: center;
@@ -218,13 +243,73 @@ body {
     color: var(--primary-green);
 }
 
-@media (max-width: 768px) {
+/* ---------------------------------------------------
+   5. MEDIA QUERIES (MOBILE, TABLET, DESKTOP)
+--------------------------------------------------- */
+
+/* মোবাইল স্ক্রিন (0px থেকে 600px) */
+@media (max-width: 600px) {
+    .side-drawer {
+        width: 80%; /* মোবাইলে স্ক্রিনের ৮০% জায়গা নিবে */
+    }
+
     .uno-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 20px 15px;
     }
+
+    .uno-image-box img {
+        width: 140px;
+        height: 175px;
+    }
+
     .uno-quote {
         text-align: left;
+    }
+
+    .uno-contact-grid {
+        grid-template-columns: 1fr; /* মোবাইলে সিঙ্গেল কলাম */
+        text-align: left;
+    }
+}
+
+/* ট্যাবলেট স্ক্রিন (601px থেকে 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .side-drawer {
+        width: 300px;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    .uno-card {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .uno-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ডেক্সটপ ও ল্যাপটপ স্ক্রিন (1025px এর উপরে) */
+@media (min-width: 1025px) {
+    .side-drawer {
+        width: 320px;
+    }
+
+    .uno-card {
+        padding: 35px;
+    }
+
+    .uno-details h2 {
+        font-size: 26px;
+    }
+
+    .uno-quote {
+        font-size: 15px;
     }
 }
