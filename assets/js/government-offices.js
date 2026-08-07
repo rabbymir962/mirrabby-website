@@ -1,22 +1,30 @@
 /*
 ==========================================================
 SATHIA GOVERNMENT OFFICES
-Premium Government Portal JS
+government-offices.js
+Premium Government Portal
 ==========================================================
 */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    "use strict";
+
+    /* ==========================================
+       ELEMENTS
+    ========================================== */
+
     const menuBtn = document.getElementById("menuToggleBtn");
     const sideDrawer = document.getElementById("sideDrawer");
     const closeBtn = document.getElementById("closeBtn");
     const overlay = document.getElementById("menuOverlay");
+    const header = document.querySelector(".main-header");
 
-    /* ===========================
-       Drawer Menu
-    =========================== */
+    /* ==========================================
+       DRAWER MENU
+    ========================================== */
 
-    function openDrawer() {
+    function openDrawer(){
 
         sideDrawer.classList.add("active");
         overlay.classList.add("active");
@@ -26,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function closeDrawer() {
+    function closeDrawer(){
 
         sideDrawer.classList.remove("active");
         overlay.classList.remove("active");
@@ -36,15 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    menuBtn.addEventListener("click",openDrawer);
+    if(menuBtn){
 
-    closeBtn.addEventListener("click",closeDrawer);
+        menuBtn.addEventListener("click",openDrawer);
 
-    overlay.addEventListener("click",closeDrawer);
+    }
 
-    document.addEventListener("keydown",(e)=>{
+    if(closeBtn){
 
-        if(e.key==="Escape"){
+        closeBtn.addEventListener("click",closeDrawer);
+
+    }
+
+    if(overlay){
+
+        overlay.addEventListener("click",closeDrawer);
+
+    }
+
+    document.addEventListener("keydown",(event)=>{
+
+        if(event.key==="Escape"){
 
             closeDrawer();
 
@@ -52,17 +72,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    document.querySelectorAll(".drawer-menu-list a").forEach(item=>{
+    document.querySelectorAll(".drawer-menu-list a").forEach(link=>{
 
-        item.addEventListener("click",closeDrawer);
+        link.addEventListener("click",()=>{
+
+            closeDrawer();
+
+        });
 
     });
 
-    /* ===========================
-       Scroll Animation
-    =========================== */
+    /* ==========================================
+       HEADER SHADOW
+    ========================================== */
 
-    const observer=new IntersectionObserver((entries)=>{
+    function headerShadow(){
+
+        if(window.scrollY>10){
+
+            header.style.boxShadow="0 10px 35px rgba(0,0,0,.08)";
+
+        }else{
+
+            header.style.boxShadow="none";
+
+        }
+
+    }
+
+    window.addEventListener("scroll",headerShadow);
+
+    headerShadow();
+
+    /* ==========================================
+       FADE ANIMATION
+    ========================================== */
+
+    const observer = new IntersectionObserver((entries)=>{
 
         entries.forEach(entry=>{
 
@@ -76,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     },{
 
-        threshold:.15
+        threshold:0.15
 
     });
 
@@ -84,37 +130,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ".portrait-card,.content-card,.contact-item"
 
-    ).forEach(el=>{
+    ).forEach(item=>{
 
-        el.classList.add("fade-element");
+        item.classList.add("fade-element");
 
-        observer.observe(el);
-
-    });
-
-    /* ===========================
-       Header Shadow
-    =========================== */
-
-    const header=document.querySelector(".main-header");
-
-    window.addEventListener("scroll",()=>{
-
-        if(window.scrollY>20){
-
-            header.style.boxShadow="0 8px 30px rgba(0,0,0,.08)";
-
-        }else{
-
-            header.style.boxShadow="none";
-
-        }
+        observer.observe(item);
 
     });
 
-    /* ===========================
-       Card Hover
-    =========================== */
+    /* ==========================================
+       SMOOTH SCROLL
+    ========================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+        anchor.addEventListener("click",function(e){
+
+            const target=document.querySelector(this.getAttribute("href"));
+
+            if(target){
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+
+                    behavior:"smooth",
+
+                    block:"start"
+
+                });
+
+            }
+
+        });
+
+    });
+
+    /* ==========================================
+       CARD HOVER EFFECT
+    ========================================== */
 
     document.querySelectorAll(".content-card").forEach(card=>{
 
@@ -126,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("mouseleave",()=>{
 
-            card.style.transform="";
+            card.style.transform="translateY(0)";
 
         });
 
@@ -142,39 +196,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("mouseleave",()=>{
 
-            card.style.transform="";
+            card.style.transform="translateY(0)";
 
         });
 
     });
 
-    /* ===========================
-       Smooth Anchor Scroll
-    =========================== */
+    /* ==========================================
+       IMAGE HOVER
+    ========================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    const portrait=document.querySelector(".portrait-card img");
 
-        anchor.addEventListener("click",function(e){
+    if(portrait){
 
-            const target=document.querySelector(
+        portrait.addEventListener("mouseenter",()=>{
 
-                this.getAttribute("href")
-
-            );
-
-            if(!target) return;
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-
-                behavior:"smooth",
-
-                block:"start"
-
-            });
+            portrait.style.transform="scale(1.04)";
 
         });
+
+        portrait.addEventListener("mouseleave",()=>{
+
+            portrait.style.transform="scale(1)";
+
+        });
+
+    }
+
+    /* ==========================================
+       ACTIVE MENU
+    ========================================== */
+
+    const current=window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".drawer-menu-list a").forEach(link=>{
+
+        const href=link.getAttribute("href");
+
+        if(href && href.includes(current)){
+
+            link.classList.add("active");
+
+        }
 
     });
 
