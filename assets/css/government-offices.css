@@ -1,12 +1,12 @@
 /* ==========================================================
    MIR RABBY HUMAN RIGHTS
-   Government Offices CSS
+   Premium Government Portal CSS
    Version 2026
 ========================================================== */
 
-/* ==========================
+/* =========================
    RESET
-========================== */
+========================= */
 
 *,
 *::before,
@@ -22,54 +22,70 @@ html{
 
 :root{
 
-    --primary:#005c3b;
-    --primary-dark:#00472f;
-    --primary-light:#eaf7ef;
+    --primary:#006a4e;
+    --primary-dark:#00543f;
+    --primary-light:#edf8f3;
 
-    --white:#ffffff;
+    --secondary:#ffffff;
 
-    --bg:#f4f7f5;
+    --bg:#f4f7f6;
+
+    --surface:rgba(255,255,255,.82);
 
     --text:#1f2937;
-    --text-light:#64748b;
 
-    --border:#dde6df;
+    --muted:#64748b;
 
-    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --border:#dce8e2;
 
-    --radius:18px;
+    --radius:20px;
 
-    --transition:.30s ease;
+    --shadow:
+        0 10px 30px rgba(15,23,42,.08);
+
+    --shadow-hover:
+        0 18px 45px rgba(15,23,42,.12);
+
+    --transition:.35s ease;
 
 }
+
+/* =========================
+   BODY
+========================= */
 
 body{
 
     font-family:
-    "SolaimanLipi",
-    "Hind Siliguri",
-    "Noto Sans Bengali",
-    sans-serif;
+        "Hind Siliguri",
+        "SolaimanLipi",
+        "Noto Sans Bengali",
+        sans-serif;
 
-    background:var(--bg);
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbf9 0%,
+            #f2f7f5 100%
+        );
 
     color:var(--text);
 
-    line-height:1.7;
+    line-height:1.8;
 
     overflow-x:hidden;
 
 }
 
-/* ==========================
+/* =========================
    GLOBAL
-========================== */
+========================= */
 
 img{
 
     display:block;
 
-    max-width:100%;
+    width:100%;
 
     height:auto;
 
@@ -91,15 +107,15 @@ ul{
 
 .container{
 
-    width:min(1180px,92%);
+    width:min(1200px,92%);
 
-    margin:auto;
+    margin-inline:auto;
 
 }
 
-/* ==========================
+/* =========================
    HEADER
-========================== */
+========================= */
 
 .main-header{
 
@@ -109,21 +125,25 @@ ul{
 
     z-index:1000;
 
-    background:#fff;
+    background:rgba(255,255,255,.88);
 
-    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,106,78,.08);
+
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
 
 }
 
 .header-container{
+
+    min-height:78px;
 
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
-
-    min-height:72px;
 
 }
 
@@ -133,47 +153,45 @@ ul{
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
-    color:var(--primary);
-
-    font-size:22px;
+    font-size:1.35rem;
 
     font-weight:700;
+
+    color:var(--primary);
 
 }
 
 .logo-img{
 
-    width:46px;
+    width:48px;
 
-    height:46px;
+    height:48px;
 
     object-fit:contain;
 
 }
 
-/* ==========================
+/* =========================
    MENU BUTTON
-========================== */
+========================= */
 
 .menu-toggle-btn{
 
-    width:46px;
+    width:48px;
 
-    height:46px;
+    height:48px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:16px;
 
-    cursor:pointer;
-
-    background:#eef7f1;
+    background:var(--primary-light);
 
     color:var(--primary);
 
-    font-size:20px;
+    cursor:pointer;
 
     transition:var(--transition);
 
@@ -185,489 +203,545 @@ ul{
 
     color:#fff;
 
-}
-
-/* ==========================
-   DRAWER
-========================== */
-
-.side-drawer{
-
-    position:fixed;
-
-    top:0;
-
-    right:0;
-
-    width:320px;
-
-    max-width:88%;
-
-    height:100vh;
-
-    background:#fff;
-
-    z-index:1100;
-
-    overflow-y:auto;
-
-    transform:translateX(100%);
-
-    transition:.35s;
-
-    box-shadow:-10px 0 30px rgba(0,0,0,.15);
+    transform:translateY(-2px);
 
 }
 
-.side-drawer.active{
+/* =========================
+   PAGE
+========================= */
 
-    transform:translateX(0);
+.page-content{
 
-}
-
-.drawer-header{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    padding:18px;
+    padding:48px 0 70px;
 
 }
 
-.close-btn{
+/* =========================
+   PROFILE LAYOUT
+========================= */
 
-    background:none;
+.profile-grid{
 
-    border:none;
+    display:grid;
 
-    cursor:pointer;
+    grid-template-columns:360px 1fr;
 
-    font-size:30px;
+    gap:32px;
 
-    color:#64748b;
-
-}
-
-.drawer-menu-list{
-
-    padding:0 18px 25px;
+    align-items:start;
 
 }
 
-.drawer-menu-list li{
+/* =========================
+   SIDEBAR
+========================= */
+
+.profile-sidebar{
+
+    position:sticky;
+
+    top:110px;
+
+}
+
+.portrait-card{
+
+    background:var(--surface);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.portrait-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.portrait-card img{
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+}
+
+.portrait-content{
+
+    padding:26px;
+
+    text-align:center;
+
+}
+
+.profile-badge{
+
+    display:inline-flex;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:.85rem;
+
+    margin-bottom:16px;
+
+}
+
+.portrait-content h1{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.portrait-content h2{
+
+    font-size:1.1rem;
+
+    font-weight:600;
 
     margin-bottom:8px;
 
 }
 
-.drawer-menu-list li a{
+.portrait-content p{
+
+    color:var(--muted);
+
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+
+.profile-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.content-card{
+
+    position:relative;
+
+    background:var(--surface);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    border-radius:20px;
+
+    padding:32px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.content-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #009966
+    );
+
+}
+
+.content-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-heading{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:18px;
 
-    padding:13px 16px;
-
-    border-radius:12px;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    transition:var(--transition);
+    margin-bottom:26px;
 
 }
 
-.drawer-menu-list li a:hover{
+.heading-icon{
+
+    width:62px;
+
+    height:62px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
 
     background:var(--primary-light);
 
     color:var(--primary);
 
-}
+    font-size:22px;
 
-.drawer-menu-list li a i{
-
-    width:22px;
-
-    text-align:center;
+    flex-shrink:0;
 
 }
 
-.active-home{
+.section-heading h3{
 
-    background:var(--primary);
-
-    color:#fff !important;
-
-}
-
-/* ==========================
-   OVERLAY
-========================== */
-
-.menu-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    backdrop-filter:blur(2px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.3s;
-
-    z-index:1050;
-
-}
-
-.menu-overlay.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-/* ==========================
-   PAGE
-========================== */
-
-.page-content{
-
-    padding:35px 0 60px;
-
-}
-
-.page-footer{
-
-    margin-top:60px;
-
-    background:#fff;
-
-    border-top:1px solid var(--border);
-
-    padding:20px 0;
-
-    text-align:center;
-
-    color:var(--text-light);
-
-    font-size:14px;
-
-}
-
-/* ==========================================================
-   UNO PROFILE CARD
-========================================================== */
-
-.uno-card{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:32px;
-
-    background:#fff;
-
-    border-radius:var(--radius);
-
-    padding:30px;
-
-    box-shadow:var(--shadow);
-
-    border:1px solid var(--border);
-
-    animation:fadeUp .5s ease;
-
-}
-
-.uno-image-box{
-
-    flex:0 0 200px;
-
-}
-
-.uno-image-box img{
-
-    width:200px;
-
-    height:250px;
-
-    object-fit:cover;
-
-    border-radius:16px;
-
-    border:4px solid #fff;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-}
-
-.uno-details{
-
-    flex:1;
-
-    min-width:0;
-
-}
-
-.uno-badge{
-
-    display:inline-block;
-
-    background:#e8f6ed;
+    font-size:1.55rem;
 
     color:var(--primary);
 
-    padding:6px 14px;
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:14px;
+    margin-bottom:4px;
 
 }
 
-.uno-details h2{
+.section-heading p{
 
-    color:var(--primary);
+    color:var(--muted);
 
-    font-size:30px;
-
-    margin-bottom:8px;
-
-    font-weight:700;
+    font-size:.95rem;
 
 }
 
-.uno-title{
+/* =========================
+   MESSAGE
+========================= */
 
-    color:var(--text-light);
+.message-body{
 
-    font-size:16px;
-
-    margin-bottom:22px;
-
-}
-
-.uno-quote{
-
-    background:#f8fafc;
-
-    border-left:5px solid var(--primary);
-
-    padding:18px;
-
-    border-radius:10px;
-
-    line-height:1.9;
-
-    margin-bottom:24px;
-
-}
-
-.uno-contact-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:15px;
-
-}
-
-.uno-contact-item{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:12px;
-
-    padding:14px;
-
-    background:#f8fafc;
-
-    border-radius:12px;
-
-    transition:var(--transition);
-
-}
-
-.uno-contact-item:hover{
-
-    background:var(--primary-light);
-
-    transform:translateY(-2px);
-
-}
-
-.uno-contact-item i{
-
-    color:var(--primary);
-
-    font-size:18px;
-
-    margin-top:2px;
-
-}
-
-.uno-contact-item span{
-
-    word-break:break-word;
+    font-size:1rem;
 
     color:var(--text);
 
+    line-height:2;
+
 }
 
-/* ==========================
+.message-body p{
+
+    margin-bottom:18px;
+
+}
+
+.signature{
+
+    margin-top:28px;
+
+    padding-top:22px;
+
+    border-top:1px dashed var(--border);
+
+}
+
+.signature strong{
+
+    display:block;
+
+    font-size:1.08rem;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.signature span{
+
+    display:block;
+
+    color:var(--muted);
+
+    margin-bottom:4px;
+
+}
+
+/* =========================
+   CONTACT GRID
+========================= */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    min-height:130px;
+
+    transition:var(--transition);
+
+}
+
+.contact-item:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(0,106,78,.25);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+
+.contact-icon{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.contact-info{
+
+    flex:1;
+
+}
+
+.contact-label{
+
+    display:block;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+    font-size:1rem;
+
+}
+
+.contact-info p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    word-break:break-word;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.page-footer{
+
+    margin-top:70px;
+
+    padding:26px 0;
+
+    background:#ffffff;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+}
+
+.page-footer p{
+
+    color:var(--muted);
+
+    font-size:.95rem;
+
+}
+
+/* =========================
    TABLET
-========================== */
+========================= */
 
-@media (max-width:991px){
+@media (max-width:992px){
 
-    .uno-card{
-
-        gap:24px;
-
-        padding:24px;
-
-    }
-
-    .uno-image-box{
-
-        flex:0 0 170px;
-
-    }
-
-    .uno-image-box img{
-
-        width:170px;
-
-        height:220px;
-
-    }
-
-    .uno-details h2{
-
-        font-size:26px;
-
-    }
-
-}
-
-/* ==========================
-   MOBILE
-========================== */
-
-@media (max-width:768px){
-
-    .brand-logo{
-
-        font-size:18px;
-
-    }
-
-    .logo-img{
-
-        width:40px;
-
-        height:40px;
-
-    }
-
-    .page-content{
-
-        padding:22px 0 40px;
-
-    }
-
-    .uno-card{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        text-align:center;
-
-        padding:20px 16px;
-
-    }
-
-    .uno-image-box{
-
-        width:100%;
-
-        display:flex;
-
-        justify-content:center;
-
-    }
-
-    .uno-image-box img{
-
-        width:180px;
-
-        height:225px;
-
-    }
-
-    .uno-details{
-
-        width:100%;
-
-    }
-
-    .uno-details h2{
-
-        font-size:24px;
-
-    }
-
-    .uno-title{
-
-        font-size:15px;
-
-    }
-
-    .uno-quote{
-
-        text-align:left;
-
-        font-size:15px;
-
-    }
-
-    .uno-contact-grid{
+    .profile-grid{
 
         grid-template-columns:1fr;
 
     }
 
-    .uno-contact-item{
+    .profile-sidebar{
 
-        text-align:left;
+        position:static;
+
+    }
+
+    .portrait-card{
+
+        max-width:420px;
+
+        margin:0 auto;
 
     }
 
 }
 
-/* ==========================
-   EXTRA SMALL MOBILE
-========================== */
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .page-content{
+
+        padding:30px 0 50px;
+
+    }
+
+    .header-container{
+
+        min-height:70px;
+
+    }
+
+    .brand-logo{
+
+        font-size:1.05rem;
+
+    }
+
+    .logo-img{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .content-card{
+
+        padding:22px;
+
+    }
+
+    .section-heading{
+
+        align-items:flex-start;
+
+    }
+
+    .section-heading h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-item{
+
+        min-height:auto;
+
+    }
+
+    .portrait-content{
+
+        padding:22px;
+
+    }
+
+    .portrait-content h1{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width:480px){
 
@@ -677,93 +751,47 @@ ul{
 
     }
 
-    .brand-logo{
+    .content-card{
 
-        font-size:16px;
+        padding:18px;
 
-    }
-
-    .uno-card{
-
-        padding:18px 14px;
+        border-radius:18px;
 
     }
 
-    .uno-image-box img{
+    .heading-icon{
 
-        width:160px;
+        width:52px;
 
-        height:205px;
+        height:52px;
 
-    }
-
-    .uno-details h2{
-
-        font-size:22px;
+        font-size:18px;
 
     }
 
-    .uno-title{
+    .portrait-content h1{
 
-        font-size:14px;
-
-    }
-
-    .uno-quote{
-
-        padding:15px;
-
-        font-size:14px;
+        font-size:1.45rem;
 
     }
 
-    .uno-contact-item{
+    .portrait-content h2{
 
-        padding:12px;
+        font-size:1rem;
 
-        font-size:14px;
+    }
+
+    .contact-item{
+
+        padding:18px;
 
     }
 
 }
 
-/* ==========================
-   LARGE DESKTOP
-========================== */
-
-@media (min-width:1400px){
-
-    .container{
-
-        max-width:1320px;
-
-    }
-
-    .uno-card{
-
-        padding:40px;
-
-    }
-
-    .uno-image-box{
-
-        flex:0 0 230px;
-
-    }
-
-    .uno-image-box img{
-
-        width:230px;
-
-        height:290px;
-
-    }
-
-}
-
-/* ==========================
+/* =========================
    ANIMATION
-========================== */
+========================= */
 
 @keyframes fadeUp{
 
@@ -771,7 +799,7 @@ ul{
 
         opacity:0;
 
-        transform:translateY(20px);
+        transform:translateY(25px);
 
     }
 
@@ -782,5 +810,18 @@ ul{
         transform:translateY(0);
 
     }
+
+}
+
+.profile-sidebar,
+.content-card{
+
+    animation:fadeUp .6s ease both;
+
+}
+
+.content-card:nth-child(2){
+
+    animation-delay:.15s;
 
 }
