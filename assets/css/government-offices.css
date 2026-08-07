@@ -1,12 +1,11 @@
 /* ==========================================================
-   MIR RABBY HUMAN RIGHTS
-   Premium Government Portal CSS
-   Version 2026
+   SATHIA GOVERNMENT OFFICES
+   Premium Government Portal
 ========================================================== */
 
-/* =========================
+/* ===========================
    RESET
-========================= */
+=========================== */
 
 *,
 *::before,
@@ -20,66 +19,51 @@ html{
     scroll-behavior:smooth;
 }
 
-:root{
-
-    --primary:#006a4e;
-    --primary-dark:#00543f;
-    --primary-light:#edf8f3;
-
-    --secondary:#ffffff;
-
-    --bg:#f4f7f6;
-
-    --surface:rgba(255,255,255,.82);
-
-    --text:#1f2937;
-
-    --muted:#64748b;
-
-    --border:#dce8e2;
-
-    --radius:20px;
-
-    --shadow:
-        0 10px 30px rgba(15,23,42,.08);
-
-    --shadow-hover:
-        0 18px 45px rgba(15,23,42,.12);
-
-    --transition:.35s ease;
-
-}
-
-/* =========================
-   BODY
-========================= */
-
 body{
 
-    font-family:
-        "Hind Siliguri",
-        "SolaimanLipi",
-        "Noto Sans Bengali",
-        sans-serif;
+    font-family:"Hind Siliguri",sans-serif;
 
-    background:
-        linear-gradient(
-            180deg,
-            #f8fbf9 0%,
-            #f2f7f5 100%
-        );
+    background:#f4f7f6;
 
-    color:var(--text);
+    color:#1f2937;
 
-    line-height:1.8;
+    line-height:1.75;
 
     overflow-x:hidden;
 
 }
 
-/* =========================
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root{
+
+    --primary:#006a4e;
+    --primary-dark:#004b37;
+    --primary-light:#edf8f3;
+
+    --white:#ffffff;
+
+    --gray:#6b7280;
+
+    --border:#d9e5df;
+
+    --radius:20px;
+
+    --shadow:
+        0 12px 35px rgba(0,0,0,.08);
+
+    --hover-shadow:
+        0 20px 45px rgba(0,0,0,.14);
+
+    --transition:.35s ease;
+
+}
+
+/* ===========================
    GLOBAL
-========================= */
+=========================== */
 
 img{
 
@@ -93,9 +77,9 @@ img{
 
 a{
 
-    text-decoration:none;
-
     color:inherit;
+
+    text-decoration:none;
 
 }
 
@@ -107,15 +91,15 @@ ul{
 
 .container{
 
-    width:min(1200px,92%);
+    width:min(1180px,92%);
 
-    margin-inline:auto;
+    margin:auto;
 
 }
 
-/* =========================
+/* ===========================
    HEADER
-========================= */
+=========================== */
 
 .main-header{
 
@@ -123,27 +107,25 @@ ul{
 
     top:0;
 
-    z-index:1000;
+    z-index:999;
 
-    background:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(14px);
 
-    border-bottom:1px solid rgba(0,106,78,.08);
-
-    box-shadow:0 4px 20px rgba(0,0,0,.05);
+    border-bottom:1px solid rgba(0,0,0,.06);
 
 }
 
 .header-container{
 
-    min-height:78px;
-
     display:flex;
+
+    align-items:center;
 
     justify-content:space-between;
 
-    align-items:center;
+    min-height:78px;
 
 }
 
@@ -155,7 +137,7 @@ ul{
 
     gap:14px;
 
-    font-size:1.35rem;
+    font-size:1.30rem;
 
     font-weight:700;
 
@@ -173,9 +155,9 @@ ul{
 
 }
 
-/* =========================
+/* ===========================
    MENU BUTTON
-========================= */
+=========================== */
 
 .menu-toggle-btn{
 
@@ -185,13 +167,23 @@ ul{
 
     border:none;
 
-    border-radius:16px;
+    border-radius:14px;
 
     background:var(--primary-light);
 
     color:var(--primary);
 
     cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:20px;
+
+    margin-left:auto;
 
     transition:var(--transition);
 
@@ -203,59 +195,183 @@ ul{
 
     color:#fff;
 
-    transform:translateY(-2px);
+}
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9998;
 
 }
 
-/* =========================
-   PAGE
-========================= */
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ===========================
+   RIGHT DRAWER
+=========================== */
+
+.side-drawer{
+
+    position:fixed;
+
+    top:0;
+
+    right:-330px;
+
+    width:320px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:#fff;
+
+    transition:right .35s ease;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.18);
+
+    overflow-y:auto;
+
+    z-index:9999;
+
+}
+
+.side-drawer.active{
+
+    right:0;
+
+}
+
+.drawer-header{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    padding:18px;
+
+}
+
+.close-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+.drawer-menu-list{
+
+    padding:0 18px 25px;
+
+}
+
+.drawer-menu-list li{
+
+    margin-bottom:10px;
+
+}
+
+.drawer-menu-list a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    transition:var(--transition);
+
+}
+
+.drawer-menu-list a:hover{
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+   MAIN
+=========================== */
 
 .page-content{
 
-    padding:48px 0 70px;
+    padding:50px 0;
 
 }
-
-/* =========================
-   PROFILE LAYOUT
-========================= */
 
 .profile-grid{
 
     display:grid;
 
-    grid-template-columns:360px 1fr;
+    grid-template-columns:370px 1fr;
 
-    gap:32px;
+    gap:35px;
 
     align-items:start;
 
 }
 
-/* =========================
-   SIDEBAR
-========================= */
-
 .profile-sidebar{
 
     position:sticky;
 
-    top:110px;
+    top:100px;
 
 }
 
+/* ==========================================
+   PREMIUM PORTRAIT CARD
+========================================== */
+
 .portrait-card{
 
-    background:var(--surface);
+    background:rgba(255,255,255,.88);
 
     backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.7);
-
-    border-radius:20px;
+    border-radius:24px;
 
     overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.7);
 
     box-shadow:var(--shadow);
 
@@ -265,23 +381,39 @@ ul{
 
 .portrait-card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-8px);
 
-    box-shadow:var(--shadow-hover);
+    box-shadow:var(--hover-shadow);
 
 }
 
 .portrait-card img{
 
+    width:108%;
+
+    max-width:none;
+
+    margin-left:-22px;
+
     aspect-ratio:4/5;
 
     object-fit:cover;
+
+    object-position:center;
+
+    transition:.45s ease;
+
+}
+
+.portrait-card:hover img{
+
+    transform:scale(1.04);
 
 }
 
 .portrait-content{
 
-    padding:26px;
+    padding:28px;
 
     text-align:center;
 
@@ -291,19 +423,23 @@ ul{
 
     display:inline-flex;
 
-    padding:8px 18px;
+    align-items:center;
 
-    border-radius:999px;
+    justify-content:center;
+
+    padding:8px 18px;
 
     background:var(--primary-light);
 
     color:var(--primary);
 
+    border-radius:999px;
+
+    font-size:.88rem;
+
     font-weight:700;
 
-    font-size:.85rem;
-
-    margin-bottom:16px;
+    margin-bottom:18px;
 
 }
 
@@ -319,23 +455,25 @@ ul{
 
 .portrait-content h2{
 
-    font-size:1.1rem;
+    font-size:1.08rem;
 
     font-weight:600;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
 }
 
 .portrait-content p{
 
-    color:var(--muted);
+    color:var(--gray);
+
+    font-size:.95rem;
 
 }
 
-/* =========================
-   CONTENT AREA
-========================= */
+/* ==========================================
+   CONTENT
+========================================== */
 
 .profile-content{
 
@@ -349,45 +487,19 @@ ul{
 
 .content-card{
 
-    position:relative;
+    background:rgba(255,255,255,.88);
 
-    background:var(--surface);
+    backdrop-filter:blur(16px);
 
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.75);
-
-    border-radius:20px;
+    border-radius:22px;
 
     padding:32px;
+
+    border:1px solid rgba(255,255,255,.8);
 
     box-shadow:var(--shadow);
 
     transition:var(--transition);
-
-    overflow:hidden;
-
-}
-
-.content-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    width:100%;
-
-    height:5px;
-
-    background:linear-gradient(
-        90deg,
-        var(--primary),
-        #009966
-    );
 
 }
 
@@ -395,15 +507,15 @@ ul{
 
     transform:translateY(-5px);
 
-    box-shadow:var(--shadow-hover);
+    box-shadow:var(--hover-shadow);
 
 }
 
-/* =========================
-   SECTION HEADER
-========================= */
+/* ==========================================
+   SECTION TITLE
+========================================== */
 
-.section-heading{
+.section-title{
 
     display:flex;
 
@@ -411,21 +523,15 @@ ul{
 
     gap:18px;
 
-    margin-bottom:26px;
+    margin-bottom:28px;
 
 }
 
-.heading-icon{
+.section-icon{
 
-    width:62px;
+    width:60px;
 
-    height:62px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    height:60px;
 
     border-radius:18px;
 
@@ -433,13 +539,17 @@ ul{
 
     color:var(--primary);
 
-    font-size:22px;
+    display:flex;
 
-    flex-shrink:0;
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
 
 }
 
-.section-heading h3{
+.section-title h3{
 
     font-size:1.55rem;
 
@@ -449,31 +559,27 @@ ul{
 
 }
 
-.section-heading p{
+.section-title p{
 
-    color:var(--muted);
-
-    font-size:.95rem;
+    color:var(--gray);
 
 }
 
-/* =========================
+/* ==========================================
    MESSAGE
-========================= */
+========================================== */
 
-.message-body{
-
-    font-size:1rem;
-
-    color:var(--text);
+.message-content{
 
     line-height:2;
 
 }
 
-.message-body p{
+.message-content p{
 
     margin-bottom:18px;
+
+    color:#374151;
 
 }
 
@@ -491,9 +597,9 @@ ul{
 
     display:block;
 
-    font-size:1.08rem;
-
     color:var(--primary);
+
+    font-size:1.08rem;
 
     margin-bottom:8px;
 
@@ -503,15 +609,15 @@ ul{
 
     display:block;
 
-    color:var(--muted);
+    color:var(--gray);
 
     margin-bottom:4px;
 
 }
 
-/* =========================
-   CONTACT GRID
-========================= */
+/* ==========================================
+   CONTACT
+========================================== */
 
 .contact-grid{
 
@@ -537,9 +643,7 @@ ul{
 
     border-radius:18px;
 
-    padding:22px;
-
-    min-height:130px;
+    padding:24px;
 
     transition:var(--transition);
 
@@ -547,11 +651,11 @@ ul{
 
 .contact-item:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
-    border-color:rgba(0,106,78,.25);
+    border-color:var(--primary);
 
-    box-shadow:0 12px 28px rgba(0,0,0,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
 
@@ -563,15 +667,15 @@ ul{
 
     border-radius:16px;
 
+    background:var(--primary-light);
+
+    color:var(--primary);
+
     display:flex;
 
     align-items:center;
 
     justify-content:center;
-
-    background:var(--primary-light);
-
-    color:var(--primary);
 
     font-size:22px;
 
@@ -579,15 +683,11 @@ ul{
 
 }
 
-.contact-info{
-
-    flex:1;
-
-}
-
-.contact-label{
+.contact-text span{
 
     display:block;
+
+    font-size:1rem;
 
     font-weight:700;
 
@@ -595,13 +695,11 @@ ul{
 
     margin-bottom:8px;
 
-    font-size:1rem;
-
 }
 
-.contact-info p{
+.contact-text p{
 
-    color:var(--muted);
+    color:var(--gray);
 
     line-height:1.8;
 
@@ -609,189 +707,61 @@ ul{
 
 }
 
-/* =========================
+/* ==========================================
    FOOTER
-========================= */
+========================================== */
 
-.page-footer{
+.main-footer{
 
-    margin-top:70px;
-
-    padding:26px 0;
+    margin-top:60px;
 
     background:#ffffff;
 
     border-top:1px solid var(--border);
 
+    padding:30px 0;
+
     text-align:center;
 
 }
 
-.page-footer p{
+.main-footer p{
 
-    color:var(--muted);
+    color:var(--gray);
 
     font-size:.95rem;
 
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width:992px){
-
-    .profile-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .profile-sidebar{
-
-        position:static;
-
-    }
-
-    .portrait-card{
-
-        max-width:420px;
-
-        margin:0 auto;
-
-    }
+    margin-bottom:8px;
 
 }
 
-/* =========================
-   MOBILE
-========================= */
+.main-footer p:last-child{
 
-@media (max-width:768px){
-
-    .page-content{
-
-        padding:30px 0 50px;
-
-    }
-
-    .header-container{
-
-        min-height:70px;
-
-    }
-
-    .brand-logo{
-
-        font-size:1.05rem;
-
-    }
-
-    .logo-img{
-
-        width:42px;
-
-        height:42px;
-
-    }
-
-    .content-card{
-
-        padding:22px;
-
-    }
-
-    .section-heading{
-
-        align-items:flex-start;
-
-    }
-
-    .section-heading h3{
-
-        font-size:1.3rem;
-
-    }
-
-    .contact-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .contact-item{
-
-        min-height:auto;
-
-    }
-
-    .portrait-content{
-
-        padding:22px;
-
-    }
-
-    .portrait-content h1{
-
-        font-size:1.7rem;
-
-    }
+    margin-bottom:0;
 
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* ==========================================
+   FADE ANIMATION
+========================================== */
 
-@media (max-width:480px){
+.fade-element{
 
-    .container{
+    opacity:0;
 
-        width:94%;
+    transform:translateY(30px);
 
-    }
-
-    .content-card{
-
-        padding:18px;
-
-        border-radius:18px;
-
-    }
-
-    .heading-icon{
-
-        width:52px;
-
-        height:52px;
-
-        font-size:18px;
-
-    }
-
-    .portrait-content h1{
-
-        font-size:1.45rem;
-
-    }
-
-    .portrait-content h2{
-
-        font-size:1rem;
-
-    }
-
-    .contact-item{
-
-        padding:18px;
-
-    }
+    transition:all .7s ease;
 
 }
 
-/* =========================
-   ANIMATION
-========================= */
+.fade-element.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
 
 @keyframes fadeUp{
 
@@ -799,7 +769,7 @@ ul{
 
         opacity:0;
 
-        transform:translateY(25px);
+        transform:translateY(35px);
 
     }
 
@@ -813,15 +783,321 @@ ul{
 
 }
 
-.profile-sidebar,
+.portrait-card,
 .content-card{
 
-    animation:fadeUp .6s ease both;
+    animation:fadeUp .7s ease both;
 
 }
 
 .content-card:nth-child(2){
 
     animation-delay:.15s;
+
+}
+
+/* ==========================================
+   IMAGE HOVER
+========================================== */
+
+.portrait-card{
+
+    cursor:pointer;
+
+}
+
+.portrait-card:hover img{
+
+    filter:brightness(1.03);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef4f2;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0b7a59;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#055c43;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:991px){
+
+    .profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .profile-sidebar{
+
+        position:static;
+
+        max-width:450px;
+
+        width:100%;
+
+        margin:0 auto;
+
+    }
+
+    .profile-content{
+
+        margin-top:30px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .header-container{
+
+        min-height:70px;
+
+    }
+
+    .brand-logo{
+
+        font-size:1rem;
+
+        gap:10px;
+
+    }
+
+    .logo-img{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .page-content{
+
+        padding:30px 0;
+
+    }
+
+    .portrait-card img{
+
+        width:105%;
+
+        margin-left:-12px;
+
+    }
+
+    .portrait-content{
+
+        padding:22px;
+
+    }
+
+    .portrait-content h1{
+
+        font-size:1.60rem;
+
+    }
+
+    .portrait-content h2{
+
+        font-size:1rem;
+
+    }
+
+    .content-card{
+
+        padding:22px;
+
+    }
+
+    .section-title{
+
+        align-items:flex-start;
+
+    }
+
+    .section-icon{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:20px;
+
+    }
+
+    .section-title h3{
+
+        font-size:1.30rem;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-item{
+
+        padding:20px;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .menu-toggle-btn{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+    .portrait-card{
+
+        border-radius:20px;
+
+    }
+
+    .portrait-card img{
+
+        width:104%;
+
+        margin-left:-10px;
+
+    }
+
+    .portrait-content{
+
+        padding:18px;
+
+    }
+
+    .profile-badge{
+
+        font-size:.80rem;
+
+    }
+
+    .portrait-content h1{
+
+        font-size:1.40rem;
+
+    }
+
+    .portrait-content h2{
+
+        font-size:.95rem;
+
+    }
+
+    .content-card{
+
+        padding:18px;
+
+        border-radius:18px;
+
+    }
+
+    .section-title{
+
+        gap:14px;
+
+    }
+
+    .section-icon{
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:14px;
+
+    }
+
+    .contact-item{
+
+        gap:14px;
+
+        padding:16px;
+
+    }
+
+    .contact-icon{
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:14px;
+
+        font-size:18px;
+
+    }
+
+    .main-footer{
+
+        padding:22px 0;
+
+    }
+
+    .main-footer p{
+
+        font-size:.85rem;
+
+    }
+
+}
+
+/* ==========================================
+   BODY LOCK
+========================================== */
+
+body.drawer-open{
+
+    overflow:hidden;
 
 }
