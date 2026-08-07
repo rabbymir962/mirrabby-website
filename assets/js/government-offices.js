@@ -1,68 +1,79 @@
-/* ==========================================================
-   MIR RABBY HUMAN RIGHTS
-   Government Offices Page JavaScript
-   Drawer Menu Controller
-========================================================== */
+/*
+==========================================================
+ MIR RABBY HUMAN RIGHTS
+ Government Offices Drawer Menu JS
+==========================================================
+*/
 
 
 document.addEventListener("DOMContentLoaded", function(){
 
 
-    const menuBtn = document.querySelector(".menu-btn");
-    const drawer = document.querySelector(".mobile-drawer");
-    const overlay = document.querySelector(".drawer-overlay");
-    const closeBtn = document.querySelector(".drawer-close");
+    const menuBtn = document.getElementById("menuToggleBtn");
+
+    const sideDrawer = document.getElementById("sideDrawer");
+
+    const closeBtn = document.getElementById("closeBtn");
+
+    const overlay = document.getElementById("menuOverlay");
 
 
-    // যদি কোনো element না থাকে তাহলে error হবে না
-    if(!menuBtn || !drawer || !overlay){
+
+    // Safety Check
+
+    if(!menuBtn || !sideDrawer || !overlay){
+
         return;
+
     }
 
 
-    // Open Drawer
-    function openDrawer(){
 
-        drawer.classList.add("active");
+    // Open Menu
+
+    function openMenu(){
+
+        sideDrawer.classList.add("active");
 
         overlay.classList.add("active");
 
-        document.body.classList.add("menu-open");
+        document.body.classList.add("drawer-open");
 
     }
 
 
 
-    // Close Drawer
-    function closeDrawer(){
+    // Close Menu
 
-        drawer.classList.remove("active");
+    function closeMenu(){
+
+        sideDrawer.classList.remove("active");
 
         overlay.classList.remove("active");
 
-        document.body.classList.remove("menu-open");
+        document.body.classList.remove("drawer-open");
 
     }
 
 
 
-    // Menu Button Click
+    // Menu Button
 
     menuBtn.addEventListener("click", function(){
 
-        openDrawer();
+        openMenu();
 
     });
 
 
 
-    // Close Button Click
+    // Close Button
 
     if(closeBtn){
 
         closeBtn.addEventListener("click", function(){
 
-            closeDrawer();
+            closeMenu();
 
         });
 
@@ -74,19 +85,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
     overlay.addEventListener("click", function(){
 
-        closeDrawer();
+        closeMenu();
 
     });
 
 
 
-    // ESC Key Support
+    // ESC Button
 
     document.addEventListener("keydown", function(e){
 
         if(e.key === "Escape"){
 
-            closeDrawer();
+            closeMenu();
 
         }
 
@@ -94,32 +105,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-    // Drawer Link Click করলে Close হবে
+    // Menu Item Click
 
-    const drawerLinks = drawer.querySelectorAll("a");
+    const menuLinks = document.querySelectorAll(".drawer-menu-list a");
 
 
-    drawerLinks.forEach(function(link){
+    menuLinks.forEach(function(link){
 
         link.addEventListener("click", function(){
 
-            closeDrawer();
+            closeMenu();
 
         });
-
-    });
-
-
-
-    // Resize হলে Desktop এ Drawer বন্ধ
-
-    window.addEventListener("resize", function(){
-
-        if(window.innerWidth > 768){
-
-            closeDrawer();
-
-        }
 
     });
 
