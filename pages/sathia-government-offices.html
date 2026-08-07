@@ -1,222 +1,330 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>সাঁথিয়া সরকারি দপ্তর | উপজেলা প্রশাসন</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="সাঁথিয়া উপজেলার সরকারি দপ্তরসমূহ">
+    <meta name="description"
+          content="সাঁথিয়া উপজেলার সরকারি দপ্তরসমূহ">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="keywords"
+          content="সাঁথিয়া, সরকারি দপ্তর, উপজেলা প্রশাসন, পাবনা">
 
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color"
+          content="#006a4e">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>সাঁথিয়া সরকারি দপ্তর</title>
 
-<link rel="stylesheet"
-href="../assets/css/government-offices.css">
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../assets/css/government-offices.css">
 
 </head>
 
 <body>
 
-<div class="menu-overlay" id="menuOverlay"></div>
+<!-- ==========================
+     Overlay
+=========================== -->
 
-<!-- =========================
-HEADER
-========================= -->
+<div id="menuOverlay"
+     class="menu-overlay"></div>
+
+<!-- ==========================
+     Header
+=========================== -->
 
 <header class="main-header">
 
-<div class="container header-container">
+    <div class="container header-container">
 
-<a href="../index.html" class="brand-logo">
+        <a href="sathia-government-offices.html"
+           class="brand-logo">
 
-<img
-src="../assets/images/logo.png"
-alt="Logo"
-class="logo-img">
+            <img src="../assets/images/logo.png"
+                 alt="Logo"
+                 class="logo-img">
 
-<span>
-সাঁথিয়া সরকারি দপ্তর
-</span>
+            <span>
 
-</a>
+                সাঁথিয়া সরকারি দপ্তর
 
-<button
-class="menu-toggle-btn"
-id="menuToggleBtn"
-aria-label="মেনু">
+            </span>
 
-<i class="fa-solid fa-bars"></i>
+        </a>
 
-</button>
+        <button id="menuToggleBtn"
+                class="menu-toggle-btn"
+                aria-label="Open Menu"
+                aria-expanded="false">
 
-</div>
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
 
 </header>
 
-<!-- =========================
-RIGHT DRAWER
-========================= -->
+<!-- ==========================
+     Right Drawer
+=========================== -->
 
-<aside
-class="side-drawer"
-id="sideDrawer">
+<aside id="sideDrawer"
+       class="side-drawer">
 
-<div class="drawer-header">
+    <div class="drawer-header">
 
-<button
-class="close-btn"
-id="closeBtn">
+        <button id="closeBtn"
+                class="close-btn"
+                aria-label="Close">
 
-<i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark"></i>
 
-</button>
+        </button>
 
-</div>
+    </div>
 
-<ul class="drawer-menu-list">
+    <ul class="drawer-menu-list">
 
-<li>
-<a href="../index.html">
-<i class="fa-solid fa-house"></i>
-হোম
-</a>
-</li>
+        <li>
 
-<li>
-<a href="upazila-administration.html">
-<i class="fa-solid fa-building-columns"></i>
-উপজেলা প্রশাসন
-</a>
-</li>
+            <a href="https://santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
 
-<li>
-<a href="land-office.html">
-<i class="fa-solid fa-map-location-dot"></i>
-ভূমি অফিস
-</a>
-</li>
+                <i class="fa-solid fa-building-columns"></i>
 
-<li>
-<a href="police.html">
-<i class="fa-solid fa-shield-halved"></i>
-থানা
-</a>
-</li>
+                <span>
+                    সাঁথিয়া উপজেলা প্রশাসন (ইউএনও কার্যালয়)
+                </span>
 
-<li>
-<a href="health-complex.html">
-<i class="fa-solid fa-hospital"></i>
-উপজেলা স্বাস্থ্য কমপ্লেক্স
-</a>
-</li>
+            </a>
 
-<li>
-<a href="agriculture-office.html">
-<i class="fa-solid fa-seedling"></i>
-কৃষি অফিস
-</a>
-</li>
+        </li>
 
-<li>
-<a href="social-service.html">
-<i class="fa-solid fa-hand-holding-heart"></i>
-সমাজসেবা অফিস
-</a>
-</li>
+        <li>
 
-<li>
-<a href="education-office.html">
-<i class="fa-solid fa-graduation-cap"></i>
-মাধ্যমিক শিক্ষা অফিস
-</a>
-</li>
+            <a href="https://acl.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
 
-<li>
-<a href="election-office.html">
-<i class="fa-solid fa-square-poll-vertical"></i>
-নির্বাচন অফিস
-</a>
-</li>
+                <i class="fa-solid fa-map-location-dot"></i>
 
-</ul>
+                <span>
+                    উপজেলা ভূমি অফিস, সাঁথিয়া
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://sr.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+                <span>
+                    উপজেলা সাব-রেজিস্টার অফিস
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://police.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    সাঁথিয়া থানা
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://health.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-hospital"></i>
+
+                <span>
+                    উপজেলা স্বাস্থ্য কমপ্লেক্স
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://dae.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <span>
+                    উপজেলা কৃষি অফিস, সাঁথিয়া
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://dss.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+                <span>
+                    উপজেলা সমাজসেবা কার্যালয়, সাঁথিয়া
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://seo.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>
+                    উপজেলা মাধ্যমিক শিক্ষা অফিস, সাঁথিয়া
+                </span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="https://ec.santhia.pabna.gov.bd/"
+               target="_blank"
+               rel="noopener">
+
+                <i class="fa-solid fa-check-to-slot"></i>
+
+                <span>
+                    উপজেলা নির্বাচন অফিস
+                </span>
+
+            </a>
+
+        </li>
+
+    </ul>
 
 </aside>
 
-<!-- =========================
-MAIN
-========================= -->
+<!-- ==========================
+     Main Content
+=========================== -->
 
 <main class="page-content">
 
-<div class="container">
+    <div class="container">
 
-<section class="profile-grid">
+        <section class="profile-grid">
 
-<!-- LEFT -->
+            <!-- Left -->
 
-<aside class="profile-sidebar">
+            <aside class="profile-sidebar">
 
-<div class="portrait-card">
+                <div class="portrait-card">
 
-<img
-src="../assets/images/uno.jpg"
-alt="রিজু তামান্না">
+                    <img src="../assets/images/government/uno-santhia.jpg"
+                         alt="রিজু তামান্না">
 
-<div class="portrait-content">
+                    <div class="portrait-content">
 
-<span class="profile-badge">
+                        <span class="profile-badge">
 
-প্রশাসনিক প্রধান
+                            প্রশাসনিক প্রধান
 
-</span>
+                        </span>
 
-<h1>
+                        <h1>
 
-রিজু তামান্না
+                            রিজু তামান্না
 
-</h1>
+                        </h1>
 
-<h2>
+                        <h2>
 
-উপজেলা নির্বাহী কর্মকর্তা (UNO)
+                            উপজেলা নির্বাহী কর্মকর্তা (UNO)
 
-</h2>
+                        </h2>
 
-<p>
+                        <p>
 
-উপজেলা প্রশাসন,
-সাঁথিয়া,
-পাবনা
+                            উপজেলা প্রশাসন<br>
 
-</p>
+                            সাঁথিয়া, পাবনা
 
-</div>
+                        </p>
 
-</div>
+                    </div>
 
-</aside>
+                </div>
 
-<!-- RIGHT -->
+            </aside>
 
-<section class="profile-content">
+            <!-- Right -->
 
-    <!-- ======================================
-RIGHT CONTENT
-====================================== -->
+            <section class="profile-content">
+
+                <!-- =====================================
+     কর্মকর্তার বার্তা
+===================================== -->
 
 <article class="content-card message-card">
 
     <div class="section-title">
 
         <div class="section-icon">
+
             <i class="fa-solid fa-message"></i>
+
         </div>
 
         <div>
@@ -241,14 +349,19 @@ RIGHT CONTENT
 
         <p>
             সাঁথিয়া উপজেলার সার্বিক উন্নয়ন, সুশাসন প্রতিষ্ঠা,
-            জনবান্ধব প্রশাসন নিশ্চিতকরণ এবং সরকারি সেবা জনগণের
-            দোরগোড়ায় পৌঁছে দেওয়ার লক্ষ্যে উপজেলা প্রশাসন
-            নিরলসভাবে কাজ করে যাচ্ছে।
+            জনবান্ধব প্রশাসন নিশ্চিতকরণ এবং সরকারি সেবা
+            জনগণের দোরগোড়ায় পৌঁছে দেওয়ার লক্ষ্যে উপজেলা
+            প্রশাসন আন্তরিকভাবে কাজ করে যাচ্ছে।
         </p>
 
         <p>
-            আপনাদের মূল্যবান মতামত, সহযোগিতা এবং অংশগ্রহণ
+            আপনাদের মূল্যবান মতামত, পরামর্শ এবং সহযোগিতা
             আমাদের কার্যক্রমকে আরও গতিশীল ও কার্যকর করবে।
+        </p>
+
+        <p>
+            সকলের সম্মিলিত প্রচেষ্টায় একটি উন্নত, নিরাপদ
+            ও সেবাবান্ধব সাঁথিয়া গড়ে তোলা সম্ভব।
         </p>
 
         <div class="signature">
@@ -271,23 +384,25 @@ RIGHT CONTENT
 
 </article>
 
-<!-- ======================================
-CONTACT INFORMATION
-====================================== -->
+<!-- =====================================
+     যোগাযোগের তথ্য
+===================================== -->
 
 <section class="content-card contact-card">
 
     <div class="section-title">
 
         <div class="section-icon">
+
             <i class="fa-solid fa-address-book"></i>
+
         </div>
 
         <div>
 
             <h3>যোগাযোগের তথ্য</h3>
 
-            <p>সরকারি যোগাযোগ</p>
+            <p>সরকারি যোগাযোগের তথ্য</p>
 
         </div>
 
@@ -295,10 +410,12 @@ CONTACT INFORMATION
 
     <div class="contact-grid">
 
-        <div class="contact-item">
+        <article class="contact-item">
 
             <div class="contact-icon">
+
                 <i class="fa-solid fa-location-dot"></i>
+
             </div>
 
             <div class="contact-text">
@@ -312,12 +429,14 @@ CONTACT INFORMATION
 
             </div>
 
-        </div>
+        </article>
 
-        <div class="contact-item">
+        <article class="contact-item">
 
             <div class="contact-icon">
+
                 <i class="fa-solid fa-phone"></i>
+
             </div>
 
             <div class="contact-text">
@@ -328,12 +447,14 @@ CONTACT INFORMATION
 
             </div>
 
-        </div>
+        </article>
 
-        <div class="contact-item">
+        <article class="contact-item">
 
             <div class="contact-icon">
+
                 <i class="fa-solid fa-mobile-screen-button"></i>
+
             </div>
 
             <div class="contact-text">
@@ -344,61 +465,132 @@ CONTACT INFORMATION
 
             </div>
 
-        </div>
+        </article>
 
-        <div class="contact-item">
+        <article class="contact-item">
 
             <div class="contact-icon">
+
                 <i class="fa-solid fa-envelope"></i>
+
             </div>
 
             <div class="contact-text">
 
                 <span>ই-মেইল</span>
 
-                <p>
-                    unosanthia@mopa.gov.bd
-                </p>
+                <p>unosanthia@mopa.gov.bd</p>
 
             </div>
 
-        </div>
+        </article>
 
     </div>
 
 </section>
 
-</section>
+                        </section>
 
-</section>
+    </section>
 
-</div>
+    </div>
 
 </main>
 
-<!-- ======================================
-FOOTER
-====================================== -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer class="main-footer">
 
     <div class="container">
 
-        <p>
+        <div class="footer-content">
 
-            © ২০২৬ MIR RABBY HUMAN RIGHTS
+            <div class="footer-logo">
 
-        </p>
+                <img src="../assets/images/logo.png"
+                     alt="বাংলাদেশ সরকার">
 
-        <p>
+                <div>
 
-            উপজেলা প্রশাসন, সাঁথিয়া, পাবনা
+                    <h4>
 
-        </p>
+                        সাঁথিয়া সরকারি দপ্তর
+
+                    </h4>
+
+                    <p>
+
+                        উপজেলা প্রশাসন, সাঁথিয়া, পাবনা
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="https://santhia.pabna.gov.bd/"
+                   target="_blank"
+                   rel="noopener">
+
+                    উপজেলা প্রশাসন
+
+                </a>
+
+                <a href="https://acl.santhia.pabna.gov.bd/"
+                   target="_blank"
+                   rel="noopener">
+
+                    ভূমি অফিস
+
+                </a>
+
+                <a href="https://police.santhia.pabna.gov.bd/"
+                   target="_blank"
+                   rel="noopener">
+
+                    থানা
+
+                </a>
+
+                <a href="https://health.santhia.pabna.gov.bd/"
+                   target="_blank"
+                   rel="noopener">
+
+                    স্বাস্থ্য কমপ্লেক্স
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © ২০২৬ সাঁথিয়া সরকারি দপ্তর | উপজেলা প্রশাসন, সাঁথিয়া, পাবনা
+
+            </p>
+
+            <p>
+
+                বাংলাদেশ সরকারের তথ্য ও সেবা জনগণের দোরগোড়ায় পৌঁছে দেওয়ার লক্ষ্যে নির্মিত।
+
+            </p>
+
+        </div>
 
     </div>
 
 </footer>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
 
 <script src="../assets/js/government-offices.js"></script>
 
