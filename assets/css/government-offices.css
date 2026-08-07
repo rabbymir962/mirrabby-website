@@ -1,11 +1,12 @@
 /* ==========================================================
    SATHIA GOVERNMENT OFFICES
    Premium Government Portal
+   government-offices.css
 ========================================================== */
 
-/* ===========================
+/* =========================
    RESET
-=========================== */
+========================= */
 
 *,
 *::before,
@@ -15,71 +16,65 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --primary:#006a4e;
+    --primary-dark:#00523d;
+    --primary-light:#edf8f4;
+
+    --white:#ffffff;
+
+    --background:#f4f7f6;
+
+    --border:#dbe8e2;
+
+    --text:#1f2937;
+
+    --gray:#6b7280;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-hover:0 20px 45px rgba(0,0,0,.12);
+
+    --radius:20px;
+
+    --transition:.35s ease;
+
+}
+
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
     font-family:"Hind Siliguri",sans-serif;
 
-    background:#f4f7f6;
+    background:var(--background);
 
-    color:#1f2937;
+    color:var(--text);
 
-    line-height:1.75;
+    line-height:1.8;
 
     overflow-x:hidden;
 
 }
 
-/* ===========================
-   VARIABLES
-=========================== */
-
-:root{
-
-    --primary:#006a4e;
-    --primary-dark:#004b37;
-    --primary-light:#edf8f3;
-
-    --white:#ffffff;
-
-    --gray:#6b7280;
-
-    --border:#d9e5df;
-
-    --radius:20px;
-
-    --shadow:
-        0 12px 35px rgba(0,0,0,.08);
-
-    --hover-shadow:
-        0 20px 45px rgba(0,0,0,.14);
-
-    --transition:.35s ease;
-
-}
-
-/* ===========================
-   GLOBAL
-=========================== */
-
 img{
 
+    max-width:100%;
+
     display:block;
-
-    width:100%;
-
-    height:auto;
 
 }
 
 a{
 
-    color:inherit;
-
     text-decoration:none;
+
+    color:inherit;
 
 }
 
@@ -97,9 +92,9 @@ ul{
 
 }
 
-/* ===========================
+/* =========================
    HEADER
-=========================== */
+========================= */
 
 .main-header{
 
@@ -109,11 +104,11 @@ ul{
 
     z-index:999;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.95);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(0,0,0,.06);
+    border-bottom:1px solid rgba(0,0,0,.05);
 
 }
 
@@ -121,11 +116,11 @@ ul{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
-    min-height:78px;
+    align-items:center;
+
+    min-height:76px;
 
 }
 
@@ -137,11 +132,13 @@ ul{
 
     gap:14px;
 
-    font-size:1.30rem;
-
-    font-weight:700;
+    flex:1;
 
     color:var(--primary);
+
+    font-size:1.25rem;
+
+    font-weight:700;
 
 }
 
@@ -155,9 +152,9 @@ ul{
 
 }
 
-/* ===========================
+/* =========================
    MENU BUTTON
-=========================== */
+========================= */
 
 .menu-toggle-btn{
 
@@ -167,13 +164,11 @@ ul{
 
     border:none;
 
-    border-radius:14px;
+    border-radius:15px;
 
     background:var(--primary-light);
 
     color:var(--primary);
-
-    cursor:pointer;
 
     display:flex;
 
@@ -181,9 +176,9 @@ ul{
 
     justify-content:center;
 
-    font-size:20px;
+    cursor:pointer;
 
-    margin-left:auto;
+    font-size:20px;
 
     transition:var(--transition);
 
@@ -197,9 +192,9 @@ ul{
 
 }
 
-/* ===========================
+/* =========================
    OVERLAY
-=========================== */
+========================= */
 
 .menu-overlay{
 
@@ -227,9 +222,9 @@ ul{
 
 }
 
-/* ===========================
+/* =========================
    RIGHT DRAWER
-=========================== */
+========================= */
 
 .side-drawer{
 
@@ -237,7 +232,7 @@ ul{
 
     top:0;
 
-    right:-330px;
+    right:-340px;
 
     width:320px;
 
@@ -247,9 +242,9 @@ ul{
 
     background:#fff;
 
-    transition:right .35s ease;
+    box-shadow:-15px 0 45px rgba(0,0,0,.15);
 
-    box-shadow:-15px 0 40px rgba(0,0,0,.18);
+    transition:right .35s ease;
 
     overflow-y:auto;
 
@@ -289,11 +284,21 @@ ul{
 
     cursor:pointer;
 
+    transition:var(--transition);
+
+}
+
+.close-btn:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
 }
 
 .drawer-menu-list{
 
-    padding:0 18px 25px;
+    padding:0 18px 30px;
 
 }
 
@@ -317,6 +322,18 @@ ul{
 
     transition:var(--transition);
 
+    font-weight:500;
+
+}
+
+.drawer-menu-list a i{
+
+    width:22px;
+
+    color:var(--primary);
+
+    text-align:center;
+
 }
 
 .drawer-menu-list a:hover{
@@ -327,13 +344,13 @@ ul{
 
 }
 
-/* ===========================
-   MAIN
-=========================== */
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 .page-content{
 
-    padding:50px 0;
+    padding:45px 0 60px;
 
 }
 
@@ -341,7 +358,7 @@ ul{
 
     display:grid;
 
-    grid-template-columns:370px 1fr;
+    grid-template-columns:360px 1fr;
 
     gap:35px;
 
@@ -353,7 +370,7 @@ ul{
 
     position:sticky;
 
-    top:100px;
+    top:95px;
 
 }
 
@@ -363,15 +380,15 @@ ul{
 
 .portrait-card{
 
-    background:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.70);
 
     border-radius:24px;
 
     overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.7);
 
     box-shadow:var(--shadow);
 
@@ -383,7 +400,7 @@ ul{
 
     transform:translateY(-8px);
 
-    box-shadow:var(--hover-shadow);
+    box-shadow:var(--shadow-hover);
 
 }
 
@@ -399,7 +416,7 @@ ul{
 
     object-fit:cover;
 
-    object-position:center;
+    object-position:center top;
 
     transition:.45s ease;
 
@@ -413,7 +430,7 @@ ul{
 
 .portrait-content{
 
-    padding:28px;
+    padding:30px;
 
     text-align:center;
 
@@ -429,13 +446,13 @@ ul{
 
     padding:8px 18px;
 
+    border-radius:999px;
+
     background:var(--primary-light);
 
     color:var(--primary);
 
-    border-radius:999px;
-
-    font-size:.88rem;
+    font-size:.90rem;
 
     font-weight:700;
 
@@ -445,9 +462,11 @@ ul{
 
 .portrait-content h1{
 
+    color:var(--primary);
+
     font-size:2rem;
 
-    color:var(--primary);
+    font-weight:700;
 
     margin-bottom:10px;
 
@@ -459,7 +478,7 @@ ul{
 
     font-weight:600;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
@@ -467,12 +486,12 @@ ul{
 
     color:var(--gray);
 
-    font-size:.95rem;
+    font-size:.96rem;
 
 }
 
 /* ==========================================
-   CONTENT
+   RIGHT CONTENT
 ========================================== */
 
 .profile-content{
@@ -487,15 +506,15 @@ ul{
 
 .content-card{
 
-    background:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(16px);
 
-    border-radius:22px;
+    border-radius:24px;
 
-    padding:32px;
+    padding:34px;
 
-    border:1px solid rgba(255,255,255,.8);
+    border:1px solid rgba(255,255,255,.75);
 
     box-shadow:var(--shadow);
 
@@ -505,9 +524,9 @@ ul{
 
 .content-card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 
-    box-shadow:var(--hover-shadow);
+    box-shadow:var(--shadow-hover);
 
 }
 
@@ -529,9 +548,9 @@ ul{
 
 .section-icon{
 
-    width:60px;
+    width:62px;
 
-    height:60px;
+    height:62px;
 
     border-radius:18px;
 
@@ -547,13 +566,17 @@ ul{
 
     font-size:22px;
 
+    flex-shrink:0;
+
 }
 
 .section-title h3{
 
+    color:var(--primary);
+
     font-size:1.55rem;
 
-    color:var(--primary);
+    font-weight:700;
 
     margin-bottom:4px;
 
@@ -563,13 +586,17 @@ ul{
 
     color:var(--gray);
 
+    font-size:.95rem;
+
 }
 
 /* ==========================================
-   MESSAGE
+   MESSAGE CARD
 ========================================== */
 
 .message-content{
+
+    color:#374151;
 
     line-height:2;
 
@@ -579,13 +606,11 @@ ul{
 
     margin-bottom:18px;
 
-    color:#374151;
-
 }
 
 .signature{
 
-    margin-top:28px;
+    margin-top:30px;
 
     padding-top:22px;
 
@@ -616,7 +641,7 @@ ul{
 }
 
 /* ==========================================
-   CONTACT
+   CONTACT CARD
 ========================================== */
 
 .contact-grid{
@@ -641,9 +666,9 @@ ul{
 
     border:1px solid var(--border);
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:24px;
+    padding:22px;
 
     transition:var(--transition);
 
@@ -683,15 +708,19 @@ ul{
 
 }
 
+.contact-text{
+
+    flex:1;
+
+}
+
 .contact-text span{
 
     display:block;
 
-    font-size:1rem;
+    color:var(--primary);
 
     font-weight:700;
-
-    color:var(--primary);
 
     margin-bottom:8px;
 
@@ -719,23 +748,115 @@ ul{
 
     border-top:1px solid var(--border);
 
-    padding:30px 0;
+}
 
-    text-align:center;
+.footer-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:35px 0;
+
+    flex-wrap:wrap;
 
 }
 
-.main-footer p{
+.footer-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.footer-logo img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+}
+
+.footer-logo h4{
+
+    color:var(--primary);
+
+    font-size:1.15rem;
+
+    margin-bottom:4px;
+
+}
+
+.footer-logo p{
 
     color:var(--gray);
 
-    font-size:.95rem;
-
-    margin-bottom:8px;
+    font-size:.92rem;
 
 }
 
-.main-footer p:last-child{
+.footer-links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.footer-links a{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:.92rem;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    padding:22px 0;
+
+}
+
+.footer-bottom p{
+
+    color:var(--gray);
+
+    margin-bottom:6px;
+
+}
+
+.footer-bottom p:last-child{
 
     margin-bottom:0;
 
@@ -749,9 +870,9 @@ ul{
 
     opacity:0;
 
-    transform:translateY(30px);
+    transform:translateY(35px);
 
-    transition:all .7s ease;
+    transition:.7s ease;
 
 }
 
@@ -760,85 +881,6 @@ ul{
     opacity:1;
 
     transform:translateY(0);
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.portrait-card,
-.content-card{
-
-    animation:fadeUp .7s ease both;
-
-}
-
-.content-card:nth-child(2){
-
-    animation-delay:.15s;
-
-}
-
-/* ==========================================
-   IMAGE HOVER
-========================================== */
-
-.portrait-card{
-
-    cursor:pointer;
-
-}
-
-.portrait-card:hover img{
-
-    filter:brightness(1.03);
-
-}
-
-/* ==========================================
-   SCROLLBAR
-========================================== */
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#eef4f2;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#0b7a59;
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#055c43;
 
 }
 
@@ -860,15 +902,33 @@ ul{
 
         max-width:450px;
 
-        width:100%;
-
-        margin:0 auto;
+        margin:auto;
 
     }
 
-    .profile-content{
+    .contact-grid{
 
-        margin-top:30px;
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-content{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .footer-logo{
+
+        justify-content:center;
+
+    }
+
+    .footer-links{
+
+        justify-content:center;
 
     }
 
@@ -889,8 +949,6 @@ ul{
     .brand-logo{
 
         font-size:1rem;
-
-        gap:10px;
 
     }
 
@@ -924,7 +982,7 @@ ul{
 
     .portrait-content h1{
 
-        font-size:1.60rem;
+        font-size:1.55rem;
 
     }
 
@@ -936,7 +994,7 @@ ul{
 
     .content-card{
 
-        padding:22px;
+        padding:24px;
 
     }
 
@@ -948,9 +1006,9 @@ ul{
 
     .section-icon{
 
-        width:52px;
+        width:54px;
 
-        height:52px;
+        height:54px;
 
         font-size:20px;
 
@@ -958,19 +1016,13 @@ ul{
 
     .section-title h3{
 
-        font-size:1.30rem;
-
-    }
-
-    .contact-grid{
-
-        grid-template-columns:1fr;
+        font-size:1.35rem;
 
     }
 
     .contact-item{
 
-        padding:20px;
+        padding:18px;
 
     }
 
@@ -1024,13 +1076,13 @@ ul{
 
     .portrait-content h1{
 
-        font-size:1.40rem;
+        font-size:1.35rem;
 
     }
 
     .portrait-content h2{
 
-        font-size:.95rem;
+        font-size:.92rem;
 
     }
 
@@ -1078,15 +1130,25 @@ ul{
 
     }
 
-    .main-footer{
+    .footer-logo{
 
-        padding:22px 0;
+        flex-direction:column;
 
     }
 
-    .main-footer p{
+    .footer-links{
 
-        font-size:.85rem;
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .footer-links a{
+
+        width:100%;
+
+        text-align:center;
 
     }
 
