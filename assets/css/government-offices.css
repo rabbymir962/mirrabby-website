@@ -219,7 +219,7 @@ ul{
 
 }
 
-.side-drawer.open{
+.side-drawer.active{
 
     transform:translateX(0);
 
