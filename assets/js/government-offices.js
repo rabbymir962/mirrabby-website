@@ -1,8 +1,7 @@
 /*
 ==========================================================
-MIR RABBY HUMAN RIGHTS
+SATHIA GOVERNMENT OFFICES
 Premium Government Portal JS
-Version 2026
 ==========================================================
 */
 
@@ -13,67 +12,61 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeBtn");
     const overlay = document.getElementById("menuOverlay");
 
-    /* =====================================
+    /* ===========================
        Drawer Menu
-    ===================================== */
+    =========================== */
 
-    const openMenu = () => {
-
-        if (!sideDrawer) return;
+    function openDrawer() {
 
         sideDrawer.classList.add("active");
         overlay.classList.add("active");
-
         document.body.classList.add("drawer-open");
 
-        menuBtn?.setAttribute("aria-expanded", "true");
+        menuBtn.setAttribute("aria-expanded","true");
 
-    };
+    }
 
-    const closeMenu = () => {
-
-        if (!sideDrawer) return;
+    function closeDrawer() {
 
         sideDrawer.classList.remove("active");
         overlay.classList.remove("active");
-
         document.body.classList.remove("drawer-open");
 
-        menuBtn?.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-expanded","false");
 
-    };
+    }
 
-    menuBtn?.addEventListener("click", openMenu);
+    menuBtn.addEventListener("click",openDrawer);
 
-    closeBtn?.addEventListener("click", closeMenu);
+    closeBtn.addEventListener("click",closeDrawer);
 
-    overlay?.addEventListener("click", closeMenu);
+    overlay.addEventListener("click",closeDrawer);
 
-    document.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown",(e)=>{
 
-        if (e.key === "Escape") {
+        if(e.key==="Escape"){
 
-            closeMenu();
+            closeDrawer();
 
         }
 
     });
 
-    document.querySelectorAll(".drawer-menu-list a").forEach(link => {
+    document.querySelectorAll(".drawer-menu-list a").forEach(item=>{
 
-        link.addEventListener("click", closeMenu);
+        item.addEventListener("click",closeDrawer);
 
     });
 
-    /* =====================================
-       Fade Animation
-    ===================================== */
+    /* ===========================
+       Scroll Animation
+    =========================== */
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer=new IntersectionObserver((entries)=>{
 
-        entries.forEach(entry => {
+        entries.forEach(entry=>{
 
-            if (entry.isIntersecting) {
+            if(entry.isIntersecting){
 
                 entry.target.classList.add("show");
 
@@ -81,56 +74,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-    }, {
-        threshold: .15
-    });
+    },{
 
-    document.querySelectorAll(".content-card,.portrait-card").forEach(item => {
-
-        item.classList.add("fade-element");
-
-        observer.observe(item);
+        threshold:.15
 
     });
 
-    /* =====================================
-       Contact Hover Effect
-    ===================================== */
+    document.querySelectorAll(
 
-    document.querySelectorAll(".contact-item").forEach(card => {
+        ".portrait-card,.content-card,.contact-item"
 
-        card.addEventListener("mouseenter", () => {
+    ).forEach(el=>{
 
-            card.style.transform = "translateY(-6px)";
+        el.classList.add("fade-element");
+
+        observer.observe(el);
+
+    });
+
+    /* ===========================
+       Header Shadow
+    =========================== */
+
+    const header=document.querySelector(".main-header");
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>20){
+
+            header.style.boxShadow="0 8px 30px rgba(0,0,0,.08)";
+
+        }else{
+
+            header.style.boxShadow="none";
+
+        }
+
+    });
+
+    /* ===========================
+       Card Hover
+    =========================== */
+
+    document.querySelectorAll(".content-card").forEach(card=>{
+
+        card.addEventListener("mouseenter",()=>{
+
+            card.style.transform="translateY(-6px)";
 
         });
 
-        card.addEventListener("mouseleave", () => {
+        card.addEventListener("mouseleave",()=>{
 
-            card.style.transform = "";
+            card.style.transform="";
 
         });
 
     });
 
-    /* =====================================
-       Smooth Scroll
-    ===================================== */
+    document.querySelectorAll(".contact-item").forEach(card=>{
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        card.addEventListener("mouseenter",()=>{
 
-        anchor.addEventListener("click", function (e) {
+            card.style.transform="translateY(-5px)";
 
-            const target = document.querySelector(this.getAttribute("href"));
+        });
 
-            if (!target) return;
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform="";
+
+        });
+
+    });
+
+    /* ===========================
+       Smooth Anchor Scroll
+    =========================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+        anchor.addEventListener("click",function(e){
+
+            const target=document.querySelector(
+
+                this.getAttribute("href")
+
+            );
+
+            if(!target) return;
 
             e.preventDefault();
 
             target.scrollIntoView({
 
-                behavior: "smooth",
-                block: "start"
+                behavior:"smooth",
+
+                block:"start"
 
             });
 
