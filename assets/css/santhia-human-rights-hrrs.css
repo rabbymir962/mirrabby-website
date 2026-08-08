@@ -349,13 +349,7 @@ img {
 }
 
 /* =========================================================
-   NEWS TICKER — FINAL
-   HTML uses:
-   .news-ticker
-   .ticker-container
-   .ticker-title
-   .ticker-content
-   <marquee>
+   NEWS TICKER - FINAL FIXED DESIGN
    ========================================================= */
 
 .news-ticker {
@@ -368,116 +362,68 @@ img {
     overflow: hidden;
     display: flex;
     align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
     z-index: 10;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
 }
-
-
-/* =========================================================
-   TICKER CONTAINER
-   ========================================================= */
 
 .ticker-container {
     width: 100%;
     height: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
-
-
-/* =========================================================
-   TICKER TITLE
-   ========================================================= */
 
 .ticker-title {
     flex: 0 0 auto;
     height: 100%;
-    min-width: max-content;
-
     display: flex;
     align-items: center;
-    justify-content: center;
-
     gap: 8px;
-
-    padding: 0 16px;
-
+    padding: 0 15px;
     background: #059669;
     color: #ffffff;
-
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
-
     white-space: nowrap;
-
-    position: relative;
     z-index: 2;
 }
 
-
-/* =========================================================
-   BULLHORN ICON
-   ========================================================= */
-
 .ticker-title i {
-    flex-shrink: 0;
-
     font-size: 15px;
     color: #ffffff;
 }
 
-
-/* =========================================================
-   TICKER CONTENT
-   ========================================================= */
-
 .ticker-content {
     flex: 1 1 auto;
-
-    width: 0;
     min-width: 0;
-
+    width: auto;
     height: 100%;
-
     display: flex;
     align-items: center;
-
     overflow: hidden;
-
     background: #10B981;
 }
 
-
-/* =========================================================
-   MARQUEE
-   ========================================================= */
-
 .ticker-content marquee {
-    display: block;
-
     width: 100%;
     height: 100%;
-
     margin: 0;
     padding: 0;
-
     color: #ffffff;
-
+    font-family: inherit;
     font-size: 16px;
     font-weight: 600;
     line-height: 42px;
-
     white-space: nowrap;
 }
 
 
 /* =========================================================
    TABLET
-   768px — 1024px
    ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -488,7 +434,6 @@ img {
 
     .ticker-title {
         padding: 0 14px;
-        gap: 7px;
         font-size: 15px;
     }
 
@@ -500,23 +445,21 @@ img {
         font-size: 15px;
         line-height: 42px;
     }
-
 }
 
 
 /* =========================================================
    MOBILE
-   481px — 767px
    ========================================================= */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 767px) {
 
     .news-ticker {
         height: 40px;
     }
 
     .ticker-title {
-        padding: 0 12px;
+        padding: 0 11px;
         gap: 6px;
         font-size: 14px;
     }
@@ -529,16 +472,14 @@ img {
         font-size: 14px;
         line-height: 40px;
     }
-
 }
 
 
 /* =========================================================
    SMALL PHONE
-   320px — 480px
    ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
 
     .news-ticker {
         height: 38px;
@@ -558,34 +499,4 @@ img {
         font-size: 13px;
         line-height: 38px;
     }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE
-   320px — 360px
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-    .news-ticker {
-        height: 37px;
-    }
-
-    .ticker-title {
-        padding: 0 7px;
-        gap: 4px;
-        font-size: 12px;
-    }
-
-    .ticker-title i {
-        font-size: 11px;
-    }
-
-    .ticker-content marquee {
-        font-size: 12px;
-        line-height: 37px;
-    }
-
 }
