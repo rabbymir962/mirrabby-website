@@ -2,12 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
-    // Mobile Menu Toggle functionality
+    // Mobile Menu Toggle
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             
-            // Toggle Icon between Bars and Times (X)
             const icon = menuToggle.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-bars');
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Close mobile menu when a navigation link is clicked & Smooth Scroll
+    // Close menu & Smooth Scroll
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            // Smooth Scroll for internal hash links
             const targetId = this.getAttribute('href');
             if (targetId && targetId.startsWith('#')) {
                 e.preventDefault();
