@@ -348,140 +348,244 @@ img {
     }
 }
 
- .news-ticker{
+/* =========================================================
+   NEWS TICKER — FINAL
+   HTML uses:
+   .news-ticker
+   .ticker-container
+   .ticker-title
+   .ticker-content
+   <marquee>
+   ========================================================= */
+
+.news-ticker {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    background: #10B981;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+}
 
 
+/* =========================================================
+   TICKER CONTAINER
+   ========================================================= */
 
-position:fixed;
-
-
-
-top:72px;
-
-
-
-left:0;
-
-
-
-width:100%;
-
+.ticker-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
 
 
-height:42px;
+/* =========================================================
+   TICKER TITLE
+   ========================================================= */
+
+.ticker-title {
+    flex: 0 0 auto;
+    height: 100%;
+    min-width: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 16px;
+
+    background: #059669;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    position: relative;
+    z-index: 2;
+}
 
 
+/* =========================================================
+   BULLHORN ICON
+   ========================================================= */
 
-background:#10B981;
+.ticker-title i {
+    flex-shrink: 0;
 
-
-
-overflow:hidden;
-
-
-
-z-index:999;
-
-
-
-display:flex;
+    font-size: 15px;
+    color: #ffffff;
+}
 
 
+/* =========================================================
+   TICKER CONTENT
+   ========================================================= */
 
-align-items:center;
+.ticker-content {
+    flex: 1 1 auto;
+
+    width: 0;
+    min-width: 0;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #10B981;
+}
 
 
+/* =========================================================
+   MARQUEE
+   ========================================================= */
 
-box-shadow:0 5px 20px rgba(0,0,0,.25);
+.ticker-content marquee {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 42px;
+
+    white-space: nowrap;
+}
 
 
+/* =========================================================
+   TABLET
+   768px — 1024px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .news-ticker {
+        height: 42px;
+    }
+
+    .ticker-title {
+        padding: 0 14px;
+        gap: 7px;
+        font-size: 15px;
+    }
+
+    .ticker-title i {
+        font-size: 14px;
+    }
+
+    .ticker-content marquee {
+        font-size: 15px;
+        line-height: 42px;
+    }
 
 }
 
 
+/* =========================================================
+   MOBILE
+   481px — 767px
+   ========================================================= */
 
-.ticker-wrap{
+@media (min-width: 481px) and (max-width: 767px) {
 
+    .news-ticker {
+        height: 40px;
+    }
 
+    .ticker-title {
+        padding: 0 12px;
+        gap: 6px;
+        font-size: 14px;
+    }
 
-white-space:nowrap;
+    .ticker-title i {
+        font-size: 13px;
+    }
 
-
-
-display:inline-block;
-
-
-
-padding-left:100%;
-
-
-
-animation:ticker 60s linear infinite;
-
-
-
-}
-
-
-
-.ticker-wrap span{
-
-
-
-font-size:16px;
-
-
-
-font-weight:700;
-
-
-
-color:#fff;
-
-
+    .ticker-content marquee {
+        font-size: 14px;
+        line-height: 40px;
+    }
 
 }
 
 
+/* =========================================================
+   SMALL PHONE
+   320px — 480px
+   ========================================================= */
 
-.news-ticker:hover .ticker-wrap{
+@media (max-width: 480px) {
 
+    .news-ticker {
+        height: 38px;
+    }
 
+    .ticker-title {
+        padding: 0 9px;
+        gap: 5px;
+        font-size: 13px;
+    }
 
-animation-play-state:paused;
+    .ticker-title i {
+        font-size: 12px;
+    }
 
-
-
-}
-
-
-
-@keyframes ticker{
-
-
-
-0%{
-
-
-
-transform:translateX(0);
-
-
-
-}
-
-
-
-100%{
-
-
-
-transform:translateX(-100%);
-
-
+    .ticker-content marquee {
+        font-size: 13px;
+        line-height: 38px;
+    }
 
 }
 
 
+/* =========================================================
+   VERY SMALL PHONE
+   320px — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .news-ticker {
+        height: 37px;
+    }
+
+    .ticker-title {
+        padding: 0 7px;
+        gap: 4px;
+        font-size: 12px;
+    }
+
+    .ticker-title i {
+        font-size: 11px;
+    }
+
+    .ticker-content marquee {
+        font-size: 12px;
+        line-height: 37px;
+    }
 
 }
