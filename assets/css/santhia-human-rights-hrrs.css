@@ -95,17 +95,20 @@ img {
     color: #333;
 }
 
-/* Fully Responsive Banner Section */
+/* Fully Responsive Banner without Cropping */
 .banner-section {
     width: 100%;
+    height: auto;
     background-color: #1a252f;
-    line-height: 0;
+    overflow: hidden;
+    line-height: 0; /* ছবিতে অতিরিক্ত গ্যাপ রোধ করার জন্য */
 }
 
 .banner-img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    display: block;
+    object-fit: contain; /* পুরো ব্যানারটি অক্ষত অবস্থায় দেখাবে */
 }
 
 /* Welcome Box Styling */
